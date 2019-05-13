@@ -1,0 +1,33 @@
+{
+  "author": "Peter T Bosse II <pbosse@gmail.com> (https://ptb.dev/)",
+  "browser": "",
+  "bugs": {
+    "url": "https://github.com/ptb/style/issues"
+  },
+  "description": "",
+  "devDependencies": {},
+  "files": [],
+  "homepage": "https://github.com/ptb/style#readme",
+  "keywords": [],
+  "license": "Apache-2.0",
+  "main": "",
+  "maintainers": [
+    {
+      "email": "pbosse@gmail.com",
+      "name": "Peter T Bosse II",
+      "url": "https://ptb.dev/"
+    }
+  ],
+  "module": "",
+  "name": "@amory/style",
+  "publishConfig": {
+    "access": "public"
+  },
+  "readmeFilename": "readme.org",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ptb/style.git"
+  },
+  "scripts": {},
+  "version": ""
+}
