@@ -69,7 +69,7 @@
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-terser": "5.1.2",
-    "sinon": "7.4.2"
+    "sinon": "7.5.0"
   },
   "eslintConfig": {
     "extends": [
