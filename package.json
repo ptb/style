@@ -41,7 +41,7 @@
   "description": "",
   "devDependencies": {
     "@amory/eslint-config": "latest",
-    "@babel/core": "7.6.3",
+    "@babel/core": "7.6.4",
     "@babel/plugin-transform-runtime": "7.6.2",
     "@babel/preset-env": "7.6.3",
     "@babel/runtime-corejs3": "7.6.3",
