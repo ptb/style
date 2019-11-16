@@ -45,7 +45,7 @@
     "@babel/plugin-transform-runtime": "7.6.2",
     "@babel/preset-env": "7.7.1",
     "@babel/runtime-corejs3": "7.7.2",
-    "@size-limit/preset-small-lib": "2.2.0",
+    "@size-limit/preset-small-lib": "2.2.1",
     "ava": "2.4.0",
     "babel-eslint": "10.0.3",
     "eslint": "6.6.0",
