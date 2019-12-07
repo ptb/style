@@ -35,16 +35,16 @@
     "url": "https://github.com/ptb/style/issues"
   },
   "dependencies": {
-    "@babel/runtime": "7.7.5",
+    "@babel/runtime": "7.7.6",
     "core-js": "3.4.7"
   },
   "description": "",
   "devDependencies": {
     "@amory/eslint-config": "latest",
     "@babel/core": "7.7.5",
-    "@babel/plugin-transform-runtime": "7.7.5",
-    "@babel/preset-env": "7.7.5",
-    "@babel/runtime-corejs3": "7.7.5",
+    "@babel/plugin-transform-runtime": "7.7.6",
+    "@babel/preset-env": "7.7.6",
+    "@babel/runtime-corejs3": "7.7.6",
     "@size-limit/preset-small-lib": "2.2.2",
     "ava": "2.4.0",
     "babel-eslint": "10.0.3",
