@@ -70,7 +70,7 @@
     "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-terser": "5.2.0",
     "sinon": "8.1.1",
-    "size-limit": "4.0.1"
+    "size-limit": "4.0.2"
   },
   "eslintConfig": {
     "extends": [
