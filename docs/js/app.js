@@ -6,7 +6,9 @@ import {
   useState
 } from "./react.js"
 import {
+  canUseDom,
   css,
+  getStyleElement,
   getStyles,
   parse,
   store
@@ -36,6 +38,11 @@ export const App = () => {
       /* eslint-disable-next-line no-undef */
       window.Prism.highlightAll (), 0)
   }, [input])
+
+  if (canUseDom) {
+    window.getStyleElement = getStyleElement
+    window.getStyles = getStyles
+  }
 
   const examples = {
     "Simple Example": {
