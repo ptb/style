@@ -18,6 +18,10 @@ export function getIndex (array = [], input = "") {
   let index = getMidpoint (start, end)
 
   while (start < end) {
+    const current = array[index].startsWith ("@")
+      ? array[index].slice (1)
+      : array[index]
+
     const compare = input.localeCompare (array[index])
 
     if (compare === 0) {
