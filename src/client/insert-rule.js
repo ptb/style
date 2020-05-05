@@ -16,10 +16,13 @@ export function insertRule (params = {}) {
 
     if (isDef (sheet) && style) {
       const rule = style.replace (/[\n ]+/gu, "")
-      const index = getIndex (rules, rule)
 
-      rules.splice (index, 0, rule)
-      sheet.insertRule (style, index)
+      if (rules.indexOf (rule) === -1) {
+        const index = getIndex (rules, rule)
+
+        rules.splice (index, 0, rule)
+        sheet.insertRule (style, index)
+      }
     }
   }
 

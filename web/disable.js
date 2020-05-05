@@ -1,0 +1,1 @@
+export const create=()=>({});export const css=()=>"";export const getStyleElement=()=>{};export const getStyles=()=>{};export const merge=()=>({})

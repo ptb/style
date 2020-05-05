@@ -1,0 +1,1 @@
+module.exports={create:function(){return{}},css:function(){return""},getStyleElement:function(){},getStyles:function(){},merge:function(){return{}}}
