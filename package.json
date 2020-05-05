@@ -96,7 +96,9 @@
     "esm/style.js",
     "src/react/circle.js",
     "src/react/icon.js",
+    "umd/disable.js",
     "umd/style.js",
+    "web/disable.js",
     "web/style.js"
   ],
   "homepage": "https://github.com/ptb/style",
@@ -178,5 +180,5 @@
       "path": "web/style.js"
     }
   ],
-  "version": "2020.4.20-0"
+  "version": "2020.5.5-0"
 }

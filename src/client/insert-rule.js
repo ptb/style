@@ -1,4 +1,11 @@
-import { canUseDom, getStyle, getStyleElement, isDef } from "../api/index.js"
+import {
+  canUseDom,
+  getIndex,
+  getStyle,
+  getStyleElement,
+  isDef,
+  rules
+} from "../api/index.js"
 
 /* istanbul ignore next */
 
@@ -8,15 +15,14 @@ export function insertRule (params = {}) {
     const style = getStyle (params, true)
 
     if (isDef (sheet) && style) {
-      const rules = Array.prototype.slice
-        .call (sheet.cssRules)
-        .map (({ cssText }) => cssText.replace (/[\n ]+/gu, ""))
-        .concat (style.replace (/[\n ]+/gu, ""))
-        .sort ()
+      const rule = style.replace (/(^@|[\n ]+)/gu, "")
 
-      const index = rules.indexOf (style.replace (/[\n ]+/gu, ""))
+      if (rules.indexOf (rule) === -1) {
+        const index = getIndex (rules, rule)
 
-      sheet.insertRule (style, index)
+        rules.splice (index, 0, rule)
+        sheet.insertRule (style, index)
+      }
     }
   }
 

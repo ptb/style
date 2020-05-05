@@ -27,9 +27,11 @@ export { parsePlaceholder } from "../parse/parse-placeholder.js"
 export { parseSelectors } from "../parse/parse-selectors.js"
 export { parseTypeSelector } from "../parse/parse-type-selector.js"
 export { cache } from "../store/cache.js"
+export { rules } from "../store/rules.js"
 export { store } from "../store/store.js"
 export { camelCase } from "../utils/camel-case.js"
 export { debounce } from "../utils/debounce.js"
+export { getIndex } from "../utils/get-index.js"
 export { kebabCase } from "../utils/kebab-case.js"
 export {
   canMerge,
