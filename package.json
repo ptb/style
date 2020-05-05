@@ -158,7 +158,7 @@
   },
   "scripts": {
     "lint": "eslint './src/'",
-    "prepare": "rollup -c && size-limit",
+    "build": "rollup -c && size-limit",
     "test": "nyc ava",
     "tidy": "prettier-eslint --write \"src/**/*.js\""
   },
