@@ -347,7 +347,7 @@ ava ("given an object with placeholder and selectors", (t) => {
     {
       "block": [{ "list-style-type": "none" }],
       "emit": false,
-      "identifier": "eor94",
+      "identifier": "eomq80",
       "input": { "listStyleType": "none" },
       "media": "",
       "property": "listStyleType",

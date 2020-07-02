@@ -30,7 +30,7 @@ ava ("given an object with valid selectors", (t) => {
         }
       ],
       "emit": false,
-      "identifier": "jtj6u",
+      "identifier": "jt4tmq",
       "input": {
         "background-color": "#f0f"
       },
@@ -50,7 +50,7 @@ ava ("given an object with valid selectors", (t) => {
         }
       ],
       "emit": false,
-      "identifier": "draen",
+      "identifier": "dr0gcr",
       "input": {
         "display": "grid"
       },
