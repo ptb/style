@@ -15,7 +15,7 @@ export function insertRule (params = {}) {
     const style = getStyle (params, true)
 
     if (isDef (sheet) && style) {
-      const rule = style.replace (/(^@|[\n ]+)/gu, "")
+      const rule = style.replace (/[\n ]+/gu, "")
 
       if (rules.indexOf (rule) === -1) {
         const index = getIndex (rules, rule)
