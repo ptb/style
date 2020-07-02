@@ -9,7 +9,9 @@ export const rules = (function (RULES) {
 ) ? Array.prototype.slice
       .call (getStyleElement ().sheet.cssRules)
       .map (function ({ cssText }) {
-        return cssText.replace (/[\n ]+/gu, "")
+        return cssText
+          .replace (/[\n ]+/gu, "")
+          .replace (/;\}/u, "}")
       })
     : []
   )
