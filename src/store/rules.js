@@ -8,6 +8,8 @@ export const rules = (function (RULES) {
 }) (canUseDom
     ? Array.prototype.slice
       .call (getStyleElement ().sheet.cssRules)
-      .map (({ cssText }) => cssText.replace (/[\n ]+/gu, ""))
+      .map (function ({ cssText }) {
+        return cssText.replace (/[\n ]+/gu, "")
+      })
     : []
   )
