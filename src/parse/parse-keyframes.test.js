@@ -26,20 +26,20 @@ ava ("given an object with valid keyframes declaration (1)", (t) => {
     {
       "block": [{ "0%": { "opacity": 0 } }, { "100%": { "opacity": 1 } }],
       "emit": false,
-      "identifier": "m7okn",
+      "identifier": "m7fokn",
       "media": "",
       "property": "animationName",
-      "selectors": [["@keyframes", " ", "m7okn"]],
-      "value": "m7okn"
+      "selectors": [["@keyframes", " ", "m7fokn"]],
+      "value": "m7fokn"
     },
     {
-      "block": [{ "animation-name": "m7okn" }],
+      "block": [{ "animation-name": "m7fokn" }],
       "emit": true,
-      "identifier": "m7okn",
+      "identifier": "m7fokn",
       "media": "",
       "property": "animationName",
-      "selectors": [[".m7okn"]],
-      "value": "m7okn"
+      "selectors": [[".m7fokn"]],
+      "value": "m7fokn"
     }
   ]
 
@@ -63,24 +63,24 @@ ava ("given an object with valid keyframes declaration (2)", (t) => {
     {
       "block": [{ "0%": { "opacity": 1 } }, { "100%": { "opacity": 0 } }],
       "emit": false,
-      "identifier": "m7nlz",
+      "identifier": "m7anlz",
       "media": "",
       "property": "animationName",
-      "selectors": [["@keyframes", " ", "m7nlz"]],
-      "value": "m7nlz"
+      "selectors": [["@keyframes", " ", "m7anlz"]],
+      "value": "m7anlz"
     },
     {
       "block": [
         {
-          "animation-name": "m7nlz"
+          "animation-name": "m7anlz"
         }
       ],
       "emit": true,
-      "identifier": "m7nlz",
+      "identifier": "m7anlz",
       "media": "",
       "property": "animationName",
-      "selectors": [[".m7nlz"]],
-      "value": "m7nlz"
+      "selectors": [[".m7anlz"]],
+      "value": "m7anlz"
     }
   ]
 

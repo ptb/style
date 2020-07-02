@@ -26,28 +26,28 @@ ava ("given an object with valid font-face declaration (1)", (t) => {
             "url('/fonts/font.woff2') format ('woff2'), url('/fonts/font.woff') format ('woff')"
         },
         {
-          "font-family": "c5xq1"
+          "font-family": "c56xq1"
         }
       ],
       "emit": false,
-      "identifier": "c5xq1",
+      "identifier": "c56xq1",
       "media": "",
       "property": "fontFamily",
       "selectors": [["@font-face"]],
-      "value": "c5xq1"
+      "value": "c56xq1"
     },
     {
       "block": [
         {
-          "font-family": "c5xq1"
+          "font-family": "c56xq1"
         }
       ],
       "emit": true,
-      "identifier": "c5xq1",
+      "identifier": "c56xq1",
       "media": "",
       "property": "fontFamily",
-      "selectors": [[".c5xq1"]],
-      "value": "c5xq1"
+      "selectors": [[".c56xq1"]],
+      "value": "c56xq1"
     }
   ]
 
@@ -71,28 +71,28 @@ ava ("given an object with valid font-face declaration (2)", (t) => {
             "url('/fonts/font2.woff2') format ('woff2'), url('/fonts/font2.woff') format ('woff')"
         },
         {
-          "font-family": "c5pnd"
+          "font-family": "c59pnd"
         }
       ],
       "emit": false,
-      "identifier": "c5pnd",
+      "identifier": "c59pnd",
       "media": "",
       "property": "fontFamily",
       "selectors": [["@font-face"]],
-      "value": "c5pnd"
+      "value": "c59pnd"
     },
     {
       "block": [
         {
-          "font-family": "c5pnd"
+          "font-family": "c59pnd"
         }
       ],
       "emit": true,
-      "identifier": "c5pnd",
+      "identifier": "c59pnd",
       "media": "",
       "property": "fontFamily",
-      "selectors": [[".c5pnd"]],
-      "value": "c5pnd"
+      "selectors": [[".c59pnd"]],
+      "value": "c59pnd"
     }
   ]
 
@@ -122,7 +122,7 @@ ava ("given an object with valid font-face declaration (3)", (t) => {
         }
       ],
       "emit": false,
-      "identifier": "c5a4t",
+      "identifier": "c5da4t",
       "media": "",
       "property": "fontFamily",
       "selectors": [["@font-face"]],
@@ -135,10 +135,10 @@ ava ("given an object with valid font-face declaration (3)", (t) => {
         }
       ],
       "emit": true,
-      "identifier": "c5a4t",
+      "identifier": "c5da4t",
       "media": "",
       "property": "fontFamily",
-      "selectors": [[".c5a4t"]],
+      "selectors": [[".c5da4t"]],
       "value": "Avenir"
     }
   ]

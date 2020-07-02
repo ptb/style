@@ -36,15 +36,15 @@ ava.serial ("given an object with simple property and value", (t) => {
         "background-color": "#f00"
       }
     ],
-    "identifier": "jt2a9",
+    "identifier": "jtx2a9",
     "property": "backgroundColor",
-    "selectors": [[".jt2a9"]],
+    "selectors": [[".jtx2a9"]],
     "value": "#f00"
   })
 
   const actual = getStyles ()
 
-  const expect = ".jt2a9{background-color:#f00}"
+  const expect = ".jtx2a9{background-color:#f00}"
 
   t.is (actual, expect)
 })
@@ -61,7 +61,7 @@ ava.serial ("given a sample declaration", (t) => {
   const actual = getStyles ()
 
   const expect =
-    ".jt2a9{background-color:#f00}.jtz4h{background-color:#0f0}@media (min-width: 768px){.jtdpi{background-color:#f00}}"
+    ".jtx2a9{background-color:#f00}.jtxz4h{background-color:#0f0}@media (min-width: 768px){.jttdpi{background-color:#f00}}"
 
   t.is (actual, expect)
 })
@@ -88,7 +88,7 @@ ava.serial ("given an object with simple property and value (2)", (t) => {
   const actual = getStyles ()
 
   const expect =
-    ".jt2a9,.jtdzh:hover{background-color:#f00}.jtz4h{background-color:#0f0}@media (min-width: 768px){.jtdpi{background-color:#f00}}"
+    ".jtx2a9,.jtdzh:hover{background-color:#f00}.jtxz4h{background-color:#0f0}@media (min-width: 768px){.jttdpi{background-color:#f00}}"
 
   t.is (actual, expect)
 })

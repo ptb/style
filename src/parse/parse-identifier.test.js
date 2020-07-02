@@ -15,9 +15,9 @@ ava ("given an object with undefined identifier (1)", (t) => {
   })
 
   const expect = {
-    "identifier": "jt2a9",
+    "identifier": "jtx2a9",
     "property": "backgroundColor",
-    "selectors": [[".jt2a9"]],
+    "selectors": [[".jtx2a9"]],
     "value": "#f00"
   }
 
@@ -31,9 +31,9 @@ ava ("given an object with undefined identifier (2)", (t) => {
   })
 
   const expect = {
-    "identifier": "jtz4h",
+    "identifier": "jtxz4h",
     "property": "backgroundColor",
-    "selectors": [[".jtz4h"]],
+    "selectors": [[".jtxz4h"]],
     "value": "#0f0"
   }
 
@@ -47,9 +47,9 @@ ava ("given an object with undefined identifier (3)", (t) => {
   })
 
   const expect = {
-    "identifier": "jkz4h",
+    "identifier": "jkxz4h",
     "property": "color",
-    "selectors": [[".jkz4h"]],
+    "selectors": [[".jkxz4h"]],
     "value": "#0f0"
   }
 
@@ -64,10 +64,10 @@ ava ("given an object with undefined identifier and media (1)", (t) => {
   })
 
   const expect = {
-    "identifier": "jkmmt",
+    "identifier": "jkommt",
     "media": "(max-width: 767px)",
     "property": "color",
-    "selectors": [[".jkmmt"]],
+    "selectors": [[".jkommt"]],
     "value": "#0f0"
   }
 
@@ -82,10 +82,10 @@ ava ("given an object with undefined identifier and media (2)", (t) => {
   })
 
   const expect = {
-    "identifier": "jkduu",
+    "identifier": "jk9duu",
     "media": "(min-width: 768px)",
     "property": "color",
-    "selectors": [[".jkduu"]],
+    "selectors": [[".jk9duu"]],
     "value": "#0f0"
   }
 
@@ -100,9 +100,9 @@ ava ("given an object with undefined identifier and selectors (1)", (t) => {
   })
 
   const expect = {
-    "identifier": "jkk07",
+    "identifier": "jkek07",
     "property": "color",
-    "selectors": [[".jkk07", ":active"]],
+    "selectors": [[".jkek07", ":active"]],
     "value": "#0f0"
   }
 
@@ -117,9 +117,9 @@ ava ("given an object with undefined identifier and selectors (2)", (t) => {
   })
 
   const expect = {
-    "identifier": "jkgwd",
+    "identifier": "jkrgwd",
     "property": "color",
-    "selectors": [[".jkgwd", ":hover"]],
+    "selectors": [[".jkrgwd", ":hover"]],
     "value": "#0f0"
   }
 
@@ -137,10 +137,10 @@ ava (
     })
 
     const expect = {
-      "identifier": "jkda2",
+      "identifier": "jk0da2",
       "media": "(min-width: 768px)",
       "property": "color",
-      "selectors": [[".jkda2", ":hover"]],
+      "selectors": [[".jk0da2", ":hover"]],
       "value": "#0f0"
     }
 
@@ -156,7 +156,7 @@ ava ("given an object with undefined identifier with selectors", (t) => {
   })
 
   const expect = {
-    "identifier": "jt5lu",
+    "identifier": "jtc5lu",
     "property": "background-color",
     "selectors": [[".abcde"]],
     "value": "#f00"
@@ -189,9 +189,9 @@ ava ("given an object with valid camel-case property and value", (t) => {
   })
 
   const expect = {
-    "identifier": "jt37r",
+    "identifier": "jtw37r",
     "property": "backgroundColor",
-    "selectors": [[".jt37r"]],
+    "selectors": [[".jtw37r"]],
     "value": "#000"
   }
 
@@ -205,9 +205,9 @@ ava ("given an object with valid kebab-case property and value", (t) => {
   })
 
   const expect = {
-    "identifier": "jt37r",
+    "identifier": "jtw37r",
     "property": "background-color",
-    "selectors": [[".jt37r"]],
+    "selectors": [[".jtw37r"]],
     "value": "#000"
   }
 
@@ -222,9 +222,9 @@ ava ("given an object with valid property, value, and selectors", (t) => {
   })
 
   const expect = {
-    "identifier": "jta6z",
+    "identifier": "jtqa6z",
     "property": "background-color",
-    "selectors": [[".jta6z", ":hover"]],
+    "selectors": [[".jtqa6z", ":hover"]],
     "value": "#000"
   }
 
@@ -239,10 +239,10 @@ ava ("given an object with valid property, value, and media", (t) => {
   })
 
   const expect = {
-    "identifier": "jt0ac",
+    "identifier": "jtb0ac",
     "media": "(min-width: 768px)",
     "property": "background-color",
-    "selectors": [[".jt0ac"]],
+    "selectors": [[".jtb0ac"]],
     "value": "#000"
   }
 
@@ -260,10 +260,10 @@ ava (
     })
 
     const expect = {
-      "identifier": "jtdo0",
+      "identifier": "jt1do0",
       "media": "(min-width: 768px)",
       "property": "background-color",
-      "selectors": [[".jtdo0", ":hover"]],
+      "selectors": [[".jt1do0", ":hover"]],
       "value": "#000"
     }
 

@@ -36,8 +36,7 @@ export default [
         },
         "output": {
           "comments": /^!/u
-        },
-        "sourcemap": false
+        }
       })
     ]
   },
@@ -93,8 +92,7 @@ export default [
         },
         "output": {
           "comments": /^!/u
-        },
-        "sourcemap": false
+        }
       })
     ]
   },
@@ -112,8 +110,7 @@ export default [
         },
         "output": {
           "comments": /^!/u
-        },
-        "sourcemap": false
+        }
       })
     ]
   }

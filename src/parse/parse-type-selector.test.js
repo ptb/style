@@ -21,7 +21,7 @@ ava ("given an object with bare element selector", (t) => {
     {
       "block": [{ "background-color": "#f00" }],
       "emit": false,
-      "identifier": "jtem7",
+      "identifier": "jtsem7",
       "input": { "backgroundColor": "#f00" },
       "media": "",
       "property": "backgroundColor",

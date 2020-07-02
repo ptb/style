@@ -12,7 +12,7 @@ ava ("given undefined arguments", (t) => {
 ava ("given an array of selectors with placeholders", (t) => {
   const actual = getPlaceholders (["a", "%b", ".c", "%products", "%items"])
 
-  const expect = ["a", ".afqkz", ".c", ".afknd", ".afxpz"]
+  const expect = ["a", ".affqkz", ".c", ".af5knd", ".af5xpz"]
 
   t.deepEqual (actual, expect)
 })

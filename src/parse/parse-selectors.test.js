@@ -37,9 +37,9 @@ ava ("given an object with valid selectors", (t) => {
       "media": "",
       "property": "backgroundColor",
       "selectors": [
-        ["#root", " ", ".afdkz", " ", "#products", "::after"],
-        [".af3qz", ">", "#root", " ", ".afdkz"],
-        ["#body", "~", "#root", " ", ".afdkz", "+", "stuff"]
+        ["#root", " ", ".afldkz", " ", "#products", "::after"],
+        [".afh3qz", ">", "#root", " ", ".afldkz"],
+        ["#body", "~", "#root", " ", ".afldkz", "+", "stuff"]
       ],
       "value": "#f0f"
     },
@@ -57,9 +57,9 @@ ava ("given an object with valid selectors", (t) => {
       "media": "",
       "property": "display",
       "selectors": [
-        ["#root", " ", ".afdkz", " ", "#products", "::after"],
-        [".af3qz", ">", "#root", " ", ".afdkz"],
-        ["#body", "~", "#root", " ", ".afdkz", "+", "stuff"]
+        ["#root", " ", ".afldkz", " ", "#products", "::after"],
+        [".afh3qz", ">", "#root", " ", ".afldkz"],
+        ["#body", "~", "#root", " ", ".afldkz", "+", "stuff"]
       ],
       "value": "grid"
     }
@@ -103,13 +103,13 @@ ava ("given an object with valid pseudo-class selector", (t) => {
         }
       ],
       "emit": true,
-      "identifier": "c53hh",
+      "identifier": "c5a3hh",
       "input": {
         "font-family": "Helvetica"
       },
       "media": "",
       "property": "fontFamily",
-      "selectors": [[".c53hh", ":hover"]],
+      "selectors": [[".c5a3hh", ":hover"]],
       "value": "Helvetica"
     }
   ]
@@ -129,7 +129,7 @@ ava ("given an object with valid attribute selector", (t) => {
     {
       "block": [{ "background-color": "#f00" }],
       "emit": false,
-      "identifier": "jtrn7",
+      "identifier": "jtjrn7",
       "input": { "backgroundColor": "#f00" },
       "media": "",
       "property": "backgroundColor",
@@ -148,7 +148,7 @@ ava ("given an object with valid placeholder selector", (t) => {
   })
 
   const expect = {
-    "identifier": "afvip",
+    "identifier": "afrvip",
     "property": "%fieldset",
     "value": true
   }
@@ -170,11 +170,11 @@ ava ("given an object with valid placeholder selector (2)", (t) => {
     {
       "block": [{ "background-color": "#f00" }],
       "emit": false,
-      "identifier": "jt8ph",
+      "identifier": "jtor09",
       "input": { "backgroundColor": "#f00" },
       "media": "",
       "property": "backgroundColor",
-      "selectors": [[".afvip", "[aria-expanded=true]"]],
+      "selectors": [[".afrvip", "[aria-expanded=true]"]],
       "value": "#f00"
     }
   ]
@@ -194,11 +194,11 @@ ava ("given an object with valid placeholder with attribute selector", (t) => {
     {
       "block": [{ "background-color": "#f00" }],
       "emit": false,
-      "identifier": "jt8ph",
+      "identifier": "jtor09",
       "input": { "backgroundColor": "#f00" },
       "media": "",
       "property": "backgroundColor",
-      "selectors": [[".afvip", "[aria-expanded=true]"]],
+      "selectors": [[".afrvip", "[aria-expanded=true]"]],
       "value": "#f00"
     }
   ]
