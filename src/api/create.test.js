@@ -22,8 +22,8 @@ ava ("given an object with simple declarations", (t) => {
   })
 
   const expect = {
-    "banner": "drztx9 dtfndl",
-    "product": "dr54gk jkx2a9"
+    "banner": "dqztx9 dsfndl",
+    "product": "dq54gk jjx2a9"
   }
 
   t.deepEqual (actual, expect)
@@ -45,9 +45,9 @@ ava ("given an object with simple declarations and function", (t) => {
   })
 
   const expect = {
-    "banner": "drztx9 dtfndl",
+    "banner": "dqztx9 dsfndl",
     "item": function item () {},
-    "product": "dr54gk jkx2a9"
+    "product": "dq54gk jjx2a9"
   }
 
   t.deepEqual (actual, expect)
@@ -157,23 +157,23 @@ ava ("given an object with multiple 'fontFamily' declarations", (t) => {
   const actual1 = create (fonts)
 
   const expect1 = {
-    "avenir300": "c51w4b",
-    "avenir300i": "c5e9u0",
-    "avenir400": "c5rkrw",
-    "avenir400i": "c5dc5b",
-    "avenir500": "c59ji2",
-    "avenir500i": "c5wqt3",
-    "avenir600": "c5kync",
-    "avenir600i": "c5hvw5",
-    "avenir700": "c5zj0a",
-    "avenir700i": "c54xmd",
-    "avenir800": "c53h5q",
-    "avenir800i": "c5psr5"
+    "avenir300": "c41w4b",
+    "avenir300i": "c4e9u0",
+    "avenir400": "c4rkrw",
+    "avenir400i": "c4dc5b",
+    "avenir500": "c49ji2",
+    "avenir500i": "c4wqt3",
+    "avenir600": "c4kync",
+    "avenir600i": "c4hvw5",
+    "avenir700": "c4zj0a",
+    "avenir700i": "c44xmd",
+    "avenir800": "c43h5q",
+    "avenir800i": "c4psr5"
   }
 
   const actual2 = css (fonts.avenir300)
 
-  const expect2 = "c51w4b"
+  const expect2 = "c41w4b"
 
   t.deepEqual (actual1, expect1)
   t.deepEqual (actual2, expect2)

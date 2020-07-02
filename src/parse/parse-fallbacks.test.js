@@ -72,7 +72,7 @@ ava ("given an object with fontFamily property and array value (1)", (t) => {
         }
       ],
       "emit": false,
-      "identifier": "c5rlkw",
+      "identifier": "c4rlkw",
       "media": "",
       "property": "fontFamily",
       "selectors": [["@font-face"]],
@@ -84,20 +84,20 @@ ava ("given an object with fontFamily property and array value (1)", (t) => {
           "src": "url('/fonts/font-2.woff') format('woff')"
         },
         {
-          "font-family": "c583zz"
+          "font-family": "c483zz"
         }
       ],
       "emit": false,
-      "identifier": "c583zz",
+      "identifier": "c483zz",
       "media": "",
       "property": "fontFamily",
       "selectors": [["@font-face"]],
-      "value": "c583zz"
+      "value": "c483zz"
     },
     {
       "block": [
         {
-          "font-family": "Avenir,Helvetica,Arial,c583zz"
+          "font-family": "Avenir,Helvetica,Arial,c483zz"
         }
       ],
       "property": "fontFamily",
@@ -109,7 +109,7 @@ ava ("given an object with fontFamily property and array value (1)", (t) => {
         "Helvetica",
         "Arial",
         {
-          "fontFamily": "c583zz",
+          "fontFamily": "c483zz",
           "src": "url('/fonts/font-2.woff') format('woff')"
         }
       ]

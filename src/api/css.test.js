@@ -25,7 +25,7 @@ ava ("given an object with simple declarations", (t) => {
     "display": "block"
   })
 
-  const expect1 = "drztx9 jtx2a9"
+  const expect1 = "dqztx9 jsx2a9"
 
   const actual2 = strMapToObj (store.get (""))
 
@@ -37,14 +37,14 @@ ava ("given an object with simple declarations", (t) => {
         }
       ],
       "emit": true,
-      "identifier": "jtx2a9",
+      "identifier": "jsx2a9",
       "input": {
         "backgroundColor": "#f00"
       },
       "insertRule": true,
       "media": "",
       "property": "backgroundColor",
-      "selectors": [[".jtx2a9"]],
+      "selectors": [[".jsx2a9"]],
       "value": "#f00"
     },
     '[{"display":"block"}]': {
@@ -54,14 +54,14 @@ ava ("given an object with simple declarations", (t) => {
         }
       ],
       "emit": true,
-      "identifier": "drztx9",
+      "identifier": "dqztx9",
       "input": {
         "display": "block"
       },
       "insertRule": true,
       "media": "",
       "property": "display",
-      "selectors": [[".drztx9"]],
+      "selectors": [[".dqztx9"]],
       "value": "block"
     }
   }
@@ -81,7 +81,7 @@ ava ("given an array of objects with simple declarations", (t) => {
     }
   ])
 
-  const expect = "drztx9 jtxz4h"
+  const expect = "dqztx9 jsxz4h"
 
   t.is (actual, expect)
 })
@@ -91,7 +91,7 @@ ava ("given an object with simple declarations and class name strings", (t) => {
     "backgroundColor": "#0f0"
   }, "button large")
 
-  const expect = "button large jtxz4h"
+  const expect = "button large jsxz4h"
 
   t.is (actual, expect)
 })
@@ -101,7 +101,7 @@ ava ("given an object with simple declarations and array of class name strings",
     "backgroundColor": "#0f0"
   }, ["button", "large"])
 
-  const expect = "button large jtxz4h"
+  const expect = "button large jsxz4h"
 
   t.is (actual, expect)
 })

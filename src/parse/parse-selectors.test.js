@@ -30,16 +30,16 @@ ava ("given an object with valid selectors", (t) => {
         }
       ],
       "emit": false,
-      "identifier": "jt4tmq",
+      "identifier": "jsk31e",
       "input": {
         "background-color": "#f0f"
       },
       "media": "",
       "property": "backgroundColor",
       "selectors": [
-        ["#root", " ", ".afldkz", " ", "#products", "::after"],
-        [".afh3qz", ">", "#root", " ", ".afldkz"],
-        ["#body", "~", "#root", " ", ".afldkz", "+", "stuff"]
+        ["#root", " ", ".nbldkz", " ", "#products", "::after"],
+        [".nbh3qz", ">", "#root", " ", ".nbldkz"],
+        ["#body", "~", "#root", " ", ".nbldkz", "+", "stuff"]
       ],
       "value": "#f0f"
     },
@@ -50,16 +50,16 @@ ava ("given an object with valid selectors", (t) => {
         }
       ],
       "emit": false,
-      "identifier": "dr0gcr",
+      "identifier": "dqgkob",
       "input": {
         "display": "grid"
       },
       "media": "",
       "property": "display",
       "selectors": [
-        ["#root", " ", ".afldkz", " ", "#products", "::after"],
-        [".afh3qz", ">", "#root", " ", ".afldkz"],
-        ["#body", "~", "#root", " ", ".afldkz", "+", "stuff"]
+        ["#root", " ", ".nbldkz", " ", "#products", "::after"],
+        [".nbh3qz", ">", "#root", " ", ".nbldkz"],
+        ["#body", "~", "#root", " ", ".nbldkz", "+", "stuff"]
       ],
       "value": "grid"
     }
@@ -103,13 +103,13 @@ ava ("given an object with valid pseudo-class selector", (t) => {
         }
       ],
       "emit": true,
-      "identifier": "c5a3hh",
+      "identifier": "c4a3hh",
       "input": {
         "font-family": "Helvetica"
       },
       "media": "",
       "property": "fontFamily",
-      "selectors": [[".c5a3hh", ":hover"]],
+      "selectors": [[".c4a3hh", ":hover"]],
       "value": "Helvetica"
     }
   ]
@@ -129,7 +129,7 @@ ava ("given an object with valid attribute selector", (t) => {
     {
       "block": [{ "background-color": "#f00" }],
       "emit": false,
-      "identifier": "jtjrn7",
+      "identifier": "jsjrn7",
       "input": { "backgroundColor": "#f00" },
       "media": "",
       "property": "backgroundColor",
@@ -148,7 +148,7 @@ ava ("given an object with valid placeholder selector", (t) => {
   })
 
   const expect = {
-    "identifier": "afrvip",
+    "identifier": "nbrvip",
     "property": "%fieldset",
     "value": true
   }
@@ -170,11 +170,11 @@ ava ("given an object with valid placeholder selector (2)", (t) => {
     {
       "block": [{ "background-color": "#f00" }],
       "emit": false,
-      "identifier": "jtor09",
+      "identifier": "jsinxq",
       "input": { "backgroundColor": "#f00" },
       "media": "",
       "property": "backgroundColor",
-      "selectors": [[".afrvip", "[aria-expanded=true]"]],
+      "selectors": [[".nbrvip", "[aria-expanded=true]"]],
       "value": "#f00"
     }
   ]
@@ -194,11 +194,11 @@ ava ("given an object with valid placeholder with attribute selector", (t) => {
     {
       "block": [{ "background-color": "#f00" }],
       "emit": false,
-      "identifier": "jtor09",
+      "identifier": "jsinxq",
       "input": { "backgroundColor": "#f00" },
       "media": "",
       "property": "backgroundColor",
-      "selectors": [[".afrvip", "[aria-expanded=true]"]],
+      "selectors": [[".nbrvip", "[aria-expanded=true]"]],
       "value": "#f00"
     }
   ]

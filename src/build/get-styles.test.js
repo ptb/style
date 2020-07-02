@@ -14,7 +14,7 @@ ava.serial ("given an object with placeholder property", (t) => {
   cache ({
     "block": [{ "%figure": true }],
     "emit": true,
-    "identifier": "af3qz",
+    "identifier": "nch3qz",
     "input": { "%figure": true },
     "media": "",
     "property": "%figure",
@@ -36,15 +36,15 @@ ava.serial ("given an object with simple property and value", (t) => {
         "background-color": "#f00"
       }
     ],
-    "identifier": "jtx2a9",
+    "identifier": "jsx2a9",
     "property": "backgroundColor",
-    "selectors": [[".jtx2a9"]],
+    "selectors": [[".jsx2a9"]],
     "value": "#f00"
   })
 
   const actual = getStyles ()
 
-  const expect = ".jtx2a9{background-color:#f00}"
+  const expect = ".jsx2a9{background-color:#f00}"
 
   t.is (actual, expect)
 })
@@ -61,7 +61,7 @@ ava.serial ("given a sample declaration", (t) => {
   const actual = getStyles ()
 
   const expect =
-    ".jtx2a9{background-color:#f00}.jtxz4h{background-color:#0f0}@media (min-width: 768px){.jttdpi{background-color:#f00}}"
+    ".jsx2a9{background-color:#f00}.jsxz4h{background-color:#0f0}@media (min-width: 768px){.jstdpi{background-color:#f00}}"
 
   t.is (actual, expect)
 })
@@ -75,20 +75,20 @@ ava.serial ("given an object with simple property and value (2)", (t) => {
       }
     ],
     "emit": true,
-    "identifier": "jtdzh",
+    "identifier": "jsx2a9",
     "input": {
       "background-color": "#f00"
     },
     "media": "",
     "property": "backgroundColor",
-    "selectors": [[".jtdzh", ":hover"]],
+    "selectors": [[".jsx2a9", ":hover"]],
     "value": "#f00"
   })
 
   const actual = getStyles ()
 
   const expect =
-    ".jtx2a9,.jtdzh:hover{background-color:#f00}.jtxz4h{background-color:#0f0}@media (min-width: 768px){.jttdpi{background-color:#f00}}"
+    ".jsx2a9,.jsx2a9:hover{background-color:#f00}.jsxz4h{background-color:#0f0}@media (min-width: 768px){.jstdpi{background-color:#f00}}"
 
   t.is (actual, expect)
 })

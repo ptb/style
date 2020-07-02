@@ -16,7 +16,7 @@ ava ("given an object with valid placeholder (1)", (t) => {
   })
 
   const expect = {
-    "identifier": "afh3qz",
+    "identifier": "nbh3qz",
     "property": "%figure",
     "value": true
   }
@@ -31,7 +31,7 @@ ava ("given an object with valid placeholder (2)", (t) => {
   })
 
   const expect = {
-    "identifier": "afldkz",
+    "identifier": "nbldkz",
     "property": "%stuff",
     "value": true
   }

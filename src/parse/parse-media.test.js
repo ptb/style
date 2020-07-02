@@ -25,13 +25,13 @@ ava ("given an object with valid media declaration", (t) => {
         }
       ],
       "emit": true,
-      "identifier": "jtb0ac",
+      "identifier": "jsb0ac",
       "input": {
         "background-color": "#000"
       },
       "media": "(min-width: 768px)",
       "property": "backgroundColor",
-      "selectors": [[".jtb0ac"]],
+      "selectors": [[".jsb0ac"]],
       "value": "#000"
     }
   ]
@@ -57,13 +57,13 @@ ava ("given an object with complex valid media declaration", (t) => {
         }
       ],
       "emit": true,
-      "identifier": "jtfnzy",
+      "identifier": "jsfnzy",
       "input": {
         "background-color": "#000"
       },
       "media": "(min-width: 768px) and (-webkit-min-device-pixel-ratio: 2)",
       "property": "backgroundColor",
-      "selectors": [[".jtfnzy"]],
+      "selectors": [[".jsfnzy"]],
       "value": "#000"
     }
   ]

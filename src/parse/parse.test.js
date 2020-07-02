@@ -25,13 +25,13 @@ ava ("given an object with valid property and value", (t) => {
         }
       ],
       "emit": true,
-      "identifier": "jtx2a9",
+      "identifier": "jsx2a9",
       "input": {
         "background-color": "#f00"
       },
       "media": "",
       "property": "backgroundColor",
-      "selectors": [[".jtx2a9"]],
+      "selectors": [[".jsx2a9"]],
       "value": "#f00"
     },
     {
@@ -41,13 +41,13 @@ ava ("given an object with valid property and value", (t) => {
         }
       ],
       "emit": true,
-      "identifier": "drztx9",
+      "identifier": "dqztx9",
       "input": {
         "display": "block"
       },
       "media": "",
       "property": "display",
-      "selectors": [[".drztx9"]],
+      "selectors": [[".dqztx9"]],
       "value": "block"
     }
   ]
@@ -79,13 +79,13 @@ ava ("given an object with a media declaration", (t) => {
         }
       ],
       "emit": true,
-      "identifier": "jktdpi",
+      "identifier": "jjtdpi",
       "input": {
         "color": "#f00"
       },
       "media": "(min-width: 768px)",
       "property": "color",
-      "selectors": [[".jktdpi"]],
+      "selectors": [[".jjtdpi"]],
       "value": "#f00"
     },
     {
@@ -95,13 +95,13 @@ ava ("given an object with a media declaration", (t) => {
         }
       ],
       "emit": true,
-      "identifier": "c5zr5i",
+      "identifier": "c4zr5i",
       "input": {
         "fontFamily": "sans-serif"
       },
       "media": "(min-width: 768px)",
       "property": "fontFamily",
-      "selectors": [[".c5zr5i"]],
+      "selectors": [[".c4zr5i"]],
       "value": "sans-serif"
     },
     {
@@ -114,13 +114,13 @@ ava ("given an object with a media declaration", (t) => {
         }
       ],
       "emit": true,
-      "identifier": "jtcne4",
+      "identifier": "jscne4",
       "input": {
         "backgroundColor": ["rgba(0, 0, 0, 0.9)", "#111"]
       },
       "media": "(min-width: 768px) and screen",
       "property": "backgroundColor",
-      "selectors": [[".jtcne4"]],
+      "selectors": [[".jscne4"]],
       "value": ["rgba(0, 0, 0, 0.9)", "#111"]
     }
   ]
@@ -157,7 +157,7 @@ ava ("given an object with a complex fontFamily declaration", (t) => {
         }
       ],
       "emit": false,
-      "identifier": "c5da4t",
+      "identifier": "c4da4t",
       "media": "",
       "property": "fontFamily",
       "selectors": [["@font-face"]],
@@ -169,24 +169,24 @@ ava ("given an object with a complex fontFamily declaration", (t) => {
           "src": "url('/fonts/font.woff2') format ('woff2')"
         },
         {
-          "font-family": "c5oz34"
+          "font-family": "c4oz34"
         }
       ],
       "emit": false,
-      "identifier": "c5oz34",
+      "identifier": "c4oz34",
       "media": "",
       "property": "fontFamily",
       "selectors": [["@font-face"]],
-      "value": "c5oz34"
+      "value": "c4oz34"
     },
     {
       "block": [
         {
-          "font-family": "Avenir,c5oz34,sans-serif"
+          "font-family": "Avenir,c4oz34,sans-serif"
         }
       ],
       "emit": true,
-      "identifier": "c5rmvq",
+      "identifier": "c4rmvq",
       "input": {
         "fontFamily": [
           {
@@ -202,7 +202,7 @@ ava ("given an object with a complex fontFamily declaration", (t) => {
       },
       "media": "",
       "property": "fontFamily",
-      "selectors": [[".c5rmvq"]],
+      "selectors": [[".c4rmvq"]],
       "value": [
         {
           "fontFamily": "Avenir",
@@ -210,7 +210,7 @@ ava ("given an object with a complex fontFamily declaration", (t) => {
             "url('/fonts/avenir.woff2') format ('woff2'), url('/fonts/avenir.woff') format ('woff')"
         },
         {
-          "fontFamily": "c5oz34",
+          "fontFamily": "c4oz34",
           "src": "url('/fonts/font.woff2') format ('woff2')"
         },
         "sans-serif"
@@ -248,13 +248,13 @@ ava ("given an object with a complex keyframes declaration", (t) => {
         }
       ],
       "emit": true,
-      "identifier": "m7o57v",
+      "identifier": "m6o57v",
       "input": {
         "animationName": "slide-left"
       },
       "media": "",
       "property": "animationName",
-      "selectors": [[".m7o57v"]],
+      "selectors": [[".m6o57v"]],
       "value": "slide-left"
     },
     {
@@ -271,7 +271,7 @@ ava ("given an object with a complex keyframes declaration", (t) => {
         }
       ],
       "emit": false,
-      "identifier": "m7tcxh",
+      "identifier": "m6tcxh",
       "input": {
         "animationName": {
           "0%": {
@@ -284,17 +284,17 @@ ava ("given an object with a complex keyframes declaration", (t) => {
       },
       "media": "",
       "property": "animationName",
-      "selectors": [["@keyframes", " ", "m7tcxh"]],
-      "value": "m7tcxh"
+      "selectors": [["@keyframes", " ", "m6tcxh"]],
+      "value": "m6tcxh"
     },
     {
       "block": [
         {
-          "animation-name": "m7tcxh"
+          "animation-name": "m6tcxh"
         }
       ],
       "emit": true,
-      "identifier": "m7tcxh",
+      "identifier": "m6tcxh",
       "input": {
         "animationName": {
           "0%": {
@@ -307,8 +307,8 @@ ava ("given an object with a complex keyframes declaration", (t) => {
       },
       "media": "(min-width: 768px)",
       "property": "animationName",
-      "selectors": [[".m7tcxh"]],
-      "value": "m7tcxh"
+      "selectors": [[".m6tcxh"]],
+      "value": "m6tcxh"
     }
   ]
 
@@ -337,7 +337,7 @@ ava ("given an object with placeholder and selectors", (t) => {
     {
       "block": [{ "%figure": true }],
       "emit": true,
-      "identifier": "afh3qz",
+      "identifier": "nbh3qz",
       "input": { "%figure": true },
       "media": "",
       "property": "%figure",
@@ -347,17 +347,17 @@ ava ("given an object with placeholder and selectors", (t) => {
     {
       "block": [{ "list-style-type": "none" }],
       "emit": false,
-      "identifier": "eomq80",
+      "identifier": "en60qz",
       "input": { "listStyleType": "none" },
       "media": "",
       "property": "listStyleType",
-      "selectors": [[".afh3qz", ">", "ul"]],
+      "selectors": [[".nbh3qz", ">", "ul"]],
       "value": "none"
     },
     {
       "block": [{ "background-color": "#0f0" }],
       "emit": false,
-      "identifier": "jtxowj",
+      "identifier": "jsxowj",
       "input": { "backgroundColor": "#0f0" },
       "media": "",
       "property": "backgroundColor",
@@ -367,21 +367,21 @@ ava ("given an object with placeholder and selectors", (t) => {
     {
       "block": [{ "color": "#f00" }],
       "emit": true,
-      "identifier": "jk7dzh",
+      "identifier": "jj7dzh",
       "input": { "color": "#f00" },
       "media": "",
       "property": "color",
-      "selectors": [[".jk7dzh", ":hover"]],
+      "selectors": [[".jj7dzh", ":hover"]],
       "value": "#f00"
     },
     {
       "block": [{ "color": "#f00" }],
       "emit": true,
-      "identifier": "jkx2a9",
+      "identifier": "jjx2a9",
       "input": { "color": "#f00" },
       "media": "",
       "property": "color",
-      "selectors": [[".jkx2a9"]],
+      "selectors": [[".jjx2a9"]],
       "value": "#f00"
     }
   ]
@@ -403,7 +403,7 @@ ava ("given an object with bare element selector", (t) => {
     {
       "block": [{ "margin": 0 }],
       "emit": false,
-      "identifier": "e4e838",
+      "identifier": "e3e838",
       "input": { "margin": 0 },
       "media": "",
       "property": "margin",
@@ -413,11 +413,11 @@ ava ("given an object with bare element selector", (t) => {
     {
       "block": [{ "margin": 0 }],
       "emit": true,
-      "identifier": "e4f82s",
+      "identifier": "e3f82s",
       "input": { "margin": 0 },
       "media": "",
       "property": "margin",
-      "selectors": [[".e4f82s"]],
+      "selectors": [[".e3f82s"]],
       "value": 0
     }
   ]
@@ -436,11 +436,11 @@ ava ("given an object with 'margin' property and integer value (1)", (t) => {
     {
       "block": [{ "margin": "10px" }],
       "emit": true,
-      "identifier": "e4634t",
+      "identifier": "e3634t",
       "input": { "margin": 10 },
       "media": "",
       "property": "margin",
-      "selectors": [[".e4634t"]],
+      "selectors": [[".e3634t"]],
       "value": "10px"
     }
   ]

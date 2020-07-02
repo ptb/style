@@ -1,6 +1,5 @@
 {
   "variables": [
-    "%*",
     "--*"
   ],
 
@@ -687,5 +686,9 @@
 
   "cssomView": [
     "scrollBehavior"
+  ],
+
+  "placeholders": [
+    "%*"
   ]
 }
