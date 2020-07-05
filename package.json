@@ -55,7 +55,7 @@
     "eslint-plugin-react": "7.20.3",
     "eslint-plugin-standard": "4.0.1",
     "esm": "3.2.25",
-    "graphql": "15.2.0",
+    "graphql": "15.3.0",
     "nyc": "15.1.0",
     "prettier-eslint-cli": "5.0.0",
     "puppeteer": "5.0.0",
