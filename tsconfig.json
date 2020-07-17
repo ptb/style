@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "types"
+  },
+  "exclude": [
+    "**/*.d.ts",
+    "**/*.test.js"
+  ],
+  "include": [
+    "src/**/*.js"
+  ]
+}
