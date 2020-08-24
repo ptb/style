@@ -42,7 +42,7 @@
     "@babel/preset-env": "7.11.0",
     "@babel/runtime-corejs3": "7.11.2",
     "@size-limit/preset-small-lib": "4.5.7",
-    "ava": "3.12.0",
+    "ava": "3.12.1",
     "babel-eslint": "10.1.0",
     "eslint": "7.7.0",
     "eslint-plugin-compat": "3.8.0",
