@@ -37,9 +37,9 @@
   "description": "",
   "devDependencies": {
     "@amory/eslint-config": "latest",
-    "@babel/core": "7.11.4",
-    "@babel/plugin-transform-runtime": "7.11.0",
-    "@babel/preset-env": "7.11.0",
+    "@babel/core": "7.11.5",
+    "@babel/plugin-transform-runtime": "7.11.5",
+    "@babel/preset-env": "7.11.5",
     "@babel/runtime-corejs3": "7.11.2",
     "@size-limit/preset-small-lib": "4.5.7",
     "ava": "3.12.1",
