@@ -12,6 +12,7 @@ export { merge } from "./merge/merge.js"
 export { mergeArr } from "./merge/merge-arr.js"
 export { mergeArrOfObj } from "./merge/merge-arr-of-obj.js"
 export { mergeObj } from "./merge/merge-obj.js"
+export { sortJSON } from "./merge/sort-json.js"
 
 export { getType } from "./typeof/get-type.js"
 export { isArr } from "./typeof/is-arr.js"

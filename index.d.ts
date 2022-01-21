@@ -23,6 +23,18 @@ export function merge(... args: any[]): PlainObject | any[];
  */
 
 /**
+  Sorts `input` by object key.
+
+  @param {any} input
+  - The object to sort by key.
+
+  @returns {any}
+  Returns a new object sorted by key.
+ */
+
+export function sortJSON(input: any): any;
+
+/**
   Checks if `value` is classified as an `Array` object.
 
   @param {any} value
