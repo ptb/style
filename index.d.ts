@@ -130,6 +130,25 @@ export function isUndef(value?: any): value is undefined;
 
 export function camelCase(value?: string | undefined): string;
 
+/**
+  Creates a debounced function that delays invoking `fn` until after `wait`
+  milliseconds have elapsed since the last time the debounced function was
+  invoked. The `fn` is invoked with the last arguments provided to the
+  debounced function. Subsequent calls to the debounced function return the
+  result of the last `fn` invocation.
+
+  @param {Function} fn
+  - The function to debounce.
+
+  @param {number} wait
+  - The number of milliseconds to delay.
+
+  @returns {Function}
+  The new debounced function.
+ */
+
+export function debounce(fn: Function, wait?: number): Function;
+
 export type AnyFunction = (arg0: any[]) => any;
 
 export type PlainObject = Record<string | number | symbol, any>;

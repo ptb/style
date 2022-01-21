@@ -17,3 +17,4 @@ export { isSym } from "./typeof/is-sym.js"
 export { isUndef } from "./typeof/is-undef.js"
 
 export { camelCase } from "./utils/camel-case.js"
+export { debounce } from "./utils/debounce.js"
