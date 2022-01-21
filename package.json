@@ -7,6 +7,9 @@
   "bugs": {
     "url": "https://github.com/ptb/style/issues"
   },
+  "devDependencies": {
+    "nodemon": "2.0.15"
+  },
   "keywords": [
     "css",
     "css-in-js",
@@ -22,11 +25,26 @@
     }
   ],
   "name": "@ptb/style",
+  "nodemonConfig": {
+    "delay": 2500,
+    "events": {
+      "start": "echo \"\\x1Bc\""
+    },
+    "ext": "js json ts",
+    "verbose": true,
+    "watch": [
+      "package.json",
+      "src"
+    ]
+  },
   "packageManager": "yarn@3.1.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/ptb/style"
   },
+  "scripts": {
+    "watch": "nodemon"
+  },
   "sideEffects": false,
-  "version": "0.0.1"
+  "version": "0.0.2"
 }
