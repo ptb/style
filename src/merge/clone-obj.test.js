@@ -16,12 +16,30 @@ ava("given undefined argument", (t) => {
   t.is(actual, expect)
 })
 
+ava("given an array", (t) => {
+  const actual = cloneObj(["a"])
+
+  const expect = ["a"]
+
+  t.not(actual, expect)
+  t.deepEqual(actual, expect)
+})
+
 ava("given null", (t) => {
   const actual = cloneObj(null)
 
   const expect = null
 
   t.is(actual, expect)
+})
+
+ava("given an object", (t) => {
+  const actual = cloneObj({})
+
+  const expect = {}
+
+  t.not(actual, expect)
+  t.deepEqual(actual, expect)
 })
 
 ava("given a string", (t) => {

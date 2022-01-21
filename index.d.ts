@@ -1,4 +1,28 @@
 /**
+  Recursively merges own properties of source objects or arrays into a new
+  empty object or array. Array and plain object properties are merged
+  recursively. Other objects and value types are overridden by assignment.
+  Source objects are applied from left to right. Subsequent sources
+  overwrite property assignments of previous sources.
+
+  @param {... PlainObject | any} sources
+  - The source objects or arrays.
+
+  @returns {PlainObject | any[]}
+  Returns `object` or `array`.
+ */
+
+export function merge(... args: any[]): PlainObject | any[];
+
+/**
+  Recursively merges own properties of source objects or arrays into a new
+  empty object or array. Array and plain object properties are merged
+  recursively. Other objects and value types are overridden by assignment.
+  Source objects are applied from left to right. Subsequent sources
+  overwrite property assignments of previous sources.
+ */
+
+/**
   Checks if `value` is classified as an `Array` object.
 
   @param {any} value

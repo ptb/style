@@ -13,6 +13,7 @@ export {
   isSym,
   isUndef,
   kebabCase,
+  merge,
   murmurHash,
   nanoid,
   toPairs,

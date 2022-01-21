@@ -10,6 +10,7 @@ export { cloneObj } from "./merge/clone-obj.js"
 export { emptyObj } from "./merge/empty-obj.js"
 export { merge } from "./merge/merge.js"
 export { mergeArr } from "./merge/merge-arr.js"
+export { mergeObj } from "./merge/merge-obj.js"
 
 export { getType } from "./typeof/get-type.js"
 export { isArr } from "./typeof/is-arr.js"
