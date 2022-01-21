@@ -1,3 +1,8 @@
+/*
+  eslint-disable
+    max-lines-per-function
+ */
+
 import ava from "ava"
 
 import { flattenInput, parse } from "../index.js"
@@ -41,6 +46,7 @@ ava("given an object with valid property and value (2)", (t) => {
     "input": {
       "$unCite": {
         "display": "$displayArr",
+        "fontFamily": "$defFont",
         "my": 10
       }
     }
@@ -51,6 +57,15 @@ ava("given an object with valid property and value (2)", (t) => {
       { "$displayArr": ["$defDisplay", "inline-flex", "grid"] },
       {
         "$defDisplay": "inline-block",
+        "$defFont": [
+          {
+            "fontFamily": "Avenir",
+            "src": "url('/fonts/avenir.woff') format('woff')"
+          },
+          "Helvetica",
+          "Arial",
+          { "src": "url('/fonts/font-2.woff') format('woff')" }
+        ],
         "$iconSize": 24,
         "$unCite": true,
         "animationName": { "from": { "opacity": 0 }, "to": { "opacity": 1 } },
@@ -67,6 +82,47 @@ ava("given an object with valid property and value (2)", (t) => {
       "property": "display",
       "selectors": undefined,
       "value": ["inline-block", "inline-flex", "grid"]
+    },
+    {
+      "block": [
+        { "font-family": "Avenir" },
+        { "src": "url('/fonts/avenir.woff') format('woff')" }
+      ],
+      "emit": false,
+      "identifier": "c8hsep",
+      "property": "fontFamily",
+      "selectors": [["@font-face"]],
+      "value": "Avenir"
+    },
+    {
+      "block": [
+        { "src": "url('/fonts/font-2.woff') format('woff')" },
+        { "font-family": "c8hnbe" }
+      ],
+      "emit": false,
+      "identifier": "c8hnbe",
+      "property": "fontFamily",
+      "selectors": [["@font-face"]],
+      "value": "c8hnbe"
+    },
+    {
+      "block": [{ "font-family": "Avenir,Helvetica,Arial,c8hnbe" }],
+      "conditional": {},
+      "emit": true,
+      "property": "fontFamily",
+      "selectors": undefined,
+      "value": [
+        {
+          "fontFamily": "Avenir",
+          "src": "url('/fonts/avenir.woff') format('woff')"
+        },
+        "Helvetica",
+        "Arial",
+        {
+          "fontFamily": "c8hnbe",
+          "src": "url('/fonts/font-2.woff') format('woff')"
+        }
+      ]
     },
     {
       "conditional": {},

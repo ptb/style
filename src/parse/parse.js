@@ -1,9 +1,15 @@
+/*
+  eslint-disable
+    max-lines-per-function
+ */
+
 import {
   defaultParams,
   flattenInput,
   merge,
   modifyNumbers,
   parseConditional,
+  parseFontFace,
   parseInput,
   parseKeyframes,
   parsePlaceholder,
@@ -121,6 +127,19 @@ export function parse (params = defaultParams) {
        */
       function (styles, style) {
         return styles.concat(parseKeyframes(style))
+      },
+      []
+    )
+    .reduce(
+      /**
+        @param {Params[]} styles
+
+        @param {Params} style
+
+        @returns {Params[]}
+       */
+      function (styles, style) {
+        return styles.concat(parseFontFace(style))
       },
       []
     )

@@ -88,6 +88,7 @@ export { sortJSON } from "./merge/sort-json.js"
 
 export { isFontFace } from "./modify/is-font-face.js"
 export { modifyNumbers } from "./modify/modify-numbers.js"
+export { parseFontFace } from "./modify/parse-font-face.js"
 export { parseKeyframes } from "./modify/parse-keyframes.js"
 
 export { getAncestors } from "./parse/get-ancestors.js"
