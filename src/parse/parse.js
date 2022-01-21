@@ -5,6 +5,7 @@ import {
   modifyNumbers,
   parseConditional,
   parseInput,
+  parseKeyframes,
   parsePlaceholder,
   parseSelectors,
   parseTypeSelector
@@ -107,6 +108,19 @@ export function parse (params = defaultParams) {
        */
       function (styles, style) {
         return styles.concat(modifyNumbers(style))
+      },
+      []
+    )
+    .reduce(
+      /**
+        @param {Params[]} styles
+
+        @param {Params} style
+
+        @returns {Params[]}
+       */
+      function (styles, style) {
+        return styles.concat(parseKeyframes(style))
       },
       []
     )

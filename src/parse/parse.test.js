@@ -53,6 +53,7 @@ ava("given an object with valid property and value (2)", (t) => {
         "$defDisplay": "inline-block",
         "$iconSize": 24,
         "$unCite": true,
+        "animationName": { "from": { "opacity": 0 }, "to": { "opacity": 1 } },
         "background-color": "#0cf",
         "size": "$iconSize"
       }
@@ -80,6 +81,23 @@ ava("given an object with valid property and value (2)", (t) => {
       "property": "marginTop",
       "selectors": undefined,
       "value": "10px"
+    },
+    {
+      "block": [{ "from": { "opacity": 0 } }, { "to": { "opacity": 1 } }],
+      "emit": false,
+      "identifier": "mtto2h",
+      "property": "animationName",
+      "selectors": [["@keyframes", " ", "mtto2h"]],
+      "value": "mtto2h"
+    },
+    {
+      "block": [{ "animation-name": "mtto2h" }],
+      "conditional": { "media": undefined },
+      "emit": true,
+      "identifier": "mtto2h",
+      "property": "animationName",
+      "selectors": [[".mtto2h"]],
+      "value": "mtto2h"
     },
     {
       "conditional": {},
