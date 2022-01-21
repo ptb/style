@@ -14,6 +14,7 @@ import {
   parseInput,
   parseKeyframes,
   parsePlaceholder,
+  parseProperties,
   parseSelectors,
   parseSelfSelector,
   parseTypeSelector
@@ -176,6 +177,19 @@ export function parse (params = defaultParams, group = "", prime) {
        */
       function (styles, style) {
         return styles.concat(parseSelfSelector(style, group, prime))
+      },
+      []
+    )
+    .reduce(
+      /**
+        @param {Params[]} styles
+
+        @param {Params} style
+
+        @returns {Params[]}
+       */
+      function (styles, style) {
+        return styles.concat(parseProperties(style, group, prime))
       },
       []
     )

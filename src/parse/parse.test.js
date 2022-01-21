@@ -17,23 +17,31 @@ ava("given undefined arguments", (t) => {
 })
 
 ava("given an object with valid property and value", (t) => {
-  const actual = parse({
-    "input": { "background-color": "#f00", "display": "block" }
-  })
+  const actual = parse(
+    {
+      "input": { "background-color": "#f00", "display": "block" }
+    },
+    "",
+    true
+  )
 
   const expect = [
     {
+      "block": [{ "background-color": "#f00" }],
       "conditional": {},
       "emit": true,
+      "identifier": "kclzxd",
       "property": "backgroundColor",
-      "selectors": undefined,
+      "selectors": [[".kclzxd"]],
       "value": "#f00"
     },
     {
+      "block": [{ "display": "block" }],
       "conditional": {},
       "emit": true,
+      "identifier": "du07kg",
       "property": "display",
-      "selectors": undefined,
+      "selectors": [[".du07kg"]],
       "value": "block"
     }
   ]
@@ -52,28 +60,32 @@ ava("given an object with valid property and value (2)", (t) => {
     }
   })
 
-  const actual = parse({
-    "input": [
-      { "$displayArr": ["$defDisplay", "inline-flex", "grid"] },
-      {
-        "$defDisplay": "inline-block",
-        "$defFont": [
-          {
-            "fontFamily": "Avenir",
-            "src": "url('/fonts/avenir.woff') format('woff')"
-          },
-          "Helvetica",
-          "Arial",
-          { "src": "url('/fonts/font-2.woff') format('woff')" }
-        ],
-        "$iconSize": 24,
-        "$unCite": true,
-        "animationName": { "from": { "opacity": 0 }, "to": { "opacity": 1 } },
-        "background-color": "#0cf",
-        "size": "$iconSize"
-      }
-    ]
-  })
+  const actual = parse(
+    {
+      "input": [
+        { "$displayArr": ["$defDisplay", "inline-flex", "grid"] },
+        {
+          "$defDisplay": "inline-block",
+          "$defFont": [
+            {
+              "fontFamily": "Avenir",
+              "src": "url('/fonts/avenir.woff') format('woff')"
+            },
+            "Helvetica",
+            "Arial",
+            { "src": "url('/fonts/font-2.woff') format('woff')" }
+          ],
+          "$iconSize": 24,
+          "$unCite": true,
+          "animationName": { "from": { "opacity": 0 }, "to": { "opacity": 1 } },
+          "background-color": "#0cf",
+          "size": "$iconSize"
+        }
+      ]
+    },
+    "abc",
+    true
+  )
 
   const expect = [
     {
@@ -84,8 +96,9 @@ ava("given an object with valid property and value (2)", (t) => {
       ],
       "conditional": {},
       "emit": true,
+      "identifier": "duuuy1",
       "property": "display",
-      "selectors": undefined,
+      "selectors": [[".duuuy1"]],
       "value": ["inline-block", "inline-flex", "grid"]
     },
     {
@@ -114,8 +127,9 @@ ava("given an object with valid property and value (2)", (t) => {
       "block": [{ "font-family": "Avenir,Helvetica,Arial,c8hnbe" }],
       "conditional": {},
       "emit": true,
+      "identifier": "c8152m",
       "property": "fontFamily",
-      "selectors": undefined,
+      "selectors": [[".c8152m"]],
       "value": [
         {
           "fontFamily": "Avenir",
@@ -130,17 +144,21 @@ ava("given an object with valid property and value (2)", (t) => {
       ]
     },
     {
+      "block": [{ "margin-bottom": "10px" }],
       "conditional": {},
       "emit": true,
+      "identifier": "ehgimk",
       "property": "marginBottom",
-      "selectors": undefined,
+      "selectors": [[".ehgimk"]],
       "value": "10px"
     },
     {
+      "block": [{ "margin-top": "10px" }],
       "conditional": {},
       "emit": true,
+      "identifier": "efgimk",
       "property": "marginTop",
-      "selectors": undefined,
+      "selectors": [[".efgimk"]],
       "value": "10px"
     },
     {
@@ -161,24 +179,30 @@ ava("given an object with valid property and value (2)", (t) => {
       "value": "mtto2h"
     },
     {
+      "block": [{ "background-color": "#0cf" }],
       "conditional": {},
       "emit": true,
+      "identifier": "kcyh5w",
       "property": "backgroundColor",
-      "selectors": undefined,
+      "selectors": [[".kcyh5w"]],
       "value": "#0cf"
     },
     {
+      "block": [{ "height": "24px" }],
       "conditional": {},
       "emit": true,
+      "identifier": "e0y5o3",
       "property": "height",
-      "selectors": undefined,
+      "selectors": [[".e0y5o3"]],
       "value": "24px"
     },
     {
+      "block": [{ "width": "24px" }],
       "conditional": {},
       "emit": true,
+      "identifier": "dzy5o3",
       "property": "width",
-      "selectors": undefined,
+      "selectors": [[".dzy5o3"]],
       "value": "24px"
     }
   ]
