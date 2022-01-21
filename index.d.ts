@@ -46,4 +46,16 @@ export function isFn(value: any): value is AnyFunction;
 
 export function isNull(value: any): value is null;
 
+/**
+  Checks if `value` is classified as a `Number` primitive or object.
+
+  @param {any} value
+  - The value to check.
+
+  @returns {value is number}
+  Returns `true` if `value` is a number, else `false`.
+ */
+
+export function isNum(value: any): value is number;
+
 export type AnyFunction = (arg0: any[]) => any;
