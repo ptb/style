@@ -1,4 +1,20 @@
 /**
+  Get or set cache of common CSS style object using rule as key.
+
+  @param {Params} params
+  - This project's common exchange CSS style object.
+
+  @returns {Params}
+  This project's common exchange CSS style object.
+ */
+
+export function cache(params: Params): Params;
+
+/**
+  Get or set cache of common CSS style object using rule as key.
+ */
+
+/**
   Set the variable `property` in the store.
 
   @param {Params} params
