@@ -96,6 +96,7 @@ export { parseConditional } from "./parse/parse-conditional.js"
 export { parseInput } from "./parse/parse-input.js"
 
 export { defaultParams } from "./shared/default-params.js"
+export { getIdentifier } from "./shared/get-identifier.js"
 export { getMedia } from "./shared/get-media.js"
 export { getPropertyId } from "./shared/get-property-id.js"
 export { store } from "./shared/store.js"
