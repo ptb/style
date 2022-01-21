@@ -30,6 +30,7 @@
     "@ava/babel": "2.0.0",
     "@rollup/plugin-strip": "2.1.0",
     "@rollup/plugin-typescript": "8.3.0",
+    "@size-limit/file": "7.0.5",
     "@typescript-eslint/eslint-plugin": "5.10.0",
     "@typescript-eslint/parser": "5.10.0",
     "ava": "4.0.1",
@@ -49,6 +50,7 @@
     "prettier-eslint-cli": "5.0.1",
     "rollup": "2.65.0",
     "rollup-plugin-terser": "7.0.2",
+    "size-limit": "7.0.5",
     "tslib": "2.3.1",
     "typescript": "4.5.5"
   },
@@ -124,14 +126,28 @@
     "build": "tsc -p jsconfig.json && dts-bundle-generator --no-banner --out-file index.d.ts --project jsconfig.json src/style.js 2> /dev/null || true",
     "clean": "rm -rf index.js style.js* style.cjs* types 2> /dev/null || true",
     "lint": "eslint --fix src",
-    "prepare": "rollup -c",
+    "prepare": "rollup -c && size-limit",
     "strip": "sed -i'' -E -e 's/export type Params = Params;//' -e 's/export type PlainObject = PlainObject;//' -e 's/export type StylesObject = StylesObject;//' -e 's/`@media \\$\\{string}`/\"@media ${string}\"/' -e 's/`\\$\\{number}%`/\"${number}%\"/' -e 's/\\\\t/  /g' -e 's/ \\\\* /  /' -e 's/ *[@]typedef [{]import.*//' -e 's/\\\\/[*][*]/\\\\n\\\\n\\\\/**/' -e 's/[*]\\\\//*\\\\/\\\\n/' -e 's/export/\\\\nexport/' -e 's/export \\{};//' index.d.ts && sed -i'' -E -e '/^$/N;/^\\\\n$/D' index.d.ts && prettier-eslint --parser \"typescript\" --semi --write index.d.ts && sed -i'' -E -e 's/      \\\\/[*][*]/  \\\\/**/' -e 's/\\\"@media \\$\\{string}\\\"/`@media ${string}`/' -e 's/\\\"\\$\\{number}%\\\"/`${number}%`/' index.d.ts || true",
     "test": "c8 ava",
     "tidy": "prettier-eslint --write \"src/**/*.js\"",
     "watch": "nodemon"
   },
   "sideEffects": false,
+  "size-limit": [
+    {
+      "limit": "9 KB",
+      "path": "style.js"
+    },
+    {
+      "limit": "9 KB",
+      "path": "style.cjs"
+    },
+    {
+      "limit": "9.5 KB",
+      "path": "index.js"
+    }
+  ],
   "type": "module",
   "types": "index.d.ts",
-  "version": "0.0.11"
+  "version": "0.0.12"
 }

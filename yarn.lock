@@ -507,6 +507,7 @@ __metadata:
     "@ava/babel": 2.0.0
     "@rollup/plugin-strip": 2.1.0
     "@rollup/plugin-typescript": 8.3.0
+    "@size-limit/file": 7.0.5
     "@typescript-eslint/eslint-plugin": 5.10.0
     "@typescript-eslint/parser": 5.10.0
     ava: 4.0.1
@@ -526,6 +527,7 @@ __metadata:
     prettier-eslint-cli: 5.0.1
     rollup: 2.65.0
     rollup-plugin-terser: 7.0.2
+    size-limit: 7.0.5
     tslib: 2.3.1
     typescript: 4.5.5
   languageName: unknown
@@ -575,6 +577,17 @@ __metadata:
   version: 0.14.0
   resolution: "@sindresorhus/is@npm:0.14.0"
   checksum: 971e0441dd44ba3909b467219a5e242da0fc584048db5324cfb8048148fa8dcc9d44d71e3948972c4f6121d24e5da402ef191420d1266a95f713bb6d6e59c98a
+  languageName: node
+  linkType: hard
+
+"@size-limit/file@npm:7.0.5":
+  version: 7.0.5
+  resolution: "@size-limit/file@npm:7.0.5"
+  dependencies:
+    semver: 7.3.5
+  peerDependencies:
+    size-limit: 7.0.5
+  checksum: 7aa0fc4dd2926496321ae5a9f3ddeca4bcc4ca8d0cabd7093073f2a61ce9e996e456df582b4b22a8a7ede654aee0675644351acf6e1f4c7ad524c93fc7fb7769
   languageName: node
   linkType: hard
 
@@ -1401,6 +1414,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bytes-iec@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "bytes-iec@npm:3.1.1"
+  checksum: 092a90897e938c8d28acf2b6383e5b91abc97c5d4251d9b6ebe331eb55b6064a331dcc78520efb98f90d554cfe9c7309e9138306f58d133dc0dcfa1edf38fc0a
+  languageName: node
+  linkType: hard
+
 "c8@npm:7.11.0":
   version: 7.11.0
   resolution: "c8@npm:7.11.0"
@@ -1640,6 +1660,13 @@ __metadata:
   version: 3.3.0
   resolution: "ci-info@npm:3.3.0"
   checksum: c3d86fe374938ecda5093b1ba39acb535d8309185ba3f23587747c6a057e63f45419b406d880304dbc0e1d72392c9a33e42fe9a1e299209bc0ded5efaa232b66
+  languageName: node
+  linkType: hard
+
+"ci-job-number@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "ci-job-number@npm:1.2.2"
+  checksum: 9da8edd2c1d79e59f28e1c62e8f9f2611c29d6e470cd02551fcb8b5f5eaed6385711b9c5e3fb3b9c456dc716058fc48b4a9e38783bc378a26a8c7d4ed1348211
   languageName: node
   linkType: hard
 
@@ -3971,6 +3998,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lilconfig@npm:^2.0.3":
+  version: 2.0.4
+  resolution: "lilconfig@npm:2.0.4"
+  checksum: 02ae530aa49218d782eb79e92c600ea5220828987f85aa3403fa512cadc7efe38c0ac7d0cd2edf600ad3fae1f6c1752f5b4bb78c0d9950435b044d53d507c9e1
+  languageName: node
+  linkType: hard
+
 "load-json-file@npm:^4.0.0":
   version: 4.0.0
   resolution: "load-json-file@npm:4.0.0"
@@ -4454,6 +4488,15 @@ __metadata:
   version: 0.0.7
   resolution: "mute-stream@npm:0.0.7"
   checksum: a9d4772c1c84206aa37c218ed4751cd060239bf1d678893124f51e037f6f22f4a159b2918c030236c93252638a74beb29c9b1fd3267c9f24d4b3253cf1eaa86f
+  languageName: node
+  linkType: hard
+
+"nanospinner@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "nanospinner@npm:0.6.0"
+  dependencies:
+    picocolors: ^1.0.0
+  checksum: a977b4638960ded02bd7b4c837544df5ee39c8b17620a99b67a2e5a6d3b42e0b54997ef7c74b9b94f87b03c58e1999d3e0e32ac31155b463adc7913ac0b32efb
   languageName: node
   linkType: hard
 
@@ -5692,6 +5735,24 @@ __metadata:
   version: 3.0.6
   resolution: "signal-exit@npm:3.0.6"
   checksum: b819ac81ba757af559dad0804233ae31bf6f054591cd8a671e9cbcf09f21c72ec3076fe87d1e04861f5b33b47d63f0694b568de99c99cd733ee2060515beb6d5
+  languageName: node
+  linkType: hard
+
+"size-limit@npm:7.0.5":
+  version: 7.0.5
+  resolution: "size-limit@npm:7.0.5"
+  dependencies:
+    bytes-iec: ^3.1.1
+    chokidar: ^3.5.2
+    ci-job-number: ^1.2.2
+    globby: ^11.0.4
+    lilconfig: ^2.0.3
+    mkdirp: ^1.0.4
+    nanospinner: ^0.6.0
+    picocolors: ^1.0.0
+  bin:
+    size-limit: bin.js
+  checksum: 288af068f13505d04b1a5ad5bb469402c2dbd43acb15a7ac904e5bc51660cc1bdcc148c1740df649003afc2417de7bd0fc8f09882cc9c608c627ee873c2f8b20
   languageName: node
   linkType: hard
 
