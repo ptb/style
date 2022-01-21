@@ -2,8 +2,10 @@ import {
   defaultParams,
   get,
   getMedia,
+  getShorthand,
   isArr,
   isObj,
+  isShorthand,
   isVariable,
   mergeArrOfObj,
   replaceVariables,
@@ -76,6 +78,8 @@ export function flattenInput (params = defaultParams) {
           const input = replaceVariables(property, mediaStr)
 
           return styles.concat({ [input]: value })
+        } else if (isShorthand(property)) {
+          return styles.concat(getShorthand(property, value))
         }
 
         return styles.concat({ [property]: value })

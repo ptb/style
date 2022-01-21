@@ -100,16 +100,26 @@ ava("given a variable as argument (1)", (t) => {
 })
 
 ava("given a variable as argument (2)", (t) => {
-  flattenInput({ "input": { "$unCite": { "fontWeight": 600 } } })
+  flattenInput({
+    "input": {
+      "$primaryColor": "#696",
+      "$unCite": {
+        "fontWeight": 600
+      }
+    }
+  })
 
   const actual = flattenInput({
     "input": {
+      "$primaryColor": true,
       "$unCite": true,
+      "color": "$primaryColor",
       "fontSize": 12
     }
   })
 
   const expect = {
+    "color": "#696",
     "fontSize": 12,
     "fontWeight": 600
   }
@@ -233,6 +243,46 @@ ava("given property containing variable", (t) => {
       "margin": 15,
       "p": 10
     }
+  }
+
+  t.deepEqual(actual, expect)
+})
+
+ava("given array of style objects", (t) => {
+  flattenInput({
+    "input": {
+      "$defaultFont": "Helvetica,Arial,sans-serif",
+      "$unBlockquote": {
+        "mb": 4,
+        "mt": 8,
+        "mx": 6,
+        "perspectiveOrigin": "0 0",
+        "transformOrigin": "0 0"
+      }
+    }
+  })
+
+  const actual = flattenInput({
+    "input": {
+      "$unBlockquote": true,
+      "borderX": 12,
+      "fontFamily": "$defaultFont",
+      "size": 7
+    }
+  })
+
+  const expect = {
+    "borderLeft": 12,
+    "borderRight": 12,
+    "fontFamily": "Helvetica,Arial,sans-serif",
+    "height": 7,
+    "marginBottom": 4,
+    "marginLeft": 6,
+    "marginRight": 6,
+    "marginTop": 8,
+    "perspectiveOrigin": "0 0",
+    "transformOrigin": "0 0",
+    "width": 7
   }
 
   t.deepEqual(actual, expect)
