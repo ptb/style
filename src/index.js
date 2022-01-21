@@ -95,6 +95,7 @@ export { isSelector } from "./parse/is-selector.js"
 export { parse } from "./parse/parse.js"
 export { parseConditional } from "./parse/parse-conditional.js"
 export { parseInput } from "./parse/parse-input.js"
+export { parseSelectors } from "./parse/parse-selectors.js"
 
 export { defaultParams } from "./shared/default-params.js"
 export { getIdentifier } from "./shared/get-identifier.js"
