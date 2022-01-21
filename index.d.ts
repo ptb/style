@@ -4,6 +4,27 @@ import {
   StandardPropertiesFallback
 } from "csstype"
 
+/**
+  Creates a JavaScript object containing keys as identifiers and class
+  names as values. If the value is a function, it is assigned to the
+  value as is, without executing.
+
+  @param {PlainObject} params
+  - Plain JavaScript object with keys containing CSS styles.
+
+  @returns {PlainObject}
+  Plain JavaScript object with keys as identifiers and class names or
+  functions as values.
+ */
+
+export function create(params?: PlainObject): PlainObject;
+
+/**
+  Creates a JavaScript object containing keys as identifiers and class
+  names as values. If the value is a function, it is assigned to the
+  value as is, without executing.
+ */
+
 export type Percentage = `${number}%`;
 
 export type KeyframesObject = {

@@ -2,6 +2,7 @@ export {
   cache,
   camelCase,
   canUseDom,
+  create,
   css,
   debounce,
   get,
