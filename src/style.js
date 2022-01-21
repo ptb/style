@@ -12,5 +12,6 @@ export {
   isStr,
   isSym,
   isUndef,
-  kebabCase
+  kebabCase,
+  murmurHash
 } from "./index.js"

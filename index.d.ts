@@ -184,6 +184,34 @@ export function get(
 
 export function kebabCase(value?: string | undefined): string;
 
+/**
+  Converts `string` to unique hash identifier string.
+  JS Implementation of MurmurHash3 (r136) (as of May 20, 2011).
+
+  @param {string} string
+  - The string on convert.
+
+  @param {number} seed
+  - Positive integer only.
+
+  @returns {string}
+  The string hash identifier.
+
+  @author <a href="mailto:aappleby@gmail.com">Austin Appleby</a>
+
+  @see https://github.com/aappleby/smhasher
+
+  @author <a href="mailto:gary.court@gmail.com">Gary Court</a>
+
+  @see https://github.com/garycourt/murmurhash-js
+
+  @copyright 2011 Gary Court
+
+  @license MIT
+ */
+
+export function murmurHash(string?: string, seed?: number): string;
+
 export type AnyFunction = (arg0: any[]) => any;
 
 export type PlainObject = Record<string | number | symbol, any>;
