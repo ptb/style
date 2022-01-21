@@ -244,6 +244,18 @@ export function toPairs(
   value?: PlainObject | undefined
 ): [string, any][];
 
+/**
+  Creates a duplicate-free copy of an array of strings.
+
+  @param {string[]} [value]
+  - The array to inspect.
+
+  @returns {string[]}
+  Returns the new duplicate free array.
+ */
+
+export function uniq(value?: string[] | undefined): string[];
+
 export type AnyFunction = (arg0: any[]) => any;
 
 export type PlainObject = Record<string | number | symbol, any>;

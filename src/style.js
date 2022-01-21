@@ -15,5 +15,6 @@ export {
   kebabCase,
   murmurHash,
   nanoid,
-  toPairs
+  toPairs,
+  uniq
 } from "./index.js"
