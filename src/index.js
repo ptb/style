@@ -79,6 +79,7 @@ export { mergeObj } from "./merge/merge-obj.js"
 export { sortJSON } from "./merge/sort-json.js"
 
 export { defaultParams } from "./shared/default-params.js"
+export { getMedia } from "./shared/get-media.js"
 
 export { getType } from "./typeof/get-type.js"
 export { isArr } from "./typeof/is-arr.js"
