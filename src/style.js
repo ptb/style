@@ -16,6 +16,7 @@ export {
   merge,
   murmurHash,
   nanoid,
+  setVariable,
   sortJSON,
   store,
   toPairs,

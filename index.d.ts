@@ -1,4 +1,20 @@
 /**
+  Set the variable `property` in the store.
+
+  @param {Params} params
+  - This project's common exchange CSS style object.
+
+  @returns {any}
+  The stored value for this variable.
+ */
+
+export function setVariable(params?: Params): any;
+
+/**
+  Set the variable `property` in the store.
+ */
+
+/**
   Recursively merges own properties of source objects or arrays into a new
   empty object or array. Array and plain object properties are merged
   recursively. Other objects and value types are overridden by assignment.
@@ -296,4 +312,106 @@ export function uniq(value?: string[] | undefined): string[];
 
 export type AnyFunction = (arg0: any[]) => any;
 
+export type Conditional = {
+  /**
+    - Array of media query strings composed of an optional _media type_ and
+    any number of _media feature_ expressions. Excludes the actual `@media`
+    prefix.
+   */
+
+  media?: string[] | null | undefined;
+
+  /**
+    - Array of feature query strings composed of declarations of support for
+    one or more specific CSS features. Excludes the actual `@supports` prefix.
+   */
+
+  supports?: string[] | null | undefined;
+};
+
 export type PlainObject = Record<string | number | symbol, any>;
+
+/**
+  - This project's common exchange CSS style object.
+ */
+
+export type Params = {
+  /**
+    - Array of objects containing CSS declarations.
+   */
+
+  block?: PlainObject[] | null | undefined;
+
+  /**
+    - `media`: Array of media query strings composed of an optional _media
+    type_ and any number of _media feature_ expressions. Excludes the actual
+    `@media` prefix.
+   *
+    - `supports`: Array of feature query strings composed of declarations of
+    support for one or more specific CSS features. Excludes the actual
+    `@supports` prefix.
+   */
+
+  conditional?: Conditional | null | undefined;
+
+  /**
+    - Indicator if the class name should be returned from the `css` function.
+   */
+
+  emit?: boolean | null | undefined;
+
+  /**
+    - String uniquely identifying each CSS ruleset.
+   *
+    - The initial two characters are shared by all other declarations that
+    share the same standard CSS property feature. A consistent CSS property
+    ordering is ensured using a specified order of all current properties
+    listed on https://www.w3.org/Style/CSS/all-properties.en.html.
+    Properties are roughly ordered by CSS specification, from most basic or
+    general changes, like CSS custom properties or right-to-left, to more
+    aesthetic properties, like animations or scroll behavior. Within each
+    specification group, shorthand properties are ordered first, for example
+    `margin` is before `marginTop`, so it is possible to override shorthand
+    declarations with a more specific property. With this custom sort order
+    a simple alphabetical sort by `identifier` is enough to ensure that each
+    CSS declaration is applied in a consistent and predictable order.
+   *
+    - Remaining four characters are a hash created by the MurmurHash3
+    algorithm taking into account any media queries, selectors, pseudo
+    classes, pseudo elements, standard CSS property feature, and values.
+   */
+
+  identifier?: string | null | undefined;
+
+  /**
+    - Plain JavaScript object or array of objects containing CSS styles.
+   */
+
+  input?: PlainObject | PlainObject[] | null | undefined;
+
+  /**
+    - Camel case property name that identifies a stylistic feature to change.
+   */
+
+  property?: string | null | undefined;
+
+  /**
+    - Array of arrays of individual selector string components.
+   */
+
+  selectors?: string[][] | null | undefined;
+
+  /**
+    - Valid CSS property values, or intermediate object, array, or integers
+    that can be processed by this library to create valid CSS declarations.
+   */
+
+  value?:
+    | string
+    | number
+    | boolean
+    | any[]
+    | PlainObject
+    | null
+    | undefined;
+};
