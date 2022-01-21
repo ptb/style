@@ -2,4 +2,4 @@
   @typedef {Record<string | number | symbol, any>} PlainObject
  */
 
-export {}
+export { getType } from "./typeof/get-type.js"
