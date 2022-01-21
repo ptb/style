@@ -11,5 +11,6 @@ export {
   isObj,
   isStr,
   isSym,
-  isUndef
+  isUndef,
+  kebabCase
 } from "./index.js"

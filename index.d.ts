@@ -172,6 +172,18 @@ export function get(
   defaultValue?: any
 ): any;
 
+/**
+  Converts `string` to kebab case.
+
+  @param {string} [value]
+  - The string to convert.
+
+  @returns {string}
+  The kebab cased string.
+ */
+
+export function kebabCase(value?: string | undefined): string;
+
 export type AnyFunction = (arg0: any[]) => any;
 
 export type PlainObject = Record<string | number | symbol, any>;
