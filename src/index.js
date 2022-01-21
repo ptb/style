@@ -69,6 +69,7 @@
 export { flattenInput } from "./flatten/flatten-input.js"
 export { getVariables } from "./flatten/get-variables.js"
 export { isVariable } from "./flatten/is-variable.js"
+export { replaceVariables } from "./flatten/replace-variables.js"
 export { setStore } from "./flatten/set-store.js"
 export { setVariable } from "./flatten/set-variable.js"
 
