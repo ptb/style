@@ -1,6 +1,6 @@
 import ava from "ava"
 
-import { flattenInput } from "../index.js"
+import { flattenInput, store } from "../index.js"
 
 ava("given undefined arguments", (t) => {
   const actual = flattenInput()
@@ -78,6 +78,24 @@ ava("given an object with array value", (t) => {
   const expect = {
     "backgroundColor": "#f00",
     "display": ["block", "flex", "grid"]
+  }
+
+  t.deepEqual(actual, expect)
+})
+
+ava("given array of style objects", (t) => {
+  flattenInput({
+    "input": {
+      "$defaultFont": "Helvetica,Arial,sans-serif"
+    }
+  })
+
+  const actual = store.get("").get("$defaultFont")
+
+  const expect = {
+    "conditional": { "media": undefined },
+    "property": "$defaultFont",
+    "value": "Helvetica,Arial,sans-serif"
   }
 
   t.deepEqual(actual, expect)

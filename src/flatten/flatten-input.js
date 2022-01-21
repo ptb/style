@@ -1,7 +1,10 @@
 import {
   defaultParams,
+  get,
   isArr,
+  isVariable,
   mergeArrOfObj,
+  setVariable,
   toPairs
 } from "../index.js"
 
@@ -38,6 +41,16 @@ export function flattenInput (params = defaultParams) {
       function (styles, style) {
         const property = style[0]
         const value = style[1]
+
+        if (isVariable(property, true)) {
+          setVariable({
+            "conditional": { "media": get(params, "conditional.media") },
+            property,
+            value
+          })
+
+          return styles
+        }
 
         return styles.concat({ [property]: value })
       },
