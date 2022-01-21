@@ -70,6 +70,8 @@ export { cache } from "./build/cache.js"
 export { getBlockString } from "./build/get-block-string.js"
 export { getSupportsString } from "./build/get-supports-string.js"
 
+export { canUseDom } from "./client/can-use-dom.js"
+
 export { flattenInput } from "./flatten/flatten-input.js"
 export { getShorthand } from "./flatten/get-shorthand.js"
 export { getShorthands } from "./flatten/get-shorthands.js"

@@ -15,6 +15,15 @@ export function cache(params: Params): Params;
  */
 
 /**
+  Tests if executing in a browser environment.
+
+  @returns {boolean}
+  Returns `true` if executing in a browser, else `false`.
+ */
+
+export function canUseDom(): boolean;
+
+/**
   Set the variable `property` in the store.
 
   @param {Params} params

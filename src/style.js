@@ -1,6 +1,7 @@
 export {
   cache,
   camelCase,
+  canUseDom,
   debounce,
   get,
   isArr,
