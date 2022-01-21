@@ -97,6 +97,7 @@ export { isTypeSelector } from "./parse/is-type-selector.js"
 export { parse } from "./parse/parse.js"
 export { parseConditional } from "./parse/parse-conditional.js"
 export { parseInput } from "./parse/parse-input.js"
+export { parsePlaceholder } from "./parse/parse-placeholder.js"
 export { parseSelectors } from "./parse/parse-selectors.js"
 export { parseTypeSelector } from "./parse/parse-type-selector.js"
 
