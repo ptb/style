@@ -13,18 +13,19 @@ import { terser } from "rollup-plugin-terser"
 
 import pkg from "./package.json"
 
+const revision = "".concat(
+  execSync("git rev-parse HEAD 2> /dev/null || true")
+    .toString()
+    .slice(0, 7)
+)
+
 const banner = "/*! @copyright "
   .concat(pkg.author.name)
   .concat(" | @license ")
   .concat(pkg.license)
   .concat(" | @link ")
   .concat(pkg.repository.url)
-  .concat("/tree/")
-  .concat(
-    execSync("git rev-parse HEAD")
-      .toString()
-      .slice(0, 7)
-  )
+  .concat(revision ? "/tree/" + revision : "")
   .concat(" | @version ")
   .concat(pkg.version)
   .concat(" */")

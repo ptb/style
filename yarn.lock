@@ -67,15 +67,15 @@ __metadata:
   linkType: hard
 
 "@babel/core@npm:^7.14.6":
-  version: 7.16.10
-  resolution: "@babel/core@npm:7.16.10"
+  version: 7.16.12
+  resolution: "@babel/core@npm:7.16.12"
   dependencies:
     "@babel/code-frame": ^7.16.7
     "@babel/generator": ^7.16.8
     "@babel/helper-compilation-targets": ^7.16.7
     "@babel/helper-module-transforms": ^7.16.7
     "@babel/helpers": ^7.16.7
-    "@babel/parser": ^7.16.10
+    "@babel/parser": ^7.16.12
     "@babel/template": ^7.16.7
     "@babel/traverse": ^7.16.10
     "@babel/types": ^7.16.8
@@ -85,7 +85,7 @@ __metadata:
     json5: ^2.1.2
     semver: ^6.3.0
     source-map: ^0.5.0
-  checksum: d34c5edf9258e620d0cbea4ed25a2615f5ab86dc7f7c1b96ac19817fb7d57bfae9af72dc244385a724225dbc701cb878d9559158aee9659e2a3c69d03f93f3e1
+  checksum: 29b56f3cb7c329fc038a2efaccf64ac3025835676b3d90f57f2265b6acd477a970114d09021b38d019ac8f20b2bb1596a9e79ce1f820d6b8cf0e4a802891817c
   languageName: node
   linkType: hard
 
@@ -247,12 +247,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/parser@npm:^7.0.0, @babel/parser@npm:^7.16.10, @babel/parser@npm:^7.16.7":
-  version: 7.16.10
-  resolution: "@babel/parser@npm:7.16.10"
+"@babel/parser@npm:^7.0.0, @babel/parser@npm:^7.16.10, @babel/parser@npm:^7.16.12, @babel/parser@npm:^7.16.7":
+  version: 7.16.12
+  resolution: "@babel/parser@npm:7.16.12"
   bin:
     parser: ./bin/babel-parser.js
-  checksum: d760606039de8ab8c68e993b7d3ae461754ef51dbf1fbd88d1428bf37d7e13bfb7205105332f0ac0a55d3534c231da527ab7b2db26e7cef6e0f9c8940a3c91a3
+  checksum: af287f0f3dfa564958a7dddfeb62e08c0de9ce9bd8447fcde0997da26ec477bf19f37161b9d970e2c7e0d1f77e441258907d3347beddd0d42cae85ed46947703
   languageName: node
   linkType: hard
 
@@ -539,7 +539,7 @@ __metadata:
     prettier-eslint: 13.0.0
     prettier-eslint-cli: 5.0.1
     puppeteer: 13.1.1
-    rollup: 2.65.0
+    rollup: 2.66.0
     rollup-plugin-execute: 1.1.1
     rollup-plugin-terser: 7.0.2
     size-limit: 7.0.5
@@ -2335,9 +2335,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.17":
-  version: 1.4.49
-  resolution: "electron-to-chromium@npm:1.4.49"
-  checksum: 0527cc195c34b609f4ecad25584d238494d758c730d0aafdbd408a0ccce42cc6f05c1c0b76cc055a0a173700e29b1f3352d91b5cbeb91d063321690913afae84
+  version: 1.4.51
+  resolution: "electron-to-chromium@npm:1.4.51"
+  checksum: dad1fd5faad1eed0206951429290ff0343eebfcabc201600dc0aeda7a2de07e0db697728fcd0b9e14f9c5f8cd5ec4841acda3179c5b2f8cdea09a5e81c634313
   languageName: node
   linkType: hard
 
@@ -3780,7 +3780,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-core-module@npm:^2.8.0":
+"is-core-module@npm:^2.8.0, is-core-module@npm:^2.8.1":
   version: 2.8.1
   resolution: "is-core-module@npm:2.8.1"
   dependencies:
@@ -4731,9 +4731,9 @@ __metadata:
   linkType: hard
 
 "negotiator@npm:^0.6.2":
-  version: 0.6.2
-  resolution: "negotiator@npm:0.6.2"
-  checksum: dfddaff6c06792f1c4c3809e29a427b8daef8cd437c83b08dd51d7ee11bbd1c29d9512d66b801144d6c98e910ffd8723f2432e0cbf8b18d41d2a09599c975ab3
+  version: 0.6.3
+  resolution: "negotiator@npm:0.6.3"
+  checksum: b8ffeb1e262eff7968fc90a2b6767b04cfd9842582a9d0ece0af7049537266e7b2506dfb1d107a32f06dd849ab2aea834d5830f7f4d0e5cb7d36e1ae55d021d9
   languageName: node
   linkType: hard
 
@@ -5749,28 +5749,28 @@ __metadata:
   linkType: hard
 
 "resolve@npm:^1.10.0, resolve@npm:^1.17.0, resolve@npm:^1.19.0, resolve@npm:^1.20.0":
-  version: 1.21.1
-  resolution: "resolve@npm:1.21.1"
+  version: 1.22.0
+  resolution: "resolve@npm:1.22.0"
   dependencies:
-    is-core-module: ^2.8.0
+    is-core-module: ^2.8.1
     path-parse: ^1.0.7
     supports-preserve-symlinks-flag: ^1.0.0
   bin:
     resolve: bin/resolve
-  checksum: 4703fbd6ddaebf7a7f7834ca29f5cfa2c64ef7988ac34bcd26148f0d017783d3a475936ffca02add1b9696e0d1db2a75210052c4b08e748e144e2886e575617c
+  checksum: a2d14cc437b3a23996f8c7367eee5c7cf8149c586b07ca2ae00e96581ce59455555a1190be9aa92154785cf9f2042646c200d0e00e0bbd2b8a995a93a0ed3e4e
   languageName: node
   linkType: hard
 
 "resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.19.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>":
-  version: 1.21.1
-  resolution: "resolve@patch:resolve@npm%3A1.21.1#~builtin<compat/resolve>::version=1.21.1&hash=07638b"
+  version: 1.22.0
+  resolution: "resolve@patch:resolve@npm%3A1.22.0#~builtin<compat/resolve>::version=1.22.0&hash=07638b"
   dependencies:
-    is-core-module: ^2.8.0
+    is-core-module: ^2.8.1
     path-parse: ^1.0.7
     supports-preserve-symlinks-flag: ^1.0.0
   bin:
     resolve: bin/resolve
-  checksum: 112e944aa5c73dbeeefb1a1d8f9c70886a063b49f7f5bc4a2d3af1dc68967281da9ae388435634c8bf4b5a239026a4b5e25c5e9eca07c1190bc23c3dc0446dc5
+  checksum: c79ecaea36c872ee4a79e3db0d3d4160b593f2ca16e031d8283735acd01715a203607e9ded3f91f68899c2937fa0d49390cddbe0fb2852629212f3cda283f4a7
   languageName: node
   linkType: hard
 
@@ -5850,9 +5850,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:2.65.0":
-  version: 2.65.0
-  resolution: "rollup@npm:2.65.0"
+"rollup@npm:2.66.0":
+  version: 2.66.0
+  resolution: "rollup@npm:2.66.0"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -5860,7 +5860,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: 666063049e8ff5c7a9d7629f4cb9576aff10756e02b4b5e633ed1df3dc7f148f4579118f2fc7e92d9d5ec96a1dd9b7ea3f3b1706ad6d1259bb3d38a9622b3402
+  checksum: 577fcc6e0227269bb42726756ca6d53d2445e1b54c4dd4d5e019fae271c7f0d7d557966f3b0cc3cd71d9d7c95b4642e2ffd14c3c7b0ef9a887a0a9fab9ba8755
   languageName: node
   linkType: hard
 
