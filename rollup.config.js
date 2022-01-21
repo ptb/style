@@ -2,6 +2,8 @@
 
 import { execSync } from "child_process"
 
+// @ts-ignore
+import replace from "@rollup/plugin-replace"
 import strip from "@rollup/plugin-strip"
 import typescript from "@rollup/plugin-typescript"
 
@@ -46,6 +48,17 @@ export default [
     ],
     "plugins": [
       strip({ "sourceMap": true }),
+      replace({
+        "delimiters": ["", ""],
+        "include": ["src/client/update-styles.js"],
+        "preventAssignment": false,
+        "values": {
+          /* eslint-disable sort-keys */
+          "function updateStyles":
+            "const updateStyles = debounce (function",
+          " /* updateStyles */": ")"
+        }
+      }),
       typescript({
         "tsconfig": "jsconfig.json"
       }),

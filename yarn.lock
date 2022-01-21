@@ -505,6 +505,7 @@ __metadata:
   resolution: "@ptb/style@workspace:."
   dependencies:
     "@ava/babel": 2.0.0
+    "@rollup/plugin-replace": 3.0.1
     "@rollup/plugin-strip": 2.1.0
     "@rollup/plugin-typescript": 8.3.0
     "@size-limit/file": 7.0.5
@@ -536,6 +537,18 @@ __metadata:
     merge-json: ./merge-json.cjs
   languageName: unknown
   linkType: soft
+
+"@rollup/plugin-replace@npm:3.0.1":
+  version: 3.0.1
+  resolution: "@rollup/plugin-replace@npm:3.0.1"
+  dependencies:
+    "@rollup/pluginutils": ^3.1.0
+    magic-string: ^0.25.7
+  peerDependencies:
+    rollup: ^1.20.0 || ^2.0.0
+  checksum: 0cd97439783d3d23ba4f0c74146f5cdf0965d57977cc8227a77dfdd9604930905619e405c961ae146a0e68c8239b9a3a817704fa90f7d62d5087ed84d8c33ead
+  languageName: node
+  linkType: hard
 
 "@rollup/plugin-strip@npm:2.1.0":
   version: 2.1.0
