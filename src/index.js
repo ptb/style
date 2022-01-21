@@ -66,6 +66,8 @@
   that can be processed by this library to create valid CSS declarations.
  */
 
+export { flattenInput } from "./flatten/flatten-input.js"
+
 export { assignProp } from "./merge/assign-prop.js"
 export { canMerge } from "./merge/can-merge.js"
 export { cloneObj } from "./merge/clone-obj.js"
