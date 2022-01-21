@@ -86,6 +86,8 @@ export { mergeArrOfObj } from "./merge/merge-arr-of-obj.js"
 export { mergeObj } from "./merge/merge-obj.js"
 export { sortJSON } from "./merge/sort-json.js"
 
+export { parseInput } from "./parse/parse-input.js"
+
 export { defaultParams } from "./shared/default-params.js"
 export { getMedia } from "./shared/get-media.js"
 export { store } from "./shared/store.js"
