@@ -2,8 +2,10 @@ import {
   camelCase,
   defaultParams,
   get,
+  isConditional,
   isUndef,
   mergeArrOfObj,
+  parseConditional,
   toPairs
 } from "../index.js"
 
@@ -24,6 +26,16 @@ export function parseInput (params = defaultParams) {
   const emit = isUndef(params.emit) ? true : params.emit
   const input = mergeArrOfObj(params.input)
   const selectors = params.selectors
+
+  if (isConditional("media", input)) {
+    return parseConditional({
+      conditional,
+      emit,
+      "property": params.property,
+      selectors,
+      "value": input
+    })
+  }
 
   return toPairs(input).map(function (style) {
     const property = style[0]

@@ -2,6 +2,7 @@ import {
   defaultParams,
   flattenInput,
   merge,
+  parseConditional,
   parseInput
 } from "../index.js"
 
@@ -26,5 +27,17 @@ export function parse (params = defaultParams) {
     { "input": flattenInput(params) }
   ))
 
-  return parseInput(input)
+  return parseInput(input).reduce(
+    /**
+      @param {Params[]} styles
+
+      @param {Params} style
+
+      @returns {Params[]}
+     */
+    function (styles, style) {
+      return styles.concat(parseConditional(style))
+    },
+    []
+  )
 }
