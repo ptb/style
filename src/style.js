@@ -1,4 +1,5 @@
 export {
+  camelCase,
   isArr,
   isBool,
   isFn,

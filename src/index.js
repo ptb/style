@@ -15,3 +15,5 @@ export { isObj } from "./typeof/is-obj.js"
 export { isStr } from "./typeof/is-str.js"
 export { isSym } from "./typeof/is-sym.js"
 export { isUndef } from "./typeof/is-undef.js"
+
+export { camelCase } from "./utils/camel-case.js"

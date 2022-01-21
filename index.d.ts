@@ -118,6 +118,18 @@ export function isSym(value: any): value is symbol;
 
 export function isUndef(value?: any): value is undefined;
 
+/**
+  Converts `string` to camel case.
+
+  @param {string} [value]
+  - The string to convert.
+
+  @returns {string}
+  The camel cased string.
+ */
+
+export function camelCase(value?: string | undefined): string;
+
 export type AnyFunction = (arg0: any[]) => any;
 
 export type PlainObject = Record<string | number | symbol, any>;
