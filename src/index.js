@@ -3,3 +3,4 @@
  */
 
 export { getType } from "./typeof/get-type.js"
+export { isArr } from "./typeof/is-arr.js"
