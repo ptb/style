@@ -1,0 +1,32 @@
+{
+  "author": {
+    "email": "peter@ptb.dev",
+    "name": "Peter T Bosse II",
+    "url": "https://ptb.dev/"
+  },
+  "bugs": {
+    "url": "https://github.com/ptb/style/issues"
+  },
+  "keywords": [
+    "css",
+    "css-in-js",
+    "react",
+    "styles"
+  ],
+  "license": "Apache-2.0",
+  "maintainers": [
+    {
+      "email": "peter@ptb.dev",
+      "name": "Peter T Bosse II",
+      "url": "https://ptb.dev/"
+    }
+  ],
+  "name": "@ptb/style",
+  "packageManager": "yarn@3.1.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ptb/style"
+  },
+  "sideEffects": false,
+  "version": "0.0.1"
+}
