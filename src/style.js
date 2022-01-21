@@ -1,1 +1,1 @@
-export { isArr } from "./index.js"
+export { isArr, isBool } from "./index.js"
