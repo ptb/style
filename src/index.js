@@ -67,6 +67,7 @@
  */
 
 export { flattenInput } from "./flatten/flatten-input.js"
+export { isVariable } from "./flatten/is-variable.js"
 
 export { assignProp } from "./merge/assign-prop.js"
 export { canMerge } from "./merge/can-merge.js"
