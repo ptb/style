@@ -22,6 +22,7 @@ ava.serial("given undefined arguments", (t) => {
 
 ava.serial("given an object with valid media declaration", (t) => {
   const actual = parseConditional({
+    "conditional": { "supports": ["(display:grid)"] },
     "property": "@media (min-width: 768px)",
     "value": { "bg": "#000" }
   })
@@ -29,7 +30,8 @@ ava.serial("given an object with valid media declaration", (t) => {
   const expect = [
     {
       "conditional": {
-        "media": ["(minWidth:768px)"]
+        "media": ["(minWidth:768px)"],
+        "supports": ["(display:grid)"]
       },
       "emit": true,
       "property": "backgroundColor",
@@ -367,6 +369,299 @@ ava.serial(
         "property": "margin",
         "selectors": undefined,
         "value": 20
+      }
+    ]
+
+    t.deepEqual(actual, expect)
+  }
+)
+
+ava.serial("given an object with valid feature query 1", (t) => {
+  const actual = parseConditional(
+    {
+      "conditional": { "supports": [] },
+      "property": "@supports (display: inline-block)",
+      "value": { "display": "inline-block" }
+    },
+    "supports"
+  )
+
+  const expect = [
+    {
+      "conditional": { "supports": ["(display:inlineBlock)"] },
+      "emit": true,
+      "property": "display",
+      "selectors": undefined,
+      "value": "inline-block"
+    }
+  ]
+
+  t.deepEqual(actual, expect)
+})
+
+ava.serial("given an object with valid feature query", (t) => {
+  const actual = parseConditional(
+    {
+      "property": "@supports (display: inline-block)",
+      "value": { "bg": { "@supports (display:flex)": "#000" } }
+    },
+    "supports"
+  )
+
+  const expect = [
+    {
+      "conditional": {
+        "supports": ["(display:flex)", "(display:inlineBlock)"]
+      },
+      "emit": true,
+      "property": "backgroundColor",
+      "selectors": undefined,
+      "value": "#000"
+    }
+  ]
+
+  t.deepEqual(actual, expect)
+})
+
+ava.serial(
+  "given an object with complex valid feature query",
+  (t) => {
+    const actual = parse({
+      "input": {
+        "@supports (display: inline-block)": {
+          "@media (-webkit-min-device-pixel-ratio: 2)": {
+            "background-color": "#000"
+          }
+        }
+      }
+    })
+
+    const expect = [
+      {
+        "conditional": {
+          "media": ["(WebkitMinDevicePixelRatio:2)"],
+          "supports": ["(display:inlineBlock)"]
+        },
+        "emit": true,
+        "property": "backgroundColor",
+        "selectors": undefined,
+        "value": "#000"
+      }
+    ]
+
+    t.deepEqual(actual, expect)
+  }
+)
+
+ava.serial(
+  "given object with 'margin' property and object value for $supports",
+  (t) => {
+    setVariable({
+      "property": "$supports",
+      "value": { "hasFlex": "(display:flex)", "hasGrid": "(display:grid)" }
+    })
+
+    const actual = parseConditional(
+      { "value": { "hasFlex": { "margin": 20 }, "hasGrid": { "margin": 10 } } },
+      "supports"
+    )
+
+    const expect = [
+      {
+        "conditional": { "supports": ["(display:flex)"] },
+        "emit": true,
+        "property": "margin",
+        "selectors": undefined,
+        "value": 20
+      },
+      {
+        "conditional": { "supports": ["(display:grid)"] },
+        "emit": true,
+        "property": "margin",
+        "selectors": undefined,
+        "value": 10
+      }
+    ]
+
+    t.deepEqual(actual, expect)
+  }
+)
+
+ava.serial(
+  "given an object with 'margin' property and compound object value for $supports",
+  (t) => {
+    const actual = parseConditional(
+      {
+        "value": {
+          "hasFlex": { "margin": 20 },
+          "R": { "hasGrid": { "margin": 10 } }
+        }
+      },
+      "supports"
+    )
+
+    const expect = [
+      {
+        "conditional": { "supports": ["(display:flex)"] },
+        "emit": true,
+        "property": "margin",
+        "selectors": undefined,
+        "value": 20
+      },
+      {
+        "conditional": {
+          "media": [
+            "(WebkitMinDevicePixelRatio:2),(minResolution:192dpi)"
+          ],
+          "supports": ["(display:grid)"]
+        },
+        "emit": true,
+        "property": "margin",
+        "selectors": undefined,
+        "value": 10
+      }
+    ]
+
+    t.deepEqual(actual, expect)
+  }
+)
+
+ava.serial(
+  "given an object with 'margin' property and extra compound object value for $supports",
+  (t) => {
+    const actual = parse({
+      "conditional": { "supports": ["(color:hsla(0,0%,0%,1)"] },
+      "input": {
+        "hasFlex": { "P": { "margin": 20 } },
+        "R": { "L": { "margin": { "hasGrid": 10 } } }
+      }
+    })
+
+    const expect = [
+      {
+        "conditional": {
+          "media": ["(orientation:portrait)"],
+          "supports": ["(display:flex)", "(color:hsla(0,0%,0%,1)"]
+        },
+        "emit": true,
+        "property": "margin",
+        "selectors": undefined,
+        "value": 20
+      },
+      {
+        "conditional": {
+          "media": [
+            "(orientation:landscape)",
+            "(WebkitMinDevicePixelRatio:2),(minResolution:192dpi)"
+          ],
+          "supports": ["(display:grid)", "(color:hsla(0,0%,0%,1)"]
+        },
+        "emit": true,
+        "property": "margin",
+        "selectors": undefined,
+        "value": 10
+      }
+    ]
+
+    t.deepEqual(actual, expect)
+  }
+)
+
+ava.serial(
+  "given an object with 'margin' property and media keys object for $supports",
+  (t) => {
+    const actual = parse({
+      "input": {
+        "@media (max-width: 1536px)": {
+          "my": {
+            "@supports (display:flex)": 20,
+            "R": { "@supports (display:grid)": 10 }
+          }
+        },
+        "@media (min-width: 640px)": {
+          "Pr": {
+            "@media (prefers-color-scheme: dark)": {
+              "size": { "hasGrid": 5 }
+            }
+          }
+        }
+      }
+    })
+
+    const expect = [
+      {
+        "conditional": {
+          "media": ["(maxWidth:1536px)"],
+          "supports": ["(display:flex)"]
+        },
+        "emit": true,
+        "property": "marginBottom",
+        "selectors": undefined,
+        "value": 20
+      },
+      {
+        "conditional": {
+          "media": [
+            "(WebkitMinDevicePixelRatio:2),(minResolution:192dpi)",
+            "(maxWidth:1536px)"
+          ],
+          "supports": ["(display:grid)"]
+        },
+        "emit": true,
+        "property": "marginBottom",
+        "selectors": undefined,
+        "value": 10
+      },
+      {
+        "conditional": {
+          "media": ["(maxWidth:1536px)"],
+          "supports": ["(display:flex)"]
+        },
+        "emit": true,
+        "property": "marginTop",
+        "selectors": undefined,
+        "value": 20
+      },
+      {
+        "conditional": {
+          "media": [
+            "(WebkitMinDevicePixelRatio:2),(minResolution:192dpi)",
+            "(maxWidth:1536px)"
+          ],
+          "supports": ["(display:grid)"]
+        },
+        "emit": true,
+        "property": "marginTop",
+        "selectors": undefined,
+        "value": 10
+      },
+      {
+        "conditional": {
+          "media": [
+            "(prefersColorScheme:dark)",
+            "print",
+            "(minWidth:640px)"
+          ],
+          "supports": ["(display:grid)"]
+        },
+        "emit": true,
+        "property": "height",
+        "selectors": undefined,
+        "value": 5
+      },
+      {
+        "conditional": {
+          "media": [
+            "(prefersColorScheme:dark)",
+            "print",
+            "(minWidth:640px)"
+          ],
+          "supports": ["(display:grid)"]
+        },
+        "emit": true,
+        "property": "width",
+        "selectors": undefined,
+        "value": 5
       }
     ]
 

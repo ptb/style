@@ -35,6 +35,17 @@ export function parseInput (params = defaultParams) {
       selectors,
       "value": input
     })
+  } else if (isConditional("supports", input)) {
+    return parseConditional(
+      {
+        conditional,
+        emit,
+        "property": params.property,
+        selectors,
+        "value": input
+      },
+      "supports"
+    )
   }
 
   return toPairs(input).map(function (style) {

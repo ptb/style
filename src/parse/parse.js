@@ -27,17 +27,31 @@ export function parse (params = defaultParams) {
     { "input": flattenInput(params) }
   ))
 
-  return parseInput(input).reduce(
-    /**
-      @param {Params[]} styles
+  return parseInput(input)
+    .reduce(
+      /**
+        @param {Params[]} styles
 
-      @param {Params} style
+        @param {Params} style
 
-      @returns {Params[]}
-     */
-    function (styles, style) {
-      return styles.concat(parseConditional(style))
-    },
-    []
-  )
+        @returns {Params[]}
+       */
+      function (styles, style) {
+        return styles.concat(parseConditional(style))
+      },
+      []
+    )
+    .reduce(
+      /**
+        @param {Params[]} styles
+
+        @param {Params} style
+
+        @returns {Params[]}
+       */
+      function (styles, style) {
+        return styles.concat(parseConditional(style, "supports"))
+      },
+      []
+    )
 }
