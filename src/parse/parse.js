@@ -4,6 +4,7 @@ import {
   merge,
   parseConditional,
   parseInput,
+  parsePlaceholder,
   parseSelectors,
   parseTypeSelector
 } from "../index.js"
@@ -79,6 +80,19 @@ export function parse (params = defaultParams) {
        */
       function (styles, style) {
         return styles.concat(parseTypeSelector(style))
+      },
+      []
+    )
+    .reduce(
+      /**
+        @param {Params[]} styles
+
+        @param {Params} style
+
+        @returns {Params[]}
+       */
+      function (styles, style) {
+        return styles.concat(parsePlaceholder(style))
       },
       []
     )
