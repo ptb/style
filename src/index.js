@@ -77,6 +77,7 @@ export { getSupportsString } from "./build/get-supports-string.js"
 
 export { canUseDom } from "./client/can-use-dom.js"
 export { getStyleElement } from "./client/get-style-element.js"
+export { update } from "./client/update.js"
 export { updateStyles } from "./client/update-styles.js"
 
 export { flattenInput } from "./flatten/flatten-input.js"

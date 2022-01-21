@@ -38,6 +38,30 @@ export function canUseDom(): boolean;
 export function getStyleElement(media?: string): HTMLStyleElement;
 
 /**
+  Update styles if running in a browser environment and remove
+  the temporary self-selector group from the store singleton.
+
+  @param {Params} params
+  - This project's common exchange CSS style object.
+
+  @param {string} group
+  - Unique grouping ID string.
+
+  @returns {Params}
+  This project's common exchange CSS style object.
+ */
+
+export function update(
+  params: Params | undefined,
+  group: string
+): Params;
+
+/**
+  Update styles if running in a browser environment and remove
+  the temporary self-selector group from the store singleton.
+ */
+
+/**
   Set the variable `property` in the store.
 
   @param {Params} params

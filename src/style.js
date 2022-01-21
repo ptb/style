@@ -25,5 +25,6 @@ export {
   sortJSON,
   store,
   toPairs,
-  uniq
+  uniq,
+  update
 } from "./index.js"
