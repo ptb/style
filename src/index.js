@@ -67,6 +67,7 @@
  */
 
 export { flattenInput } from "./flatten/flatten-input.js"
+export { getShorthand } from "./flatten/get-shorthand.js"
 export { getShorthands } from "./flatten/get-shorthands.js"
 export { getVariables } from "./flatten/get-variables.js"
 export { isShorthand } from "./flatten/is-shorthand.js"
