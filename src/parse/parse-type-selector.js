@@ -17,11 +17,14 @@ import {
   @param {Params} params
   - This project's common exchange CSS style object.
 
+  @param {string} [group]
+  - Unique grouping ID string.
+
   @returns {Params[]}
     An array of this project's common exchange CSS style objects.
  */
 
-export function parseTypeSelector (params = defaultParams) {
+export function parseTypeSelector (params = defaultParams, group) {
   const property = /** @type {string} */ (params.property)
   const value = params.value
 
@@ -31,13 +34,17 @@ export function parseTypeSelector (params = defaultParams) {
     const media = get(params, "conditional.media")
 
     return /** @type {Params[]} */ (merge(
-      parse({ "conditional": { media }, emit, input }),
-      parse({
-        "conditional": { media },
-        emit,
-        input,
-        "selectors": [[property]]
-      })
+      parse({ "conditional": { media }, emit, input }, group, false),
+      parse(
+        {
+          "conditional": { media },
+          emit,
+          input,
+          "selectors": [[property]]
+        },
+        group,
+        false
+      )
     ))
   }
 

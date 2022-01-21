@@ -22,11 +22,14 @@ import {
   @param {Params} params
   - This project's common exchange CSS style object.
 
+  @param {string} [group]
+  - Unique grouping ID string.
+
   @returns {Params[]}
     An array of this project's common exchange CSS style objects.
  */
 
-export function parseSelectors (params = defaultParams) {
+export function parseSelectors (params = defaultParams, group = "") {
   const property = /** @type {string} */ (params.property)
   const input = params.value
 
@@ -86,12 +89,24 @@ export function parseSelectors (params = defaultParams) {
 
     if (noAncestors) {
       return /** @type {Params[]} */ (merge(
-        parse({ "conditional": { media }, "emit": false, input }),
-        parse({ "conditional": { media }, emit, input, selectors })
+        parse(
+          { "conditional": { media }, "emit": false, input },
+          group,
+          false
+        ),
+        parse(
+          { "conditional": { media }, emit, input, selectors },
+          group,
+          false
+        )
       ))
     }
 
-    return parse({ "conditional": { media }, emit, input, selectors })
+    return parse(
+      { "conditional": { media }, emit, input, selectors },
+      group,
+      false
+    )
   }
 
   return [params]

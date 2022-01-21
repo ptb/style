@@ -92,6 +92,7 @@ export { modifyNumbers } from "./modify/modify-numbers.js"
 export { parseFallbacks } from "./modify/parse-fallbacks.js"
 export { parseFontFace } from "./modify/parse-font-face.js"
 export { parseKeyframes } from "./modify/parse-keyframes.js"
+export { parseSelfSelector } from "./modify/parse-self-selector.js"
 
 export { getAncestors } from "./parse/get-ancestors.js"
 export { getConditionals } from "./parse/get-conditionals.js"

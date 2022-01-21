@@ -17,24 +17,31 @@ import {
   @param {Params} params
   - This project's common exchange CSS style object.
 
+  @param {string} [group]
+  - Unique grouping ID string.
+
   @returns {Params[]}
     An array of this project's common exchange CSS style objects.
  */
 
-export function parseInput (params = defaultParams) {
+export function parseInput (params = defaultParams, group = "") {
   const conditional = get(params, "conditional", {})
   const emit = isUndef(params.emit) ? true : params.emit
   const input = mergeArrOfObj(params.input)
   const selectors = params.selectors
 
   if (isConditional("media", input)) {
-    return parseConditional({
-      conditional,
-      emit,
-      "property": params.property,
-      selectors,
-      "value": input
-    })
+    return parseConditional(
+      {
+        conditional,
+        emit,
+        "property": params.property,
+        selectors,
+        "value": input
+      },
+      "media",
+      group
+    )
   } else if (isConditional("supports", input)) {
     return parseConditional(
       {
@@ -44,7 +51,8 @@ export function parseInput (params = defaultParams) {
         selectors,
         "value": input
       },
-      "supports"
+      "supports",
+      group
     )
   }
 

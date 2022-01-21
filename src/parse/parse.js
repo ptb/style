@@ -15,6 +15,7 @@ import {
   parseKeyframes,
   parsePlaceholder,
   parseSelectors,
+  parseSelfSelector,
   parseTypeSelector
 } from "../index.js"
 
@@ -28,18 +29,24 @@ import {
   @param {PlainObject} params
   - This project's common exchange CSS style object.
 
+  @param {string} [group]
+  - Unique grouping ID string.
+
+  @param {boolean} [prime]
+  - True: Primary loop. False: Recursive loop.
+
   @returns {Params[]}
     An array of this project's common exchange CSS style objects.
  */
 
-export function parse (params = defaultParams) {
+export function parse (params = defaultParams, group = "", prime) {
   const input = /** @type {Params} */ (merge(
     params,
     { "input": undefined },
     { "input": flattenInput(params) }
   ))
 
-  return parseInput(input)
+  return parseInput(input, group)
     .reduce(
       /**
         @param {Params[]} styles
@@ -49,7 +56,7 @@ export function parse (params = defaultParams) {
         @returns {Params[]}
        */
       function (styles, style) {
-        return styles.concat(parseConditional(style))
+        return styles.concat(parseConditional(style, "media", group))
       },
       []
     )
@@ -62,7 +69,9 @@ export function parse (params = defaultParams) {
         @returns {Params[]}
        */
       function (styles, style) {
-        return styles.concat(parseConditional(style, "supports"))
+        return styles.concat(
+          parseConditional(style, "supports", group)
+        )
       },
       []
     )
@@ -75,7 +84,7 @@ export function parse (params = defaultParams) {
         @returns {Params[]}
        */
       function (styles, style) {
-        return styles.concat(parseSelectors(style))
+        return styles.concat(parseSelectors(style, group))
       },
       []
     )
@@ -88,7 +97,7 @@ export function parse (params = defaultParams) {
         @returns {Params[]}
        */
       function (styles, style) {
-        return styles.concat(parseTypeSelector(style))
+        return styles.concat(parseTypeSelector(style, group))
       },
       []
     )
@@ -154,6 +163,19 @@ export function parse (params = defaultParams) {
        */
       function (styles, style) {
         return styles.concat(parseFallbacks(style))
+      },
+      []
+    )
+    .reduce(
+      /**
+        @param {Params[]} styles
+
+        @param {Params} style
+
+        @returns {Params[]}
+       */
+      function (styles, style) {
+        return styles.concat(parseSelfSelector(style, group, prime))
       },
       []
     )

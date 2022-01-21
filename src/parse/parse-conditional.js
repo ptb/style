@@ -73,13 +73,17 @@ function getObject (input, rule, feature) {
   @param {"media" | "supports"} rule
   - Conditional group rule string.
 
+  @param {string} [group]
+  - Unique grouping ID string.
+
   @returns {Params[]}
     An array of this project's common exchange CSS style objects.
  */
 
 export function parseConditional (
   params = defaultParams,
-  rule = "media"
+  rule = "media",
+  group = ""
 ) {
   const property = /** @type {string} */ (params.property)
   const value = /** @type {PlainObject} */ (params.value)
@@ -108,26 +112,28 @@ export function parseConditional (
           input = isStr(property) ? { [property]: val } : val
         }
 
-        return parse({
-          conditional,
-          emit,
-          input,
-          property,
-          selectors
-        })
+        return parse(
+          { conditional, emit, input, property, selectors },
+          group,
+          false
+        )
       })
       .reduce(function (styles, style) {
         return styles.concat(style)
       }, [])
   } else if (isConditional(rule, value, property)) {
-    return parse({
-      "conditional": getObject(
-        get(params, "conditional", { [rule]: [] }),
-        rule,
-        getString(property)
-      ),
-      "input": value
-    })
+    return parse(
+      {
+        "conditional": getObject(
+          get(params, "conditional", { [rule]: [] }),
+          rule,
+          getString(property)
+        ),
+        "input": value
+      },
+      group,
+      false
+    )
   }
 
   return [params]

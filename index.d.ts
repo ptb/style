@@ -56,11 +56,21 @@ export function sortJSON(input: any): any;
   @param {PlainObject} params
   - This project's common exchange CSS style object.
 
+  @param {string} [group]
+  - Unique grouping ID string.
+
+  @param {boolean} [prime]
+  - True: Primary loop. False: Recursive loop.
+
   @returns {Params[]}
   An array of this project's common exchange CSS style objects.
  */
 
-export function parse(params?: PlainObject): Params[];
+export function parse(
+  params?: PlainObject,
+  group?: string | undefined,
+  prime?: boolean | undefined
+): Params[];
 
 /**
   Process raw styles into this project's common exchange CSS style objects.
