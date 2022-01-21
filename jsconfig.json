@@ -31,6 +31,7 @@
     "removeComments": false,
     "resolveJsonModule": true,
     "rootDirs": [
+      "demo",
       "src"
     ],
     "strict": true,
@@ -39,6 +40,7 @@
   },
   "include": [
     "**/index.d.ts",
+    "demo/**/*.js",
     "rollup.config.js",
     "src/**/*.js",
     "wallaby.mjs"

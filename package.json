@@ -35,6 +35,7 @@
     "@rollup/plugin-strip": "2.1.0",
     "@rollup/plugin-typescript": "8.3.0",
     "@size-limit/file": "7.0.5",
+    "@types/react": "17.0.38",
     "@typescript-eslint/eslint-plugin": "5.10.0",
     "@typescript-eslint/parser": "5.10.0",
     "ava": "4.0.1",
@@ -64,6 +65,7 @@
   },
   "eslintIgnore": [
     "style.*",
+    "!demo/**/*.js",
     "!src/**/*.js"
   ],
   "files": [
@@ -105,6 +107,7 @@
     "ext": "js json ts",
     "verbose": true,
     "watch": [
+      "demo",
       "package.json",
       "src"
     ]
@@ -148,7 +151,7 @@
     "prepare": "rollup -c && size-limit",
     "strip": "sed -i'' -E -e 's/export type Params = Params;//' -e 's/export type PlainObject = PlainObject;//' -e 's/export type StylesObject = StylesObject;//' -e 's/`@media \\$\\{string}`/\"@media ${string}\"/' -e 's/`\\$\\{number}%`/\"${number}%\"/' -e 's/\\\\t/  /g' -e 's/ \\\\* /  /' -e 's/ *[@]typedef [{]import.*//' -e 's/\\\\/[*][*]/\\\\n\\\\n\\\\/**/' -e 's/[*]\\\\//*\\\\/\\\\n/' -e 's/export/\\\\nexport/' -e 's/export \\{};//' index.d.ts && sed -i'' -E -e '/^$/N;/^\\\\n$/D' index.d.ts && prettier-eslint --parser \"typescript\" --semi --write index.d.ts && sed -i'' -E -e 's/      \\\\/[*][*]/  \\\\/**/' -e 's/\\\"@media \\$\\{string}\\\"/`@media ${string}`/' -e 's/\\\"\\$\\{number}%\\\"/`${number}%`/' index.d.ts || true",
     "test": "c8 ava",
-    "tidy": "prettier-eslint --write \"src/**/*.js\"",
+    "tidy": "prettier-eslint --write \"demo/**/*.js\" \"src/**/*.js\"",
     "watch": "nodemon"
   },
   "sideEffects": false,
@@ -168,5 +171,5 @@
   ],
   "type": "module",
   "types": "index.d.ts",
-  "version": "0.8.3"
+  "version": "0.9.0"
 }
