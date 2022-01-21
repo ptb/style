@@ -88,6 +88,7 @@ export { sortJSON } from "./merge/sort-json.js"
 
 export { getConditionals } from "./parse/get-conditionals.js"
 export { isConditional } from "./parse/is-conditional.js"
+export { isSelector } from "./parse/is-selector.js"
 export { parse } from "./parse/parse.js"
 export { parseConditional } from "./parse/parse-conditional.js"
 export { parseInput } from "./parse/parse-input.js"
