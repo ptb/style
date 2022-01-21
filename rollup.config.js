@@ -4,6 +4,9 @@ import { execSync } from "child_process"
 
 import strip from "@rollup/plugin-strip"
 import typescript from "@rollup/plugin-typescript"
+
+// @ts-ignore
+import execute from "rollup-plugin-execute"
 import { terser } from "rollup-plugin-terser"
 
 import pkg from "./package.json"
@@ -77,6 +80,23 @@ export default [
           "comments": /^!/u
         }
       })
+    ]
+  },
+  {
+    "external": ["fs"],
+    "input": "src/merge/merge-json.js",
+    "output": {
+      "banner": function () {
+        return ["#!/usr/bin/env node", banner].join("\n")
+      },
+      "file": "merge-json.cjs",
+      "format": "cjs"
+    },
+    "plugins": [
+      typescript({
+        "tsconfig": "jsconfig.json"
+      }),
+      execute("chmod +x merge-json.cjs")
     ]
   }
 ]

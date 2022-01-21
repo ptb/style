@@ -526,10 +526,13 @@ __metadata:
     prettier-eslint: 13.0.0
     prettier-eslint-cli: 5.0.1
     rollup: 2.65.0
+    rollup-plugin-execute: 1.1.1
     rollup-plugin-terser: 7.0.2
     size-limit: 7.0.5
     tslib: 2.3.1
     typescript: 4.5.5
+  bin:
+    merge-json: ./merge-json.cjs
   languageName: unknown
   linkType: soft
 
@@ -5532,6 +5535,13 @@ __metadata:
   bin:
     rimraf: bin.js
   checksum: 87f4164e396f0171b0a3386cc1877a817f572148ee13a7e113b238e48e8a9f2f31d009a92ec38a591ff1567d9662c6b67fd8818a2dbbaed74bc26a87a2a4a9a0
+  languageName: node
+  linkType: hard
+
+"rollup-plugin-execute@npm:1.1.1":
+  version: 1.1.1
+  resolution: "rollup-plugin-execute@npm:1.1.1"
+  checksum: c31e8e7eb9d9321d6ccc87278128a0e7603a4552550a9e7509cc08e3109e98fe2750c9e6266e14cc922c0e17c42bbddb34bf2611f39087449215a1fa694a6878
   languageName: node
   linkType: hard
 
