@@ -212,6 +212,24 @@ export function kebabCase(value?: string | undefined): string;
 
 export function murmurHash(string?: string, seed?: number): string;
 
+/**
+  Generate URL-friendly unique ID. This method uses the non-secure
+  predictable random generator with bigger collision probability.
+
+  @returns {string}
+  A random 21 character string.
+
+  @author <a href="mailto:andrey@sitnik.ru">Andrey Sitnik</a>
+
+  @see https://github.com/ai/nanoid/blob/main/non-secure/index.js
+
+  @copyright 2017 Andrey Sitnik
+
+  @license MIT
+ */
+
+export function nanoid(): string;
+
 export type AnyFunction = (arg0: any[]) => any;
 
 export type PlainObject = Record<string | number | symbol, any>;

@@ -13,5 +13,6 @@ export {
   isSym,
   isUndef,
   kebabCase,
-  murmurHash
+  murmurHash,
+  nanoid
 } from "./index.js"
