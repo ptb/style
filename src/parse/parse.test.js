@@ -77,6 +77,11 @@ ava("given an object with valid property and value (2)", (t) => {
 
   const expect = [
     {
+      "block": [
+        { "display": "inline-block" },
+        { "display": "inline-flex" },
+        { "display": "grid" }
+      ],
       "conditional": {},
       "emit": true,
       "property": "display",

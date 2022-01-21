@@ -89,6 +89,7 @@ export { sortJSON } from "./merge/sort-json.js"
 export { getPrefixes } from "./modify/get-prefixes.js"
 export { isFontFace } from "./modify/is-font-face.js"
 export { modifyNumbers } from "./modify/modify-numbers.js"
+export { parseFallbacks } from "./modify/parse-fallbacks.js"
 export { parseFontFace } from "./modify/parse-font-face.js"
 export { parseKeyframes } from "./modify/parse-keyframes.js"
 

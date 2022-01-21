@@ -9,6 +9,7 @@ import {
   merge,
   modifyNumbers,
   parseConditional,
+  parseFallbacks,
   parseFontFace,
   parseInput,
   parseKeyframes,
@@ -140,6 +141,19 @@ export function parse (params = defaultParams) {
        */
       function (styles, style) {
         return styles.concat(parseFontFace(style))
+      },
+      []
+    )
+    .reduce(
+      /**
+        @param {Params[]} styles
+
+        @param {Params} style
+
+        @returns {Params[]}
+       */
+      function (styles, style) {
+        return styles.concat(parseFallbacks(style))
       },
       []
     )
