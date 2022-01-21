@@ -34,6 +34,8 @@ export function merge(... args: any[]): PlainObject | any[];
 
 export function sortJSON(input: any): any;
 
+export const store: Map<any, any>
+
 /**
   Checks if `value` is classified as an `Array` object.
 

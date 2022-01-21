@@ -17,6 +17,7 @@ export {
   murmurHash,
   nanoid,
   sortJSON,
+  store,
   toPairs,
   uniq
 } from "./index.js"

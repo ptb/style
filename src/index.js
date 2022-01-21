@@ -81,6 +81,7 @@ export { sortJSON } from "./merge/sort-json.js"
 
 export { defaultParams } from "./shared/default-params.js"
 export { getMedia } from "./shared/get-media.js"
+export { store } from "./shared/store.js"
 
 export { getType } from "./typeof/get-type.js"
 export { isArr } from "./typeof/is-arr.js"
