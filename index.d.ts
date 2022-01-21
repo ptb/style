@@ -70,6 +70,18 @@ export function isNum(value: any): value is number;
 
 export function isObj(value: any): value is PlainObject;
 
+/**
+  Checks if `value` is classified as a `String` primitive or object.
+
+  @param {any} value
+  - The value to check.
+
+  @returns {value is string}
+  Returns `true` if `value` is a string, else `false`.
+ */
+
+export function isStr(value: any): value is string;
+
 export type AnyFunction = (arg0: any[]) => any;
 
 export type PlainObject = Record<string | number | symbol, any>;
