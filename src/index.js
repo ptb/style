@@ -18,3 +18,4 @@ export { isUndef } from "./typeof/is-undef.js"
 
 export { camelCase } from "./utils/camel-case.js"
 export { debounce } from "./utils/debounce.js"
+export { get } from "./utils/get.js"

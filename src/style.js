@@ -1,6 +1,7 @@
 export {
   camelCase,
   debounce,
+  get,
   isArr,
   isBool,
   isFn,
