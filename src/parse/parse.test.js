@@ -106,3 +106,39 @@ ava("given an object with valid property and value (2)", (t) => {
 
   t.deepEqual(actual, expect)
 })
+
+ava("given an object with valid property and value (3)", (t) => {
+  const actual = parse({
+    "input": {
+      "_": { "$red": "#f00", "bg": "$red" },
+      "Md": { "$red": "rgba(255, 0, 0, 0.8)", "bg": "$red" },
+      "Sm": { "$red": "rgb(255, 0, 0)", "bg": "$red" }
+    }
+  })
+
+  const expect = [
+    {
+      "conditional": { "media": [] },
+      "emit": true,
+      "property": "backgroundColor",
+      "selectors": undefined,
+      "value": "#f00"
+    },
+    {
+      "conditional": { "media": ["(minWidth:768px)"] },
+      "emit": true,
+      "property": "backgroundColor",
+      "selectors": undefined,
+      "value": "rgba(255, 0, 0, 0.8)"
+    },
+    {
+      "conditional": { "media": ["(maxWidth:767.98px)"] },
+      "emit": true,
+      "property": "backgroundColor",
+      "selectors": undefined,
+      "value": "rgb(255, 0, 0)"
+    }
+  ]
+
+  t.deepEqual(actual, expect)
+})

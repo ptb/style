@@ -3,7 +3,8 @@ import {
   flattenInput,
   merge,
   parseConditional,
-  parseInput
+  parseInput,
+  parseSelectors
 } from "../index.js"
 
 /**
@@ -51,6 +52,19 @@ export function parse (params = defaultParams) {
        */
       function (styles, style) {
         return styles.concat(parseConditional(style, "supports"))
+      },
+      []
+    )
+    .reduce(
+      /**
+        @param {Params[]} styles
+
+        @param {Params} style
+
+        @returns {Params[]}
+       */
+      function (styles, style) {
+        return styles.concat(parseSelectors(style))
       },
       []
     )
