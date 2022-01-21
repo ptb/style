@@ -66,6 +66,8 @@
   that can be processed by this library to create valid CSS declarations.
  */
 
+export { getSupportsString } from "./build/get-supports-string.js"
+
 export { flattenInput } from "./flatten/flatten-input.js"
 export { getShorthand } from "./flatten/get-shorthand.js"
 export { getShorthands } from "./flatten/get-shorthands.js"
