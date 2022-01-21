@@ -39,6 +39,7 @@
   },
   "include": [
     "index.d.ts",
-    "src/**/*.js"
+    "src/**/*.js",
+    "wallaby.mjs"
   ]
 }
