@@ -1,1 +1,1 @@
-export { isArr, isBool, isFn, isNull, isNum } from "./index.js"
+export { isArr, isBool, isFn, isNull, isNum, isObj } from "./index.js"

@@ -58,4 +58,18 @@ export function isNull(value: any): value is null;
 
 export function isNum(value: any): value is number;
 
+/**
+  Checks if `value` is the language type of `Object`.
+
+  @param {any} value
+  - The value to check.
+
+  @returns {value is PlainObject}
+  Returns `true` if `value` is an object, else `false`.
+ */
+
+export function isObj(value: any): value is PlainObject;
+
 export type AnyFunction = (arg0: any[]) => any;
+
+export type PlainObject = Record<string | number | symbol, any>;
