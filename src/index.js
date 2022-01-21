@@ -97,6 +97,7 @@ export { parseInput } from "./parse/parse-input.js"
 
 export { defaultParams } from "./shared/default-params.js"
 export { getMedia } from "./shared/get-media.js"
+export { getPropertyId } from "./shared/get-property-id.js"
 export { store } from "./shared/store.js"
 
 export { getType } from "./typeof/get-type.js"
