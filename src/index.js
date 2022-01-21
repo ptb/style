@@ -66,6 +66,7 @@
   that can be processed by this library to create valid CSS declarations.
  */
 
+export { getBlockString } from "./build/get-block-string.js"
 export { getSupportsString } from "./build/get-supports-string.js"
 
 export { flattenInput } from "./flatten/flatten-input.js"
