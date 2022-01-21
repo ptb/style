@@ -118,6 +118,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "renovate": {
+    "automerge": true,
+    "extends": [
+      "config:base"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ptb/style"
@@ -149,5 +155,5 @@
   ],
   "type": "module",
   "types": "index.d.ts",
-  "version": "0.0.12"
+  "version": "0.0.13"
 }
