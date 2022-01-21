@@ -50,6 +50,26 @@ export function merge(... args: any[]): PlainObject | any[];
 
 export function sortJSON(input: any): any;
 
+/**
+  Process raw styles into this project's common exchange CSS style objects.
+
+  @param {PlainObject} params
+  - This project's common exchange CSS style object.
+
+  @returns {Params[]}
+  An array of this project's common exchange CSS style objects.
+ */
+
+export function parse(params?: PlainObject): Params[];
+
+/**
+  Process raw styles into this project's common exchange CSS style objects.
+ */
+
+/**
+  Process raw styles into this project's common exchange CSS style objects.
+ */
+
 export const store: Map<any, any>
 
 /**
