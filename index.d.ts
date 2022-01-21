@@ -34,4 +34,16 @@ export function isBool(value: any): value is boolean;
 
 export function isFn(value: any): value is AnyFunction;
 
+/**
+  Checks if `value` is `null`.
+
+  @param {any} value
+  - The value to check.
+
+  @returns {value is null}
+  Returns `true` if `value` is `null`, else `false`.
+ */
+
+export function isNull(value: any): value is null;
+
 export type AnyFunction = (arg0: any[]) => any;
