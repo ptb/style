@@ -38,7 +38,7 @@
     "target": "es2015"
   },
   "include": [
-    "index.d.ts",
+    "**/index.d.ts",
     "rollup.config.js",
     "src/**/*.js",
     "wallaby.mjs"

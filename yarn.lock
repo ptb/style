@@ -513,6 +513,7 @@ __metadata:
     "@typescript-eslint/parser": 5.10.0
     ava: 4.0.1
     c8: 7.11.0
+    csstype: 3.0.10
     dts-bundle-generator: 6.4.0
     eslint: 7.32.0
     eslint-plugin-compat: 4.0.1
@@ -2021,6 +2022,13 @@ __metadata:
   version: 2.0.0
   resolution: "crypto-random-string@npm:2.0.0"
   checksum: 0283879f55e7c16fdceacc181f87a0a65c53bc16ffe1d58b9d19a6277adcd71900d02bb2c4843dd55e78c51e30e89b0fec618a7f170ebcc95b33182c28f05fd6
+  languageName: node
+  linkType: hard
+
+"csstype@npm:3.0.10":
+  version: 3.0.10
+  resolution: "csstype@npm:3.0.10"
+  checksum: 20a8fa324f2b33ddf94aa7507d1b6ab3daa6f3cc308888dc50126585d7952f2471de69b2dbe0635d1fdc31223fef8e070842691877e725caf456e2378685a631
   languageName: node
   linkType: hard
 
