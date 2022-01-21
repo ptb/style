@@ -6,7 +6,9 @@
 
 export { assignProp } from "./merge/assign-prop.js"
 export { canMerge } from "./merge/can-merge.js"
+export { cloneObj } from "./merge/clone-obj.js"
 export { emptyObj } from "./merge/empty-obj.js"
+export { merge } from "./merge/merge.js"
 export { mergeArr } from "./merge/merge-arr.js"
 
 export { getType } from "./typeof/get-type.js"
