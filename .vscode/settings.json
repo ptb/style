@@ -1,0 +1,19 @@
+{
+  "[javascript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": false,
+  "editor.tabSize": 2,
+  "eslint.packageManager": "yarn",
+  "eslint.runtime": "node",
+  "files.insertFinalNewline": true,
+  "prettier.requireConfig": true,
+  "prettier.useEditorConfig": true,
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}
