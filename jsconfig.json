@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json.schemastore.org/jsconfig",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "checkJs": true,
+    "declaration": true,
+    "declarationDir": "types",
+    "emitDeclarationOnly": true,
+    "forceConsistentCasingInFileNames": true,
+    "importsNotUsedAsValues": "error",
+    "isolatedModules": false,
+    "jsx": "react-jsx",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es2015"
+    ],
+    "maxNodeModuleJsDepth": 0,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "newLine": "lf",
+    "noEmit": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "out",
+    "removeComments": false,
+    "resolveJsonModule": true,
+    "rootDirs": [
+      "src"
+    ],
+    "strict": true,
+    "stripInternal": true,
+    "target": "es2015"
+  },
+  "include": [
+    "index.d.ts",
+    "src/**/*.js"
+  ]
+}
