@@ -67,6 +67,7 @@
  */
 
 export { flattenInput } from "./flatten/flatten-input.js"
+export { getShorthands } from "./flatten/get-shorthands.js"
 export { getVariables } from "./flatten/get-variables.js"
 export { isVariable } from "./flatten/is-variable.js"
 export { replaceVariables } from "./flatten/replace-variables.js"
