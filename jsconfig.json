@@ -39,6 +39,7 @@
   },
   "include": [
     "index.d.ts",
+    "rollup.config.js",
     "src/**/*.js",
     "wallaby.mjs"
   ]
