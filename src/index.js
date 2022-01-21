@@ -71,6 +71,7 @@ export { getBlockString } from "./build/get-block-string.js"
 export { getSupportsString } from "./build/get-supports-string.js"
 
 export { canUseDom } from "./client/can-use-dom.js"
+export { getStyleElement } from "./client/get-style-element.js"
 
 export { flattenInput } from "./flatten/flatten-input.js"
 export { getShorthand } from "./flatten/get-shorthand.js"

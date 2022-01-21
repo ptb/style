@@ -4,6 +4,7 @@ export {
   canUseDom,
   debounce,
   get,
+  getStyleElement,
   isArr,
   isBool,
   isFn,

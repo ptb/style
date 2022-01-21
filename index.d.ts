@@ -23,6 +23,8 @@ export function cache(params: Params): Params;
 
 export function canUseDom(): boolean;
 
+export function getStyleElement(media?: string): HTMLStyleElement;
+
 /**
   Set the variable `property` in the store.
 
