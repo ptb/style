@@ -72,6 +72,7 @@ export { getClassName } from "./build/get-class-name.js"
 export { getRules } from "./build/get-rules.js"
 export { getSelectorsString } from "./build/get-selectors-string.js"
 export { getStyle } from "./build/get-style.js"
+export { getStyles } from "./build/get-styles.js"
 export { getSupportsString } from "./build/get-supports-string.js"
 
 export { canUseDom } from "./client/can-use-dom.js"

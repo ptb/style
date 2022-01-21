@@ -5,6 +5,7 @@ export {
   debounce,
   get,
   getStyleElement,
+  getStyles,
   isArr,
   isBool,
   isFn,

@@ -15,6 +15,18 @@ export function cache(params: Params): Params;
  */
 
 /**
+  Return combined cached CSS rulesets as a string.
+
+  @param {string} [mq]
+  - Media query string.
+
+  @returns {string}
+  Combined cached CSS rulesets as a string.
+ */
+
+export function getStyles(mq?: string | undefined): string;
+
+/**
   Tests if executing in a browser environment.
 
   @returns {boolean}
