@@ -82,6 +82,18 @@ export function isObj(value: any): value is PlainObject;
 
 export function isStr(value: any): value is string;
 
+/**
+  Checks if `value` is classified as a `Symbol` primitive or object.
+
+  @param {any} value
+  - The value to check.
+
+  @returns {value is symbol}
+  Returns `true` if `value` is a symbol, else `false`.
+ */
+
+export function isSym(value: any): value is symbol;
+
 export type AnyFunction = (arg0: any[]) => any;
 
 export type PlainObject = Record<string | number | symbol, any>;

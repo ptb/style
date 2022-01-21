@@ -5,5 +5,6 @@ export {
   isNull,
   isNum,
   isObj,
-  isStr
+  isStr,
+  isSym
 } from "./index.js"
