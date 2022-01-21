@@ -35,6 +35,18 @@ export function isBool(value: any): value is boolean;
 export function isFn(value: any): value is AnyFunction;
 
 /**
+  Checks if `value` is a valid JSON object.
+
+  @param {any} value
+  - The value to check.
+
+  @returns {boolean}
+  Returns `true` if `value` is a valid JSON object, else `false`.
+ */
+
+export function isJSON(value: any): boolean;
+
+/**
   Checks if `value` is `null`.
 
   @param {any} value

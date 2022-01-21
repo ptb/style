@@ -2,6 +2,7 @@ export {
   isArr,
   isBool,
   isFn,
+  isJSON,
   isNull,
   isNum,
   isObj,
