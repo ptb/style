@@ -90,14 +90,14 @@ ava.serial(
         "emit": true,
         "property": "margin",
         "selectors": undefined,
-        "value": 20
+        "value": "20px"
       },
       {
         "conditional": { "media": ["(maxWidth:639.98px)"] },
         "emit": true,
         "property": "margin",
         "selectors": undefined,
-        "value": 10
+        "value": "10px"
       }
     ]
 
@@ -118,7 +118,7 @@ ava.serial(
         "emit": true,
         "property": "margin",
         "selectors": undefined,
-        "value": 20
+        "value": "20px"
       },
       {
         "conditional": {
@@ -130,7 +130,7 @@ ava.serial(
         "emit": true,
         "property": "margin",
         "selectors": undefined,
-        "value": 10
+        "value": "10px"
       }
     ]
 
@@ -154,7 +154,7 @@ ava.serial(
         "emit": true,
         "property": "margin",
         "selectors": undefined,
-        "value": 20
+        "value": "20px"
       },
       {
         "conditional": {
@@ -167,7 +167,7 @@ ava.serial(
         "emit": true,
         "property": "margin",
         "selectors": undefined,
-        "value": 10
+        "value": "10px"
       }
     ]
 
@@ -208,7 +208,7 @@ ava.serial(
         "emit": true,
         "property": "margin",
         "selectors": undefined,
-        "value": 20
+        "value": "20px"
       },
       {
         "conditional": {
@@ -221,7 +221,7 @@ ava.serial(
         "emit": true,
         "property": "margin",
         "selectors": undefined,
-        "value": 10
+        "value": "10px"
       },
       {
         "conditional": {
@@ -235,7 +235,7 @@ ava.serial(
         "emit": true,
         "property": "margin",
         "selectors": undefined,
-        "value": 5
+        "value": "5px"
       },
       {
         "conditional": {
@@ -361,14 +361,14 @@ ava.serial(
         "emit": true,
         "property": "margin",
         "selectors": undefined,
-        "value": 10
+        "value": "10px"
       },
       {
         "conditional": { "media": ["(prefersColorScheme:dark)"] },
         "emit": true,
         "property": "margin",
         "selectors": undefined,
-        "value": 20
+        "value": "20px"
       }
     ]
 
@@ -472,14 +472,14 @@ ava.serial(
         "emit": true,
         "property": "margin",
         "selectors": undefined,
-        "value": 20
+        "value": "20px"
       },
       {
         "conditional": { "supports": ["(display:grid)"] },
         "emit": true,
         "property": "margin",
         "selectors": undefined,
-        "value": 10
+        "value": "10px"
       }
     ]
 
@@ -506,7 +506,7 @@ ava.serial(
         "emit": true,
         "property": "margin",
         "selectors": undefined,
-        "value": 20
+        "value": "20px"
       },
       {
         "conditional": {
@@ -518,7 +518,7 @@ ava.serial(
         "emit": true,
         "property": "margin",
         "selectors": undefined,
-        "value": 10
+        "value": "10px"
       }
     ]
 
@@ -546,7 +546,7 @@ ava.serial(
         "emit": true,
         "property": "margin",
         "selectors": undefined,
-        "value": 20
+        "value": "20px"
       },
       {
         "conditional": {
@@ -559,7 +559,7 @@ ava.serial(
         "emit": true,
         "property": "margin",
         "selectors": undefined,
-        "value": 10
+        "value": "10px"
       }
     ]
 
@@ -597,7 +597,7 @@ ava.serial(
         "emit": true,
         "property": "marginBottom",
         "selectors": undefined,
-        "value": 20
+        "value": "20px"
       },
       {
         "conditional": {
@@ -610,7 +610,7 @@ ava.serial(
         "emit": true,
         "property": "marginBottom",
         "selectors": undefined,
-        "value": 10
+        "value": "10px"
       },
       {
         "conditional": {
@@ -620,7 +620,7 @@ ava.serial(
         "emit": true,
         "property": "marginTop",
         "selectors": undefined,
-        "value": 20
+        "value": "20px"
       },
       {
         "conditional": {
@@ -633,7 +633,7 @@ ava.serial(
         "emit": true,
         "property": "marginTop",
         "selectors": undefined,
-        "value": 10
+        "value": "10px"
       },
       {
         "conditional": {
@@ -647,7 +647,7 @@ ava.serial(
         "emit": true,
         "property": "height",
         "selectors": undefined,
-        "value": 5
+        "value": "5px"
       },
       {
         "conditional": {
@@ -661,7 +661,7 @@ ava.serial(
         "emit": true,
         "property": "width",
         "selectors": undefined,
-        "value": 5
+        "value": "5px"
       }
     ]
 

@@ -72,14 +72,14 @@ ava("given an object with valid property and value (2)", (t) => {
       "emit": true,
       "property": "marginBottom",
       "selectors": undefined,
-      "value": 10
+      "value": "10px"
     },
     {
       "conditional": {},
       "emit": true,
       "property": "marginTop",
       "selectors": undefined,
-      "value": 10
+      "value": "10px"
     },
     {
       "conditional": {},
@@ -93,14 +93,14 @@ ava("given an object with valid property and value (2)", (t) => {
       "emit": true,
       "property": "height",
       "selectors": undefined,
-      "value": 24
+      "value": "24px"
     },
     {
       "conditional": {},
       "emit": true,
       "property": "width",
       "selectors": undefined,
-      "value": 24
+      "value": "24px"
     }
   ]
 

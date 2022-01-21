@@ -2,6 +2,7 @@ import {
   defaultParams,
   flattenInput,
   merge,
+  modifyNumbers,
   parseConditional,
   parseInput,
   parsePlaceholder,
@@ -93,6 +94,19 @@ export function parse (params = defaultParams) {
        */
       function (styles, style) {
         return styles.concat(parsePlaceholder(style))
+      },
+      []
+    )
+    .reduce(
+      /**
+        @param {Params[]} styles
+
+        @param {Params} style
+
+        @returns {Params[]}
+       */
+      function (styles, style) {
+        return styles.concat(modifyNumbers(style))
       },
       []
     )
