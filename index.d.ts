@@ -230,6 +230,20 @@ export function murmurHash(string?: string, seed?: number): string;
 
 export function nanoid(): string;
 
+/**
+  Creates an array of own enumerable string keyed-value pairs for `object`.
+
+  @param {PlainObject} [value]
+  - The object to query.
+
+  @returns {[string, any][]}
+  Returns the key-value pairs.
+ */
+
+export function toPairs(
+  value?: PlainObject | undefined
+): [string, any][];
+
 export type AnyFunction = (arg0: any[]) => any;
 
 export type PlainObject = Record<string | number | symbol, any>;

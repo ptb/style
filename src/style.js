@@ -14,5 +14,6 @@ export {
   isUndef,
   kebabCase,
   murmurHash,
-  nanoid
+  nanoid,
+  toPairs
 } from "./index.js"
