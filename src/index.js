@@ -86,6 +86,8 @@ export { mergeArrOfObj } from "./merge/merge-arr-of-obj.js"
 export { mergeObj } from "./merge/merge-obj.js"
 export { sortJSON } from "./merge/sort-json.js"
 
+export { modifyNumbers } from "./modify/modify-numbers.js"
+
 export { getAncestors } from "./parse/get-ancestors.js"
 export { getConditionals } from "./parse/get-conditionals.js"
 export { getPlaceholders } from "./parse/get-placeholders.js"
