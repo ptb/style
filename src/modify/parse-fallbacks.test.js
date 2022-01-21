@@ -107,3 +107,25 @@ ava(
     t.deepEqual(actual, expect)
   }
 )
+
+ava("given an object with prefixed property", (t) => {
+  const actual = parseFallbacks({
+    "property": "userSelect",
+    "value": "none"
+  })
+
+  const expect = [
+    {
+      "block": [
+        { "-webkit-user-select": "none" },
+        { "-moz-user-select": "none" },
+        { "-ms-user-select": "none" },
+        { "user-select": "none" }
+      ],
+      "property": "userSelect",
+      "value": "none"
+    }
+  ]
+
+  t.deepEqual(actual, expect)
+})

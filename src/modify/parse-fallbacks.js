@@ -2,6 +2,7 @@ import {
   defaultParams,
   get,
   getMedia,
+  getPrefixes,
   isArr,
   isFontFace,
   isStr,
@@ -29,29 +30,52 @@ export function parseFallbacks (params = defaultParams) {
   const property = params.property
   let value = params.value
 
-  if (isStr(property) && !isFontFace(property) && isArr(value)) {
+  const prefixes = getPrefixes()
+  const hasPrefix =
+    isStr(property) && Object.keys(prefixes).indexOf(property) >= 0
+
+  if (
+    isStr(property) &&
+    !isFontFace(property) &&
+    (isArr(value) || hasPrefix)
+  ) {
     let block
 
-    value = value.map(function (fallback) {
-      return replaceVariables(fallback, media)
-    })
+    if (isArr(value)) {
+      value = value.map(function (fallback) {
+        return replaceVariables(fallback, media)
+      })
 
-    block = (/^background[IPRS]/u).test(property)
-      ? [
-        {
-          [kebabCase(property)]: value.join(",")
-        }
-      ]
-      : value.map(
-        /**
-          @param {string | number} fallback
-         */
-        function (fallback) {
-          return {
-            [kebabCase(property)]: fallback
+      block = (/^background[IPRS]/u).test(property)
+        ? [
+          {
+            [kebabCase(property)]: value.join(",")
           }
-        }
-      )
+        ]
+        : value.map(
+          /**
+            @param {string | number} fallback
+           */
+          function (fallback) {
+            return {
+              [kebabCase(property)]: fallback
+            }
+          }
+        )
+    }
+
+    if (hasPrefix) {
+      block = prefixes[property]
+        .map(
+          /**
+            @param {string} prefix
+           */
+          function (prefix) {
+            return { [kebabCase(prefix + property)]: value }
+          }
+        )
+        .concat({ [kebabCase(property)]: value })
+    }
 
     return [
       /** @type {Params} */ (merge(
