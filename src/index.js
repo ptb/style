@@ -66,6 +66,8 @@
   that can be processed by this library to create valid CSS declarations.
  */
 
+export { css } from "./api/css.js"
+
 export { cache } from "./build/cache.js"
 export { getBlockString } from "./build/get-block-string.js"
 export { getClassName } from "./build/get-class-name.js"
