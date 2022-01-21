@@ -86,6 +86,7 @@ export { mergeArrOfObj } from "./merge/merge-arr-of-obj.js"
 export { mergeObj } from "./merge/merge-obj.js"
 export { sortJSON } from "./merge/sort-json.js"
 
+export { isFontFace } from "./modify/is-font-face.js"
 export { modifyNumbers } from "./modify/modify-numbers.js"
 export { parseKeyframes } from "./modify/parse-keyframes.js"
 
