@@ -96,6 +96,14 @@ export default [
     ]
   },
   {
+    "input": "src/macro.cjs",
+    "output": {
+      "banner": banner,
+      "file": "macro.cjs",
+      "format": "cjs"
+    }
+  },
+  {
     "external": ["fs"],
     "input": "src/merge/merge-json.js",
     "output": {

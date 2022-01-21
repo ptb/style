@@ -38,6 +38,7 @@
     "@typescript-eslint/eslint-plugin": "5.10.0",
     "@typescript-eslint/parser": "5.10.0",
     "ava": "4.0.1",
+    "babel-plugin-macros": "3.1.0",
     "c8": "7.11.0",
     "csstype": "3.0.10",
     "dts-bundle-generator": "6.4.0",
@@ -68,6 +69,7 @@
   "files": [
     "index.d.ts",
     "index.js",
+    "macro.cjs",
     "merge-json.cjs",
     "style.cjs",
     "style.cjs.map",
@@ -75,6 +77,7 @@
     "style.js.map"
   ],
   "keywords": [
+    "babel-plugin-macros",
     "css",
     "css-in-js",
     "json",
@@ -140,7 +143,7 @@
   },
   "scripts": {
     "build": "tsc -p jsconfig.json && dts-bundle-generator --no-banner --out-file index.d.ts --project jsconfig.json src/style.js 2> /dev/null || true",
-    "clean": "rm -rf index.js merge-json.cjs style.js* style.cjs* types 2> /dev/null || true",
+    "clean": "rm -rf index.js macro.cjs merge-json.cjs style.js* style.cjs* types 2> /dev/null || true",
     "lint": "eslint --fix src",
     "prepare": "rollup -c && size-limit",
     "strip": "sed -i'' -E -e 's/export type Params = Params;//' -e 's/export type PlainObject = PlainObject;//' -e 's/export type StylesObject = StylesObject;//' -e 's/`@media \\$\\{string}`/\"@media ${string}\"/' -e 's/`\\$\\{number}%`/\"${number}%\"/' -e 's/\\\\t/  /g' -e 's/ \\\\* /  /' -e 's/ *[@]typedef [{]import.*//' -e 's/\\\\/[*][*]/\\\\n\\\\n\\\\/**/' -e 's/[*]\\\\//*\\\\/\\\\n/' -e 's/export/\\\\nexport/' -e 's/export \\{};//' index.d.ts && sed -i'' -E -e '/^$/N;/^\\\\n$/D' index.d.ts && prettier-eslint --parser \"typescript\" --semi --write index.d.ts && sed -i'' -E -e 's/      \\\\/[*][*]/  \\\\/**/' -e 's/\\\"@media \\$\\{string}\\\"/`@media ${string}`/' -e 's/\\\"\\$\\{number}%\\\"/`${number}%`/' index.d.ts || true",
@@ -165,5 +168,5 @@
   ],
   "type": "module",
   "types": "index.d.ts",
-  "version": "0.8.2"
+  "version": "0.8.3"
 }
