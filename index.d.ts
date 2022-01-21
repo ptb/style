@@ -94,6 +94,18 @@ export function isStr(value: any): value is string;
 
 export function isSym(value: any): value is symbol;
 
+/**
+  Checks if `value` is `undefined`.
+
+  @param {any} [value]
+  - The value to check.
+
+  @returns {value is undefined}
+  Returns `true` if `value` is `undefined`, else `false`.
+ */
+
+export function isUndef(value?: any): value is undefined;
+
 export type AnyFunction = (arg0: any[]) => any;
 
 export type PlainObject = Record<string | number | symbol, any>;
