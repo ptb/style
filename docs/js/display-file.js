@@ -7,7 +7,7 @@ import {
 } from "../../demo/js/react.js"
 import { css, debounce } from "../../src/style.js"
 
-export function File ({ lang = "js", styles = {}, ... props }) {
+export function DisplayFile ({ lang = "js", styles = {}, ... props }) {
   const ref = useRef(null)
 
   const onScroll = debounce(function onScroll () {

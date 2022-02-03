@@ -13,28 +13,55 @@ import {
 } from "../../src/index.js"
 import { css } from "../../src/style.js"
 import { style } from "./app.css.js"
-import { File } from "./file.js"
+import { DisplayFile } from "./display-file.js"
 import { Iframe } from "./iframe.js"
 
+/**
+  @typedef {import ("react")} React
+ */
+
+/**
+  `@ptb/style` documentation component.
+
+  @returns {React.ReactElement}
+    React component.
+ */
+
 export function App () {
+  /**
+    Table of Contents section header.
+
+    @param {object} props
+    - Component inputs.
+
+    @returns {React.ReactElement}
+      React component.
+   */
+
+  function Heading (props) {
+    return h("h3", props)
+  }
+
   return h("div", { "className": css(style.root) }, [
     h(
       Tabs,
       {
         "as": Fragment,
         "group": "toc",
-        "heading": ({ children }) => h("strong", {}, children),
+        "heading": Heading,
         "isDynamic": true,
         "orientation": "vertical",
         "styles": style,
         "tabs": {
-          "Introduction": ["Styling Made Easier"],
-          // eslint-disable-next-line sort-keys
           "Basics": [
             "Styles Are JS Objects",
             "Deep Merge Objects",
             "Atomic Classes",
-            "Grouped Classes"
+            h(Fragment, {}, [
+              "Grouped Classes (",
+              h("code", {}, "&"),
+              ")"
+            ])
           ],
           "Shorthand Keys": [
             h(Fragment, {}, [
@@ -42,15 +69,29 @@ export function App () {
               h("code", {}, "$"),
               ")"
             ]),
-            "CSS Properties",
-            "Media Queries",
+            h(Fragment, {}, [
+              "CSS ",
+              h("code", {}, "$properties")
+            ]),
+            h(Fragment, {}, [
+              h("code", {}, "@media"),
+              " Queries"
+            ]),
             h(Fragment, {}, [h("code", {}, "@font-face"), " Rules"]),
             h(Fragment, {}, [h("code", {}, "@keyframes"), " Rules"]),
-            "Vendor Prefixes"
+            h(Fragment, {}, [
+              "Vendor ",
+              h("code", {}, "$prefixes")
+            ])
           ],
+          /* eslint-disable-next-line sort-keys */
           "Selectors": [
             "Complex Selectors",
-            "Nesting Selector",
+            h(Fragment, {}, [
+              "Nesting Selector (",
+              h("code", {}, "&"),
+              ")"
+            ]),
             h(Fragment, {}, [
               "Placeholder Classes (",
               h("code", {}, "%"),
@@ -61,29 +102,17 @@ export function App () {
             "Smart Integers",
             "Fallback Array Values"
           ],
+          /* eslint-disable-next-line sort-keys */
           "Setup Not Required": [
             "Zero-Runtime Option",
             "…with Create React App",
-            "…with Next.js",
-            "…with Gatsby",
-            "…with Remix"
+            "…with Next.js"
           ],
+          /* eslint-disable-next-line sort-keys */
           "Made With ❤️ in NH": []
         }
       },
       [
-        h(Tabpanel, {}, [
-          h("h2", {}, "Styling Made Easier"),
-          h(
-            "p",
-            {},
-            "Runtime CSS-in-JS or zero-runtime, or both. Eliminate complexity. Maintainable. Theme: why not both? Designed to handle any real world situation."
-          ),
-          h("h2", {}, "Optimized Output"),
-          h("p", {}, [
-            "Styles are minimized by default. Styles are ordered consistently by CSS property, which is why class names start with a sortable two character prefix that corresponds with a specific CSS property. Auditing the final output is easy because you'll find all of the same properties grouped together. Finding colors that are not part of your theme becomes simple."
-          ])
-        ]),
         h(Tabpanel, {}, [
           h("h2", {}, "Styles are JavaScript Objects"),
           h("h3", {}, "Can be defined inline…"),
@@ -241,7 +270,7 @@ export function App () {
             [
               h("div", {}, [
                 h("h3", {}, "CSS Properties"),
-                h(File, {
+                h(DisplayFile, {
                   "data-src": "../src/shared/get-property-id.json",
                   "styles": {
                     "&": {
@@ -256,7 +285,7 @@ export function App () {
                   h("code", {}, "$properties")
                 ]),
                 h(
-                  File,
+                  DisplayFile,
                   { "styles": { "&": { "maxHeight": "40vh" } } },
                   JSON.stringify(getShorthands(), null, 2)
                 )
@@ -559,26 +588,6 @@ export function App () {
             { "lang": "bash", "rows": 1 },
             ["yarn dev"].join("\n")
           )
-        ]),
-        h(Tabpanel, {}, [h("h2", {}, "With Gatsby")]),
-        h(Tabpanel, {}, [h("h2", {}, "With Remix")]),
-        h(Tabpanel, {}, [
-          h(Iframe, {
-            "src": "../demo/"
-          }),
-          "JSDoc and TypeScript"
-        ]),
-        h(Tabpanel, {}, [
-          h(Iframe, {
-            "src": "../demo/"
-          }),
-          "Type Guards"
-        ]),
-        h(Tabpanel, {}, [
-          h(Iframe, {
-            "src": "../demo/"
-          }),
-          "Merge Utilities"
         ])
       ]
     )
