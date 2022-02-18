@@ -135,6 +135,10 @@ export type MediaQueryObject = {
   Sm?: string | number | StylesObject;
 };
 
+export type Placeholder = `%${string}`;
+
+export type Variable = `$${string}`;
+
 export type StylesObject =
   | StandardPropertiesFallback<MediaQueryObject | string | number>
   | MediaQueryObject
@@ -150,6 +154,24 @@ export type StylesObject =
        */
 
       [key: string]:
+        | string
+        | string[]
+        | number
+        | StylesObject
+        | StylesObject[]
+        | undefined;
+
+      [key: Placeholder]:
+        | boolean
+        | string
+        | string[]
+        | number
+        | StylesObject
+        | StylesObject[]
+        | undefined;
+
+      [key: Variable]:
+        | boolean
         | string
         | string[]
         | number

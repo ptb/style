@@ -19,30 +19,82 @@ process.on("exit", function () {
   processExitHook()
 })
 
-function macro ({
-  "babel": { "types": t },
-  "config": { output = join("src", "styles.css") },
-  references,
-  "state": { cwd }
-}) {
+/**
+  @typedef {
+    import ("babel-plugin-macros").MacroParams &
+    Record<"source", string>
+  } MacroParams
+ */
+
+/**
+  Replace calls to `create` or `css` with resulting class name strings.
+
+  @param {MacroParams} args
+  - `babel-plugin-macros` arguments.
+
+  @returns {{ "keepImports": boolean }}
+    Keep import statement that has been modified.
+ */
+
+function macro ({ babel, config = {}, references, source, state }) {
+  const t = babel.types
+  const output = config.output || join("src", "styles.css")
+  const { cwd, file } = state
   const filepath = join(cwd, output)
 
+  const path = file.scope.path.get("body").find(function (p) {
+    return p.isImportDeclaration() && p.node.source.value === source
+  })
+
+  if (path && (/[./]macro/u).test(source)) {
+    const src = path.get("source")
+
+    if (!Array.isArray(src)) {
+      src.replaceWith(
+        t.stringLiteral(source.replace(/[./]macro.*/u, ""))
+      )
+    }
+  }
+
   Object.keys(references).forEach(function (refs) {
-    references[refs].forEach(function (ref) {
-      const CallExpression = ref.findParent(t.isCallExpression)
+    const ref = references[refs]
 
-      const args = CallExpression.get("arguments").map(function (arg) {
-        return arg.evaluate().value
+    if (typeof ref !== "undefined") {
+      ref.forEach(function ({ parentPath }) {
+        if (parentPath && t.isCallExpression(parentPath.node)) {
+          const arg1 = parentPath.get("arguments")
+          let args
+
+          if (Array.isArray(arg1)) {
+            const arg2 = arg1.map(function (arg) {
+              return arg.evaluate()
+            })
+
+            if (
+              arg2.every(function (arg) {
+                return arg.confident
+              })
+            ) {
+              args = arg2.map(function (arg) {
+                return arg.value
+              })
+
+              parentPath.replaceWith(t.stringLiteral(css(... args)))
+            }
+          }
+        }
       })
-
-      CallExpression.replaceWith(t.stringLiteral(css(... args)))
-    })
+    }
   })
 
   writeFileSync(filepath, getStyles())
 
   processExitHook = function () {
     writeFileSync(filepath, getStyles())
+  }
+
+  return {
+    "keepImports": true
   }
 }
 
@@ -54,6 +106,7 @@ module.exports = createMacro(
         "isBabelMacrosCall"
       )
     ) {
+      // @ts-ignore
       return macro(... input)
     }
 

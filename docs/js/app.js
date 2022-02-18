@@ -69,20 +69,11 @@ export function App () {
               h("code", {}, "$"),
               ")"
             ]),
-            h(Fragment, {}, [
-              "CSS ",
-              h("code", {}, "$properties")
-            ]),
-            h(Fragment, {}, [
-              h("code", {}, "@media"),
-              " Queries"
-            ]),
+            h(Fragment, {}, ["CSS ", h("code", {}, "$properties")]),
+            h(Fragment, {}, [h("code", {}, "@media"), " Queries"]),
             h(Fragment, {}, [h("code", {}, "@font-face"), " Rules"]),
             h(Fragment, {}, [h("code", {}, "@keyframes"), " Rules"]),
-            h(Fragment, {}, [
-              "Vendor ",
-              h("code", {}, "$prefixes")
-            ])
+            h(Fragment, {}, ["Vendor ", h("code", {}, "$prefixes")])
           ],
           /* eslint-disable-next-line sort-keys */
           "Selectors": [
@@ -339,7 +330,7 @@ export function App () {
           h("h2", {}, [h("code", {}, "@font-face"), " Rules"]),
           h(Iframe, {
             "src":
-              "../demo/?x=createElement%28%0A++%22span%22%2C%0A++%7B%0A++++className%3A+css%28%7B%0A++++++fontFamily%3A+%5B%0A++++++++%7B%0A++++++++++fontFamily%3A+%22SourceSansPro%22%2C%0A++++++++++fontWeight%3A+200%2C%0A++++++++++src%3A%0A++++++++++++%27url%28%22%2Ffonts%2FSourceSansPro-Light.ttf%22%29+format%28%22truetype%22%29%27%0A++++++++%7D%2C%0A++++++++%7B%0A++++++++++fontFamily%3A+%22SourceSansPro%22%2C%0A++++++++++fontWeight%3A+700%2C%0A++++++++++src%3A%0A++++++++++++%27url%28%22%2Ffonts%2FSourceSansPro-Bold.ttf%22%29+format%28%22truetype%22%29%27%0A++++++++%7D%2C%0A++++++++%22sans-serif%22%0A++++++%5D%2C%0A++++++bg%3A+%22%239c9%22%2C%0A++++++p%3A+%224px+10px%22%2C%0A++++++display%3A+%22block%22%2C%0A++++++maxWidth%3A+200%2C%0A++++++m%3A+%22auto%22%2C%0A++++++textAlign%3A+%22center%22%2C%0A++++++borderRadius%3A+10%2C%0A++++++border%3A+%222px+solid+%23696%22%2C%0A++++++fontWeight%3A+700%2C%0A++++++fontSize%3A+24%2C%0A++++%7D%29%0A++%7D%2C%0A++%22Buy+Now%21%22%0A%29&e=5-19&s=13-15%2C45-47%2C49-51&i=2-74#t=2"
+              "../demo/?x=createElement%28%22div%22%2C+%7B%7D%2C+%5B%0A++createElement%28%0A++++%22div%22%2C%0A++++%7B%0A++++++className%3A+css%28%7B%0A++++++++fontFamily%3A+%5B%0A++++++++++%7B%0A++++++++++++fontFamily%3A+%22Source+Sans+Pro%22%2C%0A++++++++++++fontStyle%3A+%22normal%22%2C%0A++++++++++++fontWeight%3A+400%2C%0A++++++++++++src%3A%0A++++++++++++++%22url%28%27..%2Ffonts%2Fsource-sans-pro-400.woff2%27%29+format%28%27woff2%27%29%22%0A++++++++++%7D%2C%0A++++++++++%7B%0A++++++++++++fontFamily%3A+%22Source+Sans+Pro%22%2C%0A++++++++++++fontStyle%3A+%22oblique%22%2C%0A++++++++++++fontWeight%3A+400%2C%0A++++++++++++src%3A%0A++++++++++++++%22url%28%27..%2Ffonts%2Fsource-sans-pro-400i.woff2%27%29+format%28%27woff2%27%29%22%0A++++++++++%7D%2C%0A++++++++++%7B%0A++++++++++++fontFamily%3A+%22Source+Sans+Pro%22%2C%0A++++++++++++fontStyle%3A+%22normal%22%2C%0A++++++++++++fontWeight%3A+700%2C%0A++++++++++++src%3A%0A++++++++++++++%22url%28%27..%2Ffonts%2Fsource-sans-pro-700.woff2%27%29+format%28%27woff2%27%29%22%0A++++++++++%7D%2C%0A++++++++++%7B%0A++++++++++++fontFamily%3A+%22Source+Sans+Pro%22%2C%0A++++++++++++fontStyle%3A+%22oblique%22%2C%0A++++++++++++fontWeight%3A+700%2C%0A++++++++++++src%3A%0A++++++++++++++%22url%28%27..%2Ffonts%2Fsource-sans-pro-700i.woff2%27%29+format%28%27woff2%27%29%22%0A++++++++++%7D%0A++++++++%5D%2C%0A++++++++fontSize%3A+24%2C%0A++++++++fontWeight%3A+700%0A++++++%7D%29%0A++++%7D%2C%0A++++%22Buy+Now%21%22%0A++%29%2C%0A++createElement%28%0A++++%22div%22%2C%0A++++%7B%0A++++++className%3A+css%28%7B%0A++++++++fontFamily%3A+%5B%0A++++++++++%7B%0A++++++++++++fontFamily%3A+%22PT+Serif%22%2C%0A++++++++++++fontStyle%3A+%22normal%22%2C%0A++++++++++++fontWeight%3A+400%2C%0A++++++++++++src%3A+%22url%28%27..%2Ffonts%2Fpt-serif-400.woff2%27%29+format%28%27woff2%27%29%22%0A++++++++++%7D%2C%0A++++++++++%7B%0A++++++++++++fontFamily%3A+%22PT+Serif%22%2C%0A++++++++++++fontStyle%3A+%22italic%22%2C%0A++++++++++++fontWeight%3A+400%2C%0A++++++++++++src%3A+%22url%28%27..%2Ffonts%2Fpt-serif-400i.woff2%27%29+format%28%27woff2%27%29%22%0A++++++++++%7D%2C%0A++++++++++%7B%0A++++++++++++fontFamily%3A+%22PT+Serif%22%2C%0A++++++++++++fontStyle%3A+%22normal%22%2C%0A++++++++++++fontWeight%3A+700%2C%0A++++++++++++src%3A+%22url%28%27..%2Ffonts%2Fpt-serif-700.woff2%27%29+format%28%27woff2%27%29%22%0A++++++++++%7D%2C%0A++++++++++%7B%0A++++++++++++fontFamily%3A+%22PT+Serif%22%2C%0A++++++++++++fontStyle%3A+%22italic%22%2C%0A++++++++++++fontWeight%3A+700%2C%0A++++++++++++src%3A+%22url%28%27..%2Ffonts%2Fpt-serif-700i.woff2%27%29+format%28%27woff2%27%29%22%0A++++++++++%7D%0A++++++++%5D%2C%0A++++++++fontSize%3A+24%2C%0A++++++++fontWeight%3A+700%0A++++++%7D%29%0A++++%7D%2C%0A++++%22Buy+Again%21%22%0A++%29%0A%5D%29%0A#t=2"
           })
         ]),
         h(Tabpanel, {}, [
