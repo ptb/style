@@ -34,7 +34,7 @@ ava("given an object with valid keyframes declaration (1)", (t) => {
     },
     {
       "block": [{ "animation-name": "mtmj0s" }],
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": true,
       "identifier": "mtmj0s",
       "property": "animationName",
@@ -74,7 +74,7 @@ ava("given an object with valid keyframes declaration (2)", (t) => {
           "animation-name": "mt0lac"
         }
       ],
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": true,
       "identifier": "mt0lac",
       "property": "animationName",

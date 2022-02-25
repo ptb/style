@@ -20,14 +20,14 @@ ava("given an object with bare element selector (1)", (t) => {
 
   const expect = [
     {
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": false,
       "property": "backgroundColor",
       "selectors": undefined,
       "value": "#f00"
     },
     {
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": false,
       "property": "backgroundColor",
       "selectors": [["body"]],

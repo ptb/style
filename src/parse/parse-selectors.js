@@ -35,7 +35,7 @@ export function parseSelectors (params = defaultParams, group = "") {
 
   if (isSelector(property) && isObj(input)) {
     const emit = (/^:/u).test(property)
-    const media = get(params, "conditional.media")
+    const conditional = get(params, "conditional", {})
 
     /** @type {string[][]} */
     const selectors = getSelectors(kebabCase(property))
@@ -89,21 +89,13 @@ export function parseSelectors (params = defaultParams, group = "") {
 
     if (noAncestors) {
       return /** @type {Params[]} */ (merge(
-        parse(
-          { "conditional": { media }, "emit": false, input },
-          group,
-          false
-        ),
-        parse(
-          { "conditional": { media }, emit, input, selectors },
-          group,
-          false
-        )
+        parse({ conditional, "emit": false, input }, group, false),
+        parse({ conditional, emit, input, selectors }, group, false)
       ))
     }
 
     return parse(
-      { "conditional": { media }, emit, input, selectors },
+      { conditional, emit, input, selectors },
       group,
       false
     )

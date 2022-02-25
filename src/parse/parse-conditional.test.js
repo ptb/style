@@ -668,3 +668,38 @@ ava.serial(
     t.deepEqual(actual, expect)
   }
 )
+
+ava.serial("given an object with @supports and property", (t) => {
+  const actual = parse({
+    "input": {
+      "@supports (WebkitOverflowScrolling:touch)": {
+        ":where(input)": {
+          "fontSize": "1.6rem"
+        }
+      }
+    }
+  })
+
+  const expect = [
+    {
+      "conditional": {
+        "supports": ["(WebkitOverflowScrolling:touch)"]
+      },
+      "emit": false,
+      "property": "fontSize",
+      "selectors": undefined,
+      "value": "1.6rem"
+    },
+    {
+      "conditional": {
+        "supports": ["(WebkitOverflowScrolling:touch)"]
+      },
+      "emit": true,
+      "property": "fontSize",
+      "selectors": [[":where(input)"]],
+      "value": "1.6rem"
+    }
+  ]
+
+  t.deepEqual(actual, expect)
+})

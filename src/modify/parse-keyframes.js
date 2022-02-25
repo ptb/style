@@ -28,7 +28,7 @@ export function parseKeyframes (params = defaultParams) {
   const input = /** @type {PlainObject} */ (params.value)
 
   if (property === "animationName" && isObj(input)) {
-    const media = get(params, "conditional.media")
+    const conditional = get(params, "conditional", {})
     const selectors = ["@keyframes", " "]
 
     const identifier = /** @type {string} */ (getIdentifier(
@@ -63,7 +63,7 @@ export function parseKeyframes (params = defaultParams) {
 
     const rule = {
       "block": [{ "animation-name": identifier }],
-      "conditional": { media },
+      conditional,
       "emit": true,
       identifier,
       property,

@@ -60,7 +60,7 @@ ava("given an object with valid font-face declaration (1)", (t) => {
           "font-family": "c8ar46"
         }
       ],
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": true,
       "identifier": "c8ar46",
       "property": "fontFamily",
@@ -104,7 +104,7 @@ ava("given an object with valid font-face declaration (2)", (t) => {
           "font-family": "c8025u"
         }
       ],
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": true,
       "identifier": "c8025u",
       "property": "fontFamily",
@@ -149,7 +149,7 @@ ava("given an object with valid font-face declaration (3)", (t) => {
           "font-family": "Avenir"
         }
       ],
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": true,
       "identifier": "c8oyql",
       "property": "fontFamily",
@@ -194,7 +194,7 @@ ava("given an object with valid font-face declaration (4)", (t) => {
           "font-family": "Avenir"
         }
       ],
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": true,
       "identifier": "c8oyql",
       "property": "fontFamily",

@@ -23,21 +23,21 @@ ava("given an object with valid selectors", (t) => {
 
   const expect = [
     {
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": false,
       "property": "backgroundColor",
       "selectors": undefined,
       "value": "#f0f"
     },
     {
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": false,
       "property": "display",
       "selectors": undefined,
       "value": "grid"
     },
     {
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": false,
       "property": "backgroundColor",
       "selectors": [
@@ -48,7 +48,7 @@ ava("given an object with valid selectors", (t) => {
       "value": "#f0f"
     },
     {
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": false,
       "property": "display",
       "selectors": [
@@ -87,14 +87,14 @@ ava("given an object with valid pseudo-class selector", (t) => {
 
   const expect = [
     {
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": false,
       "property": "fontFamily",
       "selectors": undefined,
       "value": "Helvetica"
     },
     {
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": true,
       "property": "fontFamily",
       "selectors": [[":hover"]],
@@ -113,14 +113,14 @@ ava("given an object with valid attribute selector", (t) => {
 
   const expect = [
     {
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": false,
       "property": "backgroundColor",
       "selectors": undefined,
       "value": "#f00"
     },
     {
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": false,
       "property": "backgroundColor",
       "selectors": [["[aria-expanded=true]"]],
@@ -139,14 +139,14 @@ ava("given an object with valid placeholder selector (2)", (t) => {
 
   const expect = [
     {
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": false,
       "property": "backgroundColor",
       "selectors": undefined,
       "value": "#f00"
     },
     {
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": false,
       "property": "backgroundColor",
       "selectors": [[".osfpgs", "[aria-expanded=true]"]],
@@ -167,14 +167,14 @@ ava(
 
     const expect = [
       {
-        "conditional": { "media": undefined },
+        "conditional": {},
         "emit": false,
         "property": "backgroundColor",
         "selectors": undefined,
         "value": "#f00"
       },
       {
-        "conditional": { "media": undefined },
+        "conditional": {},
         "emit": false,
         "property": "backgroundColor",
         "selectors": [[".osfpgs", "[aria-expanded=true]"]],

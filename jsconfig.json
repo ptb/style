@@ -40,7 +40,7 @@
     "target": "es2015"
   },
   "include": [
-    "**/index.d.ts",
+    "**/*.ts",
     "demo/**/*.js",
     "docs/**/*.js",
     "rollup.config.js",

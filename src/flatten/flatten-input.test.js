@@ -189,7 +189,7 @@ ava("given variable as argument (5)", (t) => {
   const actual = store.get("").get("$defaultFont")
 
   const expect = {
-    "conditional": { "media": undefined },
+    "conditional": {},
     "property": "$defaultFont",
     "value": "Helvetica,Arial,sans-serif"
   }

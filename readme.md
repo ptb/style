@@ -1,3 +1,5 @@
+> CSS compiler for maintainable, predictable styles with the minimum possible output. Eliminate the cognitive overhead of regular CSS: coming up with class names, composing styles for variants, specificity issues, and style ordering. Supports client-side rendering, server-side rendering, zero-runtime, or a combination.
+
 <div id="top"></div>
 
 <br />

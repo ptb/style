@@ -501,7 +501,7 @@ ava("given an object with a self-selector key", (t) => {
         { "background-color": "inline-block" },
         { "background-color": "inline-flex" }
       ],
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": false,
       "identifier": "kclasr",
       "property": "backgroundColor",
@@ -528,7 +528,7 @@ ava("given an object with a self-selector key", (t) => {
     },
     {
       "block": [{ "margin-bottom": "12px" }],
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": false,
       "identifier": "eh481t",
       "property": "marginBottom",
@@ -537,7 +537,7 @@ ava("given an object with a self-selector key", (t) => {
     },
     {
       "block": [{ "margin-top": "12px" }],
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": false,
       "identifier": "ef481t",
       "property": "marginTop",
@@ -549,7 +549,7 @@ ava("given an object with a self-selector key", (t) => {
         { "background-color": "inline-block" },
         { "background-color": "inline-flex" }
       ],
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": true,
       "identifier": "orrrxi",
       "property": "backgroundColor",
@@ -576,7 +576,7 @@ ava("given an object with a self-selector key", (t) => {
     },
     {
       "block": [{ "margin-bottom": "12px" }],
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": true,
       "identifier": "orrrxi",
       "property": "marginBottom",
@@ -585,7 +585,7 @@ ava("given an object with a self-selector key", (t) => {
     },
     {
       "block": [{ "margin-top": "12px" }],
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": true,
       "identifier": "orrrxi",
       "property": "marginTop",
@@ -613,7 +613,7 @@ ava("given an object with compound self selectors", (t) => {
   const expect = [
     {
       "block": [{ "background-repeat": "no-repeat" }],
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": false,
       "identifier": "kgh12s",
       "property": "backgroundRepeat",
@@ -622,7 +622,7 @@ ava("given an object with compound self selectors", (t) => {
     },
     {
       "block": [{ "background-repeat": "no-repeat" }],
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": true,
       "identifier": "or3y02 orm48n orbfh5",
       "property": "backgroundRepeat",

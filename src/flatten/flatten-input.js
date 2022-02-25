@@ -34,8 +34,8 @@ export function flattenInput (params = defaultParams) {
       : params.input || {}
   )
 
-  const media = get(params, "conditional.media")
-  const mediaStr = getMedia(media)
+  const conditional = get(params, "conditional", {})
+  const media = getMedia(get(conditional, "media"))
 
   return mergeArrOfObj(
     toPairs(rules).reduce(
@@ -51,31 +51,27 @@ export function flattenInput (params = defaultParams) {
         let value = style[1]
 
         if (isVariable(value, false)) {
-          value = replaceVariables(value, mediaStr)
+          value = replaceVariables(value, media)
         }
 
         if (isArr(value)) {
           value = value.map(function (val) {
-            return replaceVariables(val, mediaStr)
+            return replaceVariables(val, media)
           })
         }
 
         if (isVariable(property, true)) {
           const input = mergeArrOfObj(
             value === true
-              ? replaceVariables(property, mediaStr)
-              : setVariable({
-                "conditional": { media },
-                property,
-                value
-              })
+              ? replaceVariables(property, media)
+              : setVariable({ conditional, property, value })
           )
 
           return isObj(input)
             ? styles.concat(flattenInput({ input }))
             : styles
         } else if (isVariable(property, false)) {
-          const input = replaceVariables(property, mediaStr)
+          const input = replaceVariables(property, media)
 
           return styles.concat({ [input]: value })
         } else if (isShorthand(property)) {

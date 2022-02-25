@@ -31,13 +31,13 @@ export function parseTypeSelector (params = defaultParams, group) {
   if (isTypeSelector(property) && isObj(value)) {
     const emit = false
     const input = value
-    const media = get(params, "conditional.media")
+    const conditional = get(params, "conditional", {})
 
     return /** @type {Params[]} */ (merge(
-      parse({ "conditional": { media }, emit, input }, group, false),
+      parse({ conditional, emit, input }, group, false),
       parse(
         {
-          "conditional": { media },
+          conditional,
           emit,
           input,
           "selectors": [[property]]

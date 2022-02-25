@@ -171,7 +171,7 @@ ava("given an object with valid property and value (2)", (t) => {
     },
     {
       "block": [{ "animation-name": "mtto2h" }],
-      "conditional": { "media": undefined },
+      "conditional": {},
       "emit": true,
       "identifier": "mtto2h",
       "property": "animationName",

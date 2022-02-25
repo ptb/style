@@ -32,7 +32,7 @@ export function parseFontFace (params = defaultParams) {
   const property = params.property
 
   if (isFontFace(property)) {
-    const media = get(params, "conditional.media")
+    const conditional = get(params, "conditional", {})
     const input = params.value
     const selectors = [["@font-face"]]
 
@@ -66,7 +66,7 @@ export function parseFontFace (params = defaultParams) {
 
       const rule = {
         "block": [{ "font-family": value }],
-        "conditional": { media },
+        conditional,
         "emit": true,
         identifier,
         property,
