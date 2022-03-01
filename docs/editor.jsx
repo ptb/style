@@ -1,14 +1,14 @@
-/* eslint-disable max-lines-per-function */
+/*
+  eslint-disable
+    max-lines-per-function,
+    no-console,
+    react/prop-types
+ */
 
-import { css, isFn } from "../../../src/style.js"
-import { Prism } from "../prism.js"
-import {
-  createElement as h,
-  useEffect,
-  useRef,
-  useState
-} from "../react.js"
-import { style } from "./style.js"
+import { isFn } from "../index.js"
+import classNames from "./editor.css.js"
+import { useEffect, useRef, useState } from "./jsx-runtime"
+import { Prism } from "./prism.js"
 
 /**
   @typedef {typeof import ("react")} React
@@ -23,12 +23,8 @@ import { style } from "./style.js"
   @param {string} [props.children]
   - Initial content.
 
-  @param {string} [props.className]
-  - Extra string value to append to the class attribute.
-
-  @param {boolean} [props.isDynamic]
-  - If `true`, then use dynamic `css` function.
-  - If `false`, then use static class name strings.
+  @param {string} [props.id]
+  - String defining an identifier which must be unique in the whole document.
 
   @param {string} [props.lang]
   - Programming language.
@@ -42,22 +38,17 @@ import { style } from "./style.js"
   @param {number} [props.rows]
   - The number of rows to display by default.
 
-  @param {object} [props.styles]
-  - Plain JavaScript object or array of objects containing CSS styles.
-
-  @returns {React.ReactNode}
+  @returns {React.ReactElement}
     Editable syntax-highlighted `<textarea>` React component.
  */
 
 export function Editor ({
   children = "",
-  className,
-  isDynamic,
+  id,
   lang = "js",
   onInput,
   readOnly = false,
   rows = 3,
-  styles = {},
   ... props
 }) {
   /** @type {React.RefObject<HTMLElement>} */
@@ -118,7 +109,7 @@ export function Editor ({
         setValue(children)
       }
     },
-    [children]
+    [children, value]
   )
 
   useEffect(handleUpdate, [value])
@@ -140,51 +131,33 @@ export function Editor ({
     [wrapRef]
   )
 
-  return h(
-    "div",
-    { "className": isDynamic ? css([style.div, styles]) : "orqosx" },
-    [
-      h(
-        "pre",
-        {
-          "aria-hidden": true,
-          "className": isDynamic
-            ? css(
-              [style.common, style.pre],
-              [`language-${lang}`, "line-numbers"]
-            )
-            : [
-              `language-${lang}`,
-              "line-numbers",
-              "or9a36",
-              className
-            ]
-              .filter(Boolean)
-              .join(" "),
-          "ref": wrapRef,
-          ... props
-        },
-        h(
-          "code",
-          {
-            "className": isDynamic ? css(style.common) : "orjljs",
-            "ref": codeRef
-          },
-          value + (value[value.length - 1] === "\n" ? " " : "")
-        )
-      ),
-      h("textarea", {
-        "className": isDynamic
-          ? css([style.common, style.textarea])
-          : "or2bxt orsznx",
-        "onInput": handleInput,
-        "onScroll": handleScroll,
-        "readOnly": readOnly,
-        "ref": textRef,
-        rows,
-        "spellCheck": false,
-        "value": value
-      })
-    ]
+  return (
+    <div className={classNames.div}>
+      <pre
+        aria-hidden
+        className={[
+          classNames.pre,
+          `language-${lang}`,
+          "line-numbers"
+        ].join(" ")}
+        id={id}
+        ref={wrapRef}
+        {...props}
+      >
+        <code className={classNames.code} ref={codeRef}>
+          {value + (value[value.length - 1] === "\n" ? " " : "")}
+        </code>
+      </pre>
+      <textarea
+        className={classNames.textarea}
+        onInput={handleInput}
+        onScroll={handleScroll}
+        readOnly={readOnly}
+        ref={textRef}
+        rows={rows}
+        spellCheck={false}
+        value={value}
+      />
+    </div>
   )
 }

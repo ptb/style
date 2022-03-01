@@ -1,13 +1,15 @@
-import { css } from "../../../src/style.js"
-import { createElement as h, Fragment } from "../react.js"
+/*
+  eslint-disable
+    react/prop-types
+ */
+
 import { getId } from "./get-id.js"
+import { Fragment } from "./jsx-runtime"
 
 /**
+  @typedef {import ("./tabs").ClassNames} ClassNames
+ 
   @typedef {typeof import ("react")} React
-
-  @typedef {import (".").ClassNames} ClassNames
-
-  @typedef {import (".").Styles} Styles
  */
 
 /**
@@ -36,18 +38,11 @@ import { getId } from "./get-id.js"
   @param {number} [props.index]
   - `<Tabpanel>` position in render order.
 
-  @param {boolean} [props.isDynamic]
-  - If `true`, then use dynamic `css` function.
-  - If `false`, then use static class name strings.
-
   @param {string} [props.label]
   - Controlling `<Tab>`'s label text.
 
   @param {number} [props.selected]
   - Currently selected tab position.
-
-  @param {Styles} [props.styles]
-  - Plain JavaScript object or array of objects containing CSS styles.
 
   @returns {React.ReactElement}
     React component.
@@ -59,39 +54,33 @@ export function Tabpanel ({
   classNames = {},
   group,
   index,
-  isDynamic,
   label,
   selected,
-  styles = {},
   ... props
 }) {
   const id = getId(label)
   const groupName = getId(group)
 
-  return h(Fragment, {}, [
-    h("input", {
-      "checked": index === selected,
-      "className": isDynamic
-        ? css([{ "display": "none" }, styles.radio])
-        : classNames.radio,
-      "id": `${id}-input`,
-      "name": groupName,
-      "type": "radio"
-    }),
-    h(
-      Component,
-      {
-        "aria-hidden": index !== selected,
-        "aria-labelledby": `${id}-tab`,
-        "className": isDynamic
-          ? css(styles.tabpanel)
-          : classNames.tabpanel,
-        "id": `${id}-panel`,
-        "role": "tabpanel",
-        "tabIndex": index === selected ? 0 : -1,
-        ... props
-      },
-      children
-    )
-  ])
+  return (
+    <Fragment>
+      <input
+        checked={index === selected}
+        className={classNames.radio}
+        id={`${id}-input`}
+        name={groupName}
+        type="radio"
+      />
+      <Component
+        aria-hidden={index !== selected}
+        aria-labelledby={`${id}-tab`}
+        className={classNames.tabpanel}
+        id={`${id}-panel`}
+        role="tabpanel"
+        tabIndex={index === selected ? 0 : -1}
+        {...props}
+      >
+        {children}
+      </Component>
+    </Fragment>
+  )
 }

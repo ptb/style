@@ -1,37 +1,22 @@
 /*
   eslint-disable
     compat/compat,
-    jsdoc/require-jsdoc,
-    jsdoc/require-description,
-    jsdoc/require-param-description,
-    jsdoc/require-returns-description,
     max-lines-per-function,
-    no-plusplus
+    no-plusplus,
+    react/jsx-key,
+    react/prop-types
  */
 
-import {
-  css,
-  isArr,
-  isFn,
-  isObj,
-  toPairs
-} from "../../../src/style.js"
-import {
-  createElement as h,
-  useCallback,
-  useMemo,
-  useState
-} from "../react.js"
+import { isArr, isFn, isObj, toPairs } from "../index.js"
 import { getId } from "./get-id.js"
-import { Tab } from "./tab.js"
+import { useCallback, useMemo, useState } from "./jsx-runtime"
+import { Tab } from "./tab.jsx"
 
 /**
+  @typedef {import ("./tabs").ClassNames} ClassNames
+
   @typedef {typeof import ("react")} React
-
-  @typedef {import (".").ClassNames} ClassNames
-
-  @typedef {import (".").Styles} Styles
-  */
+ */
 
 /**
   Tablist widget component containing a list of `<Tab>` elements,
@@ -56,34 +41,34 @@ import { Tab } from "./tab.js"
   an object. The keys of the object will be inserted as children
   of `heading` component and the values will be used as `<Tab>`s.
 
-  @param {number} props.initial
+  @param {string} props.initial
   - Initial selected `<Tab>` index.
 
-  @param {boolean} [props.isDynamic]
-  - If `true`, then use dynamic `css` function.
-  - If `false`, then use static class name strings.
+  @param {React.ElementType} [props.menuitem]
+  - React component to use to wrap each menu item.
 
   @param {"horizontal" | "vertical"} [props.orientation]
   - If the tablist element is vertically oriented, it has the property
   `orientation` set to `vertical`. The default value of `orientation`
   for a tablist element is `horizontal`.
 
-  @param {number} props.selected
+  @param {string} props.selected
   - Current selected `<Tab>` index.
 
-  @param {React.Dispatch<React.SetStateAction<number>>} props.setSelected
+  @param {React.Dispatch<React.SetStateAction<string>>} props.setSelected
+  - Set the `selected` `<Tab>` in response to keyboard or mouse input.
 
-  @param {number} props.total
-
-  @param {Styles} [props.styles]
-  - Plain JavaScript object or array of objects containing CSS styles.
-
-  @param {Record<string, string[]> | string[]} props.tabs
+  @param {string[] | Record<string, string[]>} props.tabs
   - An array of strings or an object with arrays of strings as values
   identifying each element in the tab list that serves as a label for
   each of the tab panels and can be activated to display that panel.
 
-  @param {function (number): void} props.updParams
+  @param {number} props.total
+  - Number of total tabs.
+
+  @param {function (string): void} props.updParams
+  - Get existing key/value pairs from `location.hash` and current
+  selected `<Tab>` `index` then set in `location.hash`.
 
   @returns {React.ReactElement}
     React component.
@@ -95,17 +80,16 @@ export function Tablist ({
   group,
   "heading": Heading,
   initial,
-  isDynamic,
+  menuitem,
   orientation = "horizontal",
   selected,
   setSelected,
-  styles = {},
   tabs,
   total,
   updParams,
   ... props
 }) {
-  const [focused, setFocused] = useState(initial)
+  const [focused, setFocused] = useState(Number(initial))
 
   const refs = useMemo(
     function () {
@@ -115,7 +99,7 @@ export function Tablist ({
         })
       })
     },
-    [tabs, total]
+    [total]
   )
 
   const handleClick = useCallback(
@@ -130,8 +114,8 @@ export function Tablist ({
 
     function handleClick (index) {
       setFocused(index)
-      setSelected(index)
-      updParams(index)
+      setSelected(String(index))
+      updParams(String(index))
     },
     [setFocused, setSelected, updParams]
   )
@@ -187,8 +171,8 @@ export function Tablist ({
         case "Enter":
         case "Space":
           e.preventDefault()
-          setSelected(index)
-          updParams(index)
+          setSelected(String(index))
+          updParams(String(index))
           break
       }
 
@@ -214,54 +198,55 @@ export function Tablist ({
   let n = 0
 
   /**
+    Tab widget component that implements a grouping label providing a
+    mechanism for selecting the tab content that is to be rendered to
+    the user.
+
     @param {string} label
+    - String to use as the title of the `<Tab>`.
 
     @returns {React.ReactElement}
+      React component.
    */
 
   function TabFn (label) {
     const index = n++
 
-    return h(Tab, {
-      classNames,
-      handleClick,
-      index,
-      isDynamic,
-      "key": getId(label),
-      label,
-      onKeyDown,
-      "ref": refs[index],
-      selected,
-      styles
-    })
+    return (
+      <Tab
+        classNames={classNames}
+        handleClick={handleClick}
+        index={index}
+        key={getId(label)}
+        label={label}
+        menuitem={menuitem}
+        onKeyDown={onKeyDown}
+        ref={refs[index]}
+        selected={selected}
+      />
+    )
   }
 
-  return h(
-    Component,
-    {
-      "aria-label": group,
-      "aria-orientation": orientation,
-      "className": isDynamic ? css(styles.tablist) : classNames.tablist,
-      "role": "tablist",
-      ... props
-    },
-    isObj(tabs) &&
-      toPairs(tabs).map(function ([label, list]) {
-        return h(
-          "li",
-          { "key": getId(label) },
-          isFn(Heading) && h(Heading, null, label),
-          h(
-            Component,
-            {
-              "className": isDynamic
-                ? css(styles.tablist)
-                : classNames.tablist
-            },
-            list.map(TabFn)
+  return (
+    <Component
+      aria-label={group}
+      aria-orientation={orientation}
+      className={classNames.tablist}
+      role="tablist"
+      {...props}
+    >
+      {isObj(tabs) &&
+        toPairs(tabs).map(function ([label, list]) {
+          return (
+            <li>
+              {isFn(Heading) && <Heading>{label}</Heading>}
+              <Component className={classNames.sublist}>
+                {list.map(TabFn)}
+              </Component>
+            </li>
           )
-        )
-      }),
-    isArr(tabs) && tabs.map(TabFn)
+        })}
+      {isArr(tabs) && tabs.map(TabFn)}
+    </Component>
   )
 }

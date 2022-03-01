@@ -6,7 +6,10 @@
   },
   "extends": [
     "plugin:json/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
   ],
   "globals": {
     "JSX": "readonly"
@@ -63,7 +66,10 @@
     "json",
     "promise",
     "standard",
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "jsx-a11y",
+    "react",
+    "react-hooks"
   ],
   "root": true,
   "rules": {
@@ -856,6 +862,7 @@
       "warn",
       "always"
     ],
+    "react/react-in-jsx-scope": "off",
     "require-atomic-updates": "warn",
     "require-await": "warn",
     "require-jsdoc": "off",
@@ -1014,6 +1021,9 @@
       "preferredTypes": {
         "*": "any"
       }
+    },
+    "react": {
+      "version": "17.0.2"
     }
   }
 }

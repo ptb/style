@@ -160,6 +160,6 @@ Distributed under the Apache License. See [`LICENSE`](LICENSE) for more informat
 
 * Thanks to [Austin Appleby](https://github.com/aappleby) for [MurmurHash3](https://github.com/aappleby/smhasher).
 * Thanks to [Gary Court](https://github.com/garycourt) for [murmurhash-js](https://github.com/garycourt/murmurhash-js).
-* Thank you [Andrey Sitnik](https://github.com/ai) for [nanoid](https://github.com/ai/nanoid/blob/main/non-secure/index.js).
+* Thanks to [Andrey Sitnik](https://github.com/ai) for [nanoid](https://github.com/ai/nanoid/blob/main/non-secure/index.js).
 
 <p align="right">(<a href="#top">back to top</a>)</p>

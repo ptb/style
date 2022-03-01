@@ -31,7 +31,6 @@
     "removeComments": false,
     "resolveJsonModule": true,
     "rootDirs": [
-      "demo",
       "docs",
       "src"
     ],
@@ -39,11 +38,15 @@
     "stripInternal": true,
     "target": "es2015"
   },
+  "exclude": [
+    "node_modules",
+    "js"
+  ],
   "include": [
     "**/*.ts",
-    "demo/**/*.js",
-    "docs/**/*.js",
+    "docs/*.js",
     "rollup.config.js",
+    "src/**/*.cjs",
     "src/**/*.js",
     "wallaby.mjs"
   ]

@@ -1,4 +1,4 @@
-import { isStr } from "../../../src/style.js"
+import { isStr } from "../index.js"
 
 /**
   Removes non-alpha characters from string replacing with `-`.

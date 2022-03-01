@@ -11,6 +11,7 @@ const { join } = require("path")
 
 const { createMacro } = require("babel-plugin-macros")
 
+// @ts-ignore
 const { css, getStyles } = require("./style.cjs")
 
 let processExitHook = function () {}

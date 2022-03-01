@@ -1,13 +1,18 @@
-import { css } from "../../../src/style.js"
-import { createElement as h, forwardRef } from "../react.js"
+/*
+  eslint-disable
+    jsx-a11y/no-noninteractive-element-to-interactive-role,
+    react/display-name,
+    react/prop-types
+ */
+
+import { isFn } from "../index.js"
 import { getId } from "./get-id.js"
+import { forwardRef } from "./jsx-runtime"
 
 /**
+  @typedef {import ("./tabs").ClassNames} ClassNames
+
   @typedef {typeof import ("react")} React
-
-  @typedef {import (".").ClassNames} ClassNames
-
-  @typedef {import (".").Styles} Styles
  */
 
 /**
@@ -16,7 +21,7 @@ import { getId } from "./get-id.js"
   the user.
 
   @see https://www.w3.org/TR/wai-aria-1.2/#tab
-  */
+ */
 
 export const Tab = forwardRef(
   /**
@@ -41,12 +46,11 @@ export const Tab = forwardRef(
     @param {number} props.index
     - `<Tab>` position in render order.
 
-    @param {boolean} [props.isDynamic]
-    - If `true`, then use dynamic `css` function.
-    - If `false`, then use static class name strings.
-
     @param {string} props.label
     - Displayed label text.
+
+    @param {React.ElementType} [props.menuitem]
+    - React component to use to wrap each menu item.
 
     @param {React.KeyboardEventHandler<HTMLLabelElement>} props.onKeyDown
     - When focus is on a `<Tab>` element in a horizontal tab list:
@@ -57,18 +61,15 @@ export const Tab = forwardRef(
     focus to the first tab. Space or Enter: Activates the tab. Home:
     Moves focus to the first tab. End: Moves focus to the last tab.
 
-    @param {number} props.selected
+    @param {string} props.selected
     - Currently selected tab position.
-
-    @param {Styles} [props.styles]
-    - Plain JavaScript object or array of objects containing CSS styles.
 
     @param {React.ForwardedRef<HTMLLabelElement>} ref
     - Used to set focus on the specified `<Tab>`.
 
     @returns {React.ReactElement}
       React component.
-  */
+   */
 
   function Tab (
     {
@@ -76,11 +77,10 @@ export const Tab = forwardRef(
       classNames = {},
       handleClick,
       index,
-      isDynamic,
       label,
+      "menuitem": MenuItem,
       onKeyDown,
       selected,
-      styles = {},
       ... props
     },
     ref
@@ -97,26 +97,28 @@ export const Tab = forwardRef(
       handleClick(index)
     }
 
-    return h(
-      Component,
-      { "role": "none" },
-      h(
-        "label",
-        {
-          "aria-controls": `${id}-panel`,
-          "aria-selected": index === selected,
-          "className": isDynamic ? css(styles.tab) : classNames.tab,
-          "htmlFor": `${id}-input`,
-          "id": `${id}-tab`,
-          onClick,
-          onKeyDown,
-          ref,
-          "role": "tab",
-          "tabIndex": index === selected ? 0 : -1,
-          ... props
-        },
-        label
-      )
+    return (
+      <Component role="none">
+        <label
+          aria-controls={`${id}-panel`}
+          aria-selected={String(index) === selected}
+          className={classNames.tab}
+          htmlFor={`${id}-input`}
+          id={`${id}-tab`}
+          onClick={onClick}
+          onKeyDown={onKeyDown}
+          ref={ref}
+          role="tab"
+          tabIndex={String(index) === selected ? 0 : -1}
+          {...props}
+        >
+          {isFn(MenuItem) ? (
+            <MenuItem index={index}>{label}</MenuItem>
+          ) : (
+            label
+          )}
+        </label>
+      </Component>
     )
   }
 )
