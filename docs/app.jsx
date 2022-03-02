@@ -4,7 +4,6 @@
     react/prop-types
  */
 
-// @ts-ignore
 import { css } from "@ptb/style/macro"
 
 import {

@@ -1,4 +1,3 @@
-// @ts-ignore
 import { css } from "@ptb/style/macro"
 
 export default {

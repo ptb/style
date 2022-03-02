@@ -45,6 +45,7 @@
   "include": [
     "**/*.ts",
     "docs/*.js",
+    "docs/*.jsx",
     "rollup.config.js",
     "src/**/*.cjs",
     "src/**/*.js",
