@@ -11,5 +11,5 @@ import { isStr } from "../index.js"
  */
 
 export function isTypeSelector (value) {
-  return isStr(value) && (/^[a-z]+$/u).test(value)
+  return isStr(value) && (/^[a-z][-a-z0-9]*$/u).test(value)
 }

@@ -134,13 +134,22 @@ ava("given a string with a complex selector", (t) => {
 
 ava("given a string with multiple complex selectors", (t) => {
   const actual = getSelectors(
-    "& > div::hover, li[aria-expanded=true]"
+    "& > div::hover, li[aria-expanded='true'], input[type=\"reset\"]"
   )
 
   const expect = [
     ["&", ">", "div", "::hover"],
-    ["li", "[aria-expanded=true]"]
+    ["li", "[aria-expanded='true']"],
+    ["input", '[type="reset"]']
   ]
+
+  t.deepEqual(actual, expect)
+})
+
+ava("given a string with multiple type selectors", (t) => {
+  const actual = getSelectors("details summary")
+
+  const expect = [["details", " ", "summary"]]
 
   t.deepEqual(actual, expect)
 })

@@ -66,6 +66,7 @@
   that can be processed by this library to create valid CSS declarations.
  */
 
+export { cn } from "./api/cn.js"
 export { create } from "./api/create.js"
 export { css } from "./api/css.js"
 

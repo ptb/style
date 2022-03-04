@@ -11,5 +11,9 @@ import { isStr } from "../index.js"
  */
 
 export function isSelector (value) {
-  return isStr(value) && (/([#$%&*+,.>[^~]|:[a-z])/u).test(value)
+  return (
+    isStr(value) &&
+    (/^[^@]/u).test(value) &&
+    (/([ #$%&*+,.>[^~]|:[a-z])/u).test(value)
+  )
 }

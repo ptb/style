@@ -84,7 +84,8 @@ export function App () {
     "Production Ready": [
       "Zero–Runtime Option",
       "…with Create React App",
-      "…with Next.js"
+      "…with Next.js",
+      "…with Tailwind CSS"
     ]
   }
 
@@ -101,14 +102,15 @@ export function App () {
           className={classNames.menu}
           htmlFor="menu"
         />
-        <h1 className={classNames.h1}>
-          <a
-            className={classNames.logo}
-            href="https://github.com/ptb/style"
-          >
-            ptb/style
-          </a>
+        <h1 className={classNames.logo}>
+          ptb/style
         </h1>
+        <a
+          className={classNames.github}
+          href="https://github.com/ptb/style"
+        >
+          GitHub
+        </a>
       </header>
       <aside className={classNames.side}>
         <Tablist
@@ -138,12 +140,7 @@ export function App () {
           labels={labels}
           selected={selected}
         >
-          <Tabpanel>
-            <h1>
-              Introducing{" "}
-              <span className={classNames.logo}>ptb/style</span>!
-            </h1>
-          </Tabpanel>
+          <Tabpanel />
           <Tabpanel>
             <h2>Styles are JavaScript Objects</h2>
 
@@ -509,7 +506,7 @@ export function App () {
               {[
                 "yarn create react-app my-react-app",
                 "cd my-react-app",
-                "yarn add git+https://github.com/ptb/style.git",
+                "yarn add @ptb/style",
                 "echo '' > src/styles.css"
               ].join("\n")}
             </Editor>
@@ -538,7 +535,7 @@ export function App () {
               {[
                 "yarn create next-app my-next-app",
                 "cd my-next-app",
-                "yarn add git+https://github.com/ptb/style.git",
+                "yarn add @ptb/style",
                 "yarn add babel-plugin-macros",
                 "echo '' > styles/styles.css"
               ].join("\n")}
@@ -590,7 +587,8 @@ export function App () {
                 ``,
                 `export default class extends Document {`,
                 `  static async getInitialProps(ctx) {`,
-                `    const initialProps = await Document.getInitialProps(ctx)`,
+                `    const initialProps =`,
+                `      await Document.getInitialProps(ctx)`,
                 ``,
                 `    return {`,
                 `      ... initialProps,`,
@@ -598,7 +596,9 @@ export function App () {
                 `        <Fragment>`,
                 `          {initialProps.styles}`,
                 `          <style`,
-                `            dangerouslySetInnerHTML={{ __html: getStyles () }}`,
+                `            dangerouslySetInnerHTML={{`,
+                `              __html: getStyles ()`,
+                `            }}`,
                 `            data-creator="@ptb/style" />`,
                 `        </Fragment>`,
                 `      )`,
@@ -617,6 +617,71 @@ export function App () {
             <h3>Start Next.js server</h3>
             <Editor lang="bash" rows={1}>
               {["yarn dev"].join("\n")}
+            </Editor>
+          </Tabpanel>
+          <Tabpanel>
+            <h2>
+              With{" "}
+              <a
+                className={classNames.link}
+                href="https://tailwindcss.com/docs/utility-first"
+              >
+                Tailwind CSS
+              </a>
+            </h2>
+            <p>
+              Using Tailwind with{" "}
+              <code className={classNames.code}>@ptb/style</code> is
+              possibly simpler than Tailwind on its own! The Babel
+              macro{" "}
+              <a
+                className={classNames.link}
+                href="https://github.com/ben-rogerson/twin.macro#readme"
+              >
+                <code className={classNames.code}>twin.macro</code>
+              </a>{" "}
+              generates a JavaScript object that is perfect as input
+              for the <code className={classNames.code}>css</code>{" "}
+              function.
+            </p>
+            <p>First, add the required packages:</p>
+            <Editor lang="bash" rows={1}>
+              yarn add babel-plugin-macros tailwindcss twin.macro
+            </Editor>
+            <p>
+              Then, in each component file, import from{" "}
+              <code className={classNames.code}>twin.macro</code> and
+              call Tailwind CSS classes as a tagged template. At build
+              time, the <code className={classNames.code}>tw``</code>{" "}
+              expression will be replaced by a JavaScript object
+              representing those styles.
+            </p>
+            <p>
+              <strong>Note:</strong> The{" "}
+              <code className={classNames.code}>twin.macro</code>{" "}
+              import <em>must</em> be listed <em>before</em> the{" "}
+              <code className={classNames.code}>@ptb/style</code>{" "}
+              import.
+            </p>
+            <Editor lang="jsx">
+              {[
+                `import tw from "twin.macro"`,
+                `import { css } from "@ptb/style/macro"`,
+                ``,
+                `export default () => (`,
+                `  <span`,
+                `    className={css([`,
+                "      tw`flex flex-col items-center justify-center h-screen`,",
+                `      {`,
+                `        fontFamily: "sans-serif",`,
+                `        fontSize: "24px"`,
+                `      }`,
+                `    ])}`,
+                `  >`,
+                `    Buy Now!`,
+                `  </span>`,
+                `)`
+              ].join("\n")}
             </Editor>
           </Tabpanel>
         </Tabpanels>

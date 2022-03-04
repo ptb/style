@@ -37,6 +37,7 @@ const externals = [
   "../index.js",
   "./cssbeautify.js",
   "./jsx-runtime",
+  "./postcss.js",
   "./prism.js",
   "./react-dom.js",
   "./react-dom-server.js"
@@ -181,6 +182,15 @@ export default [
     "input": "docs/demo.jsx",
     "output": {
       "file": "js/demo.js",
+      "format": "esm"
+    },
+    plugins
+  },
+  {
+    "external": externals,
+    "input": "docs/convert.jsx",
+    "output": {
+      "file": "js/convert.js",
       "format": "esm"
     },
     plugins

@@ -31,7 +31,7 @@ ava(
   (t) => {
     const actual = isTypeSelector("body-stuff")
 
-    const expect = false
+    const expect = true
 
     t.is(actual, expect)
   }

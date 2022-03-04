@@ -5,6 +5,28 @@ import {
 } from "csstype"
 
 /**
+  @typedef {string | boolean | undefined | null} Value
+
+  @typedef {Record<string, any>} Mapping
+
+  @typedef {ArgumentArray | Mapping | Value} Argument
+
+  @typedef {Array<Argument>} ArgumentArray
+ */
+
+/**
+  Conditionally joins class names.
+
+  @param {ArgumentArray} arguments
+  - The values to join.
+
+  @returns {string}
+  Returns a string of class names each separated by a space.
+ */
+
+export function cn(... args: any[]): string;
+
+/**
   Creates a JavaScript object containing keys as identifiers and class
   names as values. If the value is a function, it is assigned to the
   value as is, without executing.

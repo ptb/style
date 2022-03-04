@@ -6,12 +6,10 @@
 
 import {
   cache,
+  cn,
   getClassName,
-  isArr,
-  isStr,
   nanoid,
   parse,
-  uniq,
   update
 } from "../index.js"
 
@@ -65,37 +63,13 @@ import {
 export function css (input = {}, className = "") {
   const group = nanoid()
 
-  const results = /** @type {string[]} */ (parse(
-    { input },
-    group,
-    true
+  return cn(
+    parse({ input }, group, true)
+      .map(cache)
+      .map(function (style) {
+        return update(style, group)
+      })
+      .map(getClassName)
+      .concat(cn(className))
   )
-    .map(cache)
-    .map(function (style) {
-      return update(style, group)
-    })
-    .map(getClassName)
-    .concat(
-      isArr(className)
-        ? className.filter(Boolean).reduce(
-          /**
-            @param {string[]} items
-
-            @param {string | undefined} item
-
-            @returns {string[]}
-           */
-          function (items, item) {
-            return isArr(item) || isStr(item)
-              ? items.concat(isStr(item) ? item.split(" ") : item)
-              : items
-          },
-          []
-        )
-        : className.split(" ")
-    )
-    .filter(Boolean)
-    .sort())
-
-  return uniq(results).join(" ")
 }

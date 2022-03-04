@@ -172,12 +172,11 @@ export default {
         "zIndex": -1
       },
       "&": {
-        "backdropFilter": "blur(2px)",
-        "bg": "hsla(var(--hue),var(--sat),10%,.1)",
+        "bg": "hsla(var(--hue),var(--sat),10%,.2)",
         "gridArea": "main",
-        "transitionDuration": "1s",
+        "transitionDuration": ".5s",
         "transitionProperty": "opacity,transform",
-        "WebkitBackdropFilter": "blur(2px)",
+        "transitionTimingFunction": "ease-in-out",
         "width": "calc(var(--viewport-width, 100vw) - var(--icon-size))"
       }
     }
@@ -207,6 +206,36 @@ export default {
     "backgroundImage":
       "url(\"data:image/svg+xml,%3csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m40 112c20-160 112-68 20-40-28 8.5-60-6-24-58' fill='none' stroke='hsl(240%2c10%25%2c80%25)' stroke-width='24'/%3e%3c/svg%3e\")"
   }),
+  "github": css([
+    {
+      "&": {
+        "$unstyle.a": true
+      }
+    },
+    {
+      "&": {
+        "alignItems": "center",
+        "backgroundPosition": ".6rem center",
+        "backgroundRepeat": "no-repeat",
+        "backgroundSize": "calc(var(--icon-size) * 0.6)",
+        "borderRadius": 6,
+        "cursor": "pointer",
+        "display": "flex",
+        "fontFamily": "var(--sans)",
+        "fontWeight": 700,
+        "justifySelf": "flex-end",
+        "mr": "1rem",
+        "pl": "3.8rem",
+        "pr": "1.2rem",
+        "py": ".2rem"
+      },
+      "&:active,&:focus,&:hover": {
+        "bg": "hsl(var(--hue),var(--sat),24%)"
+      },
+      "backgroundImage":
+        "url(\"data:image/svg+xml,%3csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill='hsl(240%2c10%25%2c80%25)' d='M60 9a52 52 0 0 0-16 102c2 0 3-2 3-3v-9c-14 3-17-7-17-7-3-6-6-7-6-7-5-4 0-3 0-3 5 0 8 5 8 5 5 8 12 6 15 4l4-7c-12-1-24-6-24-25 0-6 2-11 5-14 0-2-2-7 1-14 0 0 4-2 14 5a50 50 0 0 1 26 0c10-7 14-5 14-5 3 7 1 12 1 14 3 3 5 8 5 14 0 20-12 24-24 25 2 2 4 5 4 10v14c0 2 1 3 3 3A52 52 0 0 0 60 9'/%3e%3c/svg%3e\")"
+    }
+  ]),
   "grid": css({
     "&": {
       "bg": "inherit",
@@ -218,19 +247,6 @@ export default {
       "overflowX": "hidden"
     }
   }),
-  "h1": css([
-    {
-      "&": {
-        "$unstyle.h": true
-      }
-    },
-    {
-      "&": {
-        "fontFamily": "var(--sans)",
-        "fontSize": "2.4rem"
-      }
-    }
-  ]),
   "head": css({
     "&": {
       "alignItems": "center",
@@ -278,19 +294,20 @@ export default {
   "logo": css([
     {
       "&": {
-        "$unstyle.a": true
+        "$unstyle.h": true
       }
     },
     {
       "&": {
-        "color": "hsl(var(--hue),var(--sat),85%)"
+        "color": "hsl(var(--hue),var(--sat),85%)",
+        "flexGrow": 1,
+        "fontFamily": "var(--sans)",
+        "fontSize": "2.4rem",
+        "userSelect": "none"
       },
       "&::before": {
         "color": "hsl(var(--hue),var(--sat),65%)",
         "content": "'@'"
-      },
-      "&:hover,&:hover::before": {
-        "color": "hsl(var(--hue),var(--sat),95%)"
       }
     }
   ]),
@@ -304,14 +321,19 @@ export default {
       "overflowY": "auto"
     },
     "Sm": {
-      "#menu:checked ~ &": { "transform": "translateX(0)" },
+      "#menu:checked ~ &": {
+        "filter": "blur(3px)",
+        "transform": "translateX(0)"
+      },
       "#menu:not(:checked) ~ &": {
+        "filter": "blur(0)",
         "transform":
           "translateX(calc((var(--side-width) * -1) + var(--icon-size)))"
       },
       "&": {
-        "transitionDuration": "1s",
-        "transitionProperty": "transform",
+        "transitionDuration": ".5s",
+        "transitionProperty": "filter,transform",
+        "transitionTimingFunction": "ease-in-out",
         "width": "calc(var(--viewport-width, 100vw) - var(--icon-size))"
       }
     }
