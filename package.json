@@ -84,6 +84,8 @@
       "import": "./style.js",
       "require": "./style.cjs"
     },
+    "./index": "./index.js",
+    "./macro": "./macro.cjs",
     "./vite-plugin": "./vite-plugin.cjs"
   },
   "files": [
@@ -190,5 +192,5 @@
   ],
   "type": "module",
   "types": "index.d.ts",
-  "version": "0.9.12"
+  "version": "0.9.13"
 }

@@ -61,12 +61,9 @@ function macro ({ babel, config = {}, references, source, state }) {
     const ref = references[refs]
 
     if (typeof ref !== "undefined") {
-      ref.forEach(function (path) {
-        if (
-          path.parentPath &&
-          t.isCallExpression(path.parentPath.node)
-        ) {
-          const args = path.parentPath.get("arguments")
+      ref.forEach(function ({ "parentPath": path }) {
+        if (path && t.isCallExpression(path.node)) {
+          const args = path.get("arguments")
 
           if (Array.isArray(args)) {
             const input = args.map(function (arg) {
@@ -88,8 +85,10 @@ function macro ({ babel, config = {}, references, source, state }) {
                     JSON.stringify(create(... values))
                   )
                   break
-                case "css":
-                  path.replaceWith(t.stringLiteral(css(... values)))
+                default:
+                  path.replaceWith(
+                    t.stringLiteral(css(... values))
+                  )
               }
             }
           }

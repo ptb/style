@@ -24,33 +24,17 @@ ava("given an object with simple declarations", (t) => {
   t.deepEqual(actual, expect)
 })
 
-ava("given an object with simple declarations and function", (t) => {
-  /**
-    Example function.
-
-    @typedef {import (".").StylesObject} StylesObject
-
-    @param {number} size
-    - An example number.
-
-    @returns {StylesObject}
-      A plain JavaScript object.
-   */
-
-  function item (size) {
-    return {
-      "fontSize": size
-    }
-  }
-
+ava("given an object with simple declarations 2", (t) => {
   const actual = create({
     "banner": [
       {
-        "display": "block",
+        "display": "flex",
         "width": "80%"
+      },
+      {
+        "display": "block"
       }
     ],
-    "item": item,
     "product": {
       "color": "#f00",
       "display": ["block", "flex", "grid"]
@@ -59,7 +43,6 @@ ava("given an object with simple declarations and function", (t) => {
 
   const expect = {
     "banner": "du07kg dz103d",
-    "item": item,
     "product": "dur7z8 k0lzxd"
   }
 

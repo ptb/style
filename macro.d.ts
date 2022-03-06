@@ -722,23 +722,22 @@ export type StylesObject =
     };
 
 /**
-  Creates a JavaScript object containing keys as identifiers and class
-  names as values. If the value is a function, it is assigned to the
-  value as is, without executing.
+  Creates a JavaScript object with keys as identifiers and class names
+  as values.
 
-  @param {Record<string, Function | StylesObject | StylesObject[]>} [input]
+  @param {Record<string, StylesObject | (StylesObject | undefined)[]>} [input]
   - Plain JavaScript object with keys containing CSS styles.
 
-  @returns {Record<string, string | Function>}
-  Plain JavaScript object with keys as identifiers and class names or
-  functions as values.
+  @returns {Record<string, string>}
+  Plain JavaScript object with keys as identifiers and class names
+  as values.
  */
 
 export function create(
   input?:
-    | Record<string, Function | StylesObject | StylesObject[]>
+    | Record<string, StylesObject | (StylesObject | undefined)[]>
     | undefined
-): Record<string, string | Function>;
+): Record<string, string>;
 
 /**
   Parse styles, selectors, and shortcuts from an object or array of objects.

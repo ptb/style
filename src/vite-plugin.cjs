@@ -69,7 +69,7 @@ function plugin () {
                       JSON.stringify(create(... values))
                     )
                     break
-                  case "css":
+                  default:
                     path.replaceWith(
                       types.stringLiteral(css(... values))
                     )
