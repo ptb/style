@@ -77,9 +77,15 @@
   },
   "eslintIgnore": [
     "style.*",
-    "!docs/**/*.js",
     "!src/**/*.js"
   ],
+  "exports": {
+    ".": {
+      "import": "./style.js",
+      "require": "./style.cjs"
+    },
+    "./vite-plugin": "./vite-plugin.cjs"
+  },
   "files": [
     "index.d.ts",
     "index.js",
@@ -90,7 +96,7 @@
     "style.cjs.map",
     "style.js",
     "style.js.map",
-    "vite-plugin.js"
+    "vite-plugin.cjs"
   ],
   "keywords": [
     "babel-plugin-macros",
@@ -118,10 +124,9 @@
       "start": "echo \"\\x1Bc\""
     },
     "exec": "npm-run-all clean lint tidy test prepare build strip",
-    "ext": "js json jsx ts",
+    "ext": "cjs js json jsx ts",
     "verbose": true,
     "watch": [
-      "docs",
       "package.json",
       "src"
     ]
@@ -165,7 +170,7 @@
     "prepare": "rollup -c && size-limit",
     "strip": "sed -i'' -E -e 's/export type Params = Params;//' -e 's/export type PlainObject = PlainObject;//' -e 's/export type StylesObject = StylesObject;//' -e 's/`@media \\$\\{string}`/\"@media ${string}\"/' -e 's/`\\$\\{number}%`/\"${number}%\"/' -e 's/`%\\$\\{string}`/\"%${string}\"/' -e 's/`\\$\\$\\{string}`/\"$${string}\"/' -e 's/\\\\t/  /g' -e 's/ \\\\* /  /' -e 's/ *[@]typedef [{]import.*//' -e 's/\\\\/[*][*]/\\\\n\\\\n\\\\/**/' -e 's/[*]\\\\//*\\\\/\\\\n/' -e 's/export/\\\\nexport/' -e 's/export \\{};//' index.d.ts && sed -i'' -E -e '/^$/N;/^\\\\n$/D' index.d.ts && prettier-eslint --parser \"typescript\" --semi --write index.d.ts && sed -i'' -E -e 's/      \\\\/[*][*]/  \\\\/**/' -e 's/\\\"@media \\$\\{string}\\\"/`@media ${string}`/' -e 's/\\\"\\$\\{number}%\\\"/`${number}%`/' -e 's/\\\"\\$\\$\\{string}\\\"/`$${string}`/' -e 's/\\\"%\\$\\{string}\\\"/`%${string}`/' index.d.ts || true",
     "test": "c8 ava",
-    "tidy": "prettier-eslint --write \"docs/**/*.js\" \"src/**/*.js\"",
+    "tidy": "prettier-eslint --write \"src/**/*.js\"",
     "watch": "nodemon"
   },
   "sideEffects": false,
@@ -185,5 +190,5 @@
   ],
   "type": "module",
   "types": "index.d.ts",
-  "version": "0.9.10"
+  "version": "0.9.11"
 }

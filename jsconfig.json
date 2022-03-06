@@ -31,7 +31,6 @@
     "removeComments": false,
     "resolveJsonModule": true,
     "rootDirs": [
-      "docs",
       "src"
     ],
     "strict": true,
@@ -44,8 +43,6 @@
   ],
   "include": [
     "**/*.ts",
-    "docs/*.js",
-    "docs/*.jsx",
     "rollup.config.js",
     "src/**/*.cjs",
     "src/**/*.js",

@@ -132,5 +132,5 @@ dist
 /style.cjs*
 /style.js*
 /types/*
-/vite-plugin.js
+/vite-plugin.cjs
 !/src/*

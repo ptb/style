@@ -1,20 +1,22 @@
 /*
   eslint-disable
     @typescript-eslint/no-empty-function,
+    @typescript-eslint/no-var-requires,
     func-style,
     no-empty-function
  */
 
-import { writeFileSync } from "node:fs"
-import { join } from "node:path"
+const { writeFileSync } = require("node:fs")
+const { join } = require("node:path")
 
-import {
+const {
   defineMacro,
   defineMacroPlugin,
   vitePluginMacro
-} from "vite-plugin-macro"
+} = require("vite-plugin-macro")
 
-import { create, css, getStyles } from "./style.js"
+// @ts-ignore
+const { create, css, getStyles } = require("./style.cjs")
 
 let processExitHook = function () {}
 
@@ -45,7 +47,7 @@ function plugin () {
               { template, types },
               { prependToBody }
             ) {
-              const filepath = join(__dirname, "src", "styles.css")
+              const filepath = join("src", "styles.css")
 
               const input = args.map(function (arg) {
                 return arg.evaluate()
@@ -94,7 +96,7 @@ function plugin () {
   })
 }
 
-export default vitePluginMacro({
+module.exports = vitePluginMacro({
   "typesPath": join(__dirname, "macro.d.ts")
 })
   .use(plugin())

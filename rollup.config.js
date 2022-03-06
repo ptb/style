@@ -106,11 +106,11 @@ export default [
   },
   {
     "external": ["./style.js"],
-    "input": "src/vite-plugin.js",
+    "input": "src/vite-plugin.cjs",
     "output": {
       "banner": banner,
-      "file": "vite-plugin.js",
-      "format": "esm"
+      "file": "vite-plugin.cjs",
+      "format": "cjs"
     }
   },
   {
