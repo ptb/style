@@ -5,28 +5,28 @@ import { css, isArr, isFn, isObj, toPairs } from "../index.js"
   names as values. If the value is a function, it is assigned to the
   value as is, without executing.
 
-  @typedef {import ("..").PlainObject} PlainObject
+  @typedef {import (".").StylesObject} StylesObject
 
-  @param {PlainObject} params
+  @param {Record<string, Function | StylesObject | StylesObject[]>} [input]
   - Plain JavaScript object with keys containing CSS styles.
 
-  @returns {PlainObject}
+  @returns {Record<string, string | Function>}
     Plain JavaScript object with keys as identifiers and class names or
     functions as values.
  */
 
-export function create (params = {}) {
-  return toPairs(params).reduce(
+export function create (input = {}) {
+  return toPairs(input).reduce(
     /**
       Assigns resulting class names or functions to original keys.
 
-      @param {PlainObject} styles
+      @param {Record<string, string | Function>} styles
       - Object with keys as strings and values as class names or functions.
 
-      @param {[string, PlainObject | PlainObject[]]} style
+      @param {[string, Function | StylesObject | StylesObject[]]} style
       - Key/value pair from original input.
 
-      @returns {PlainObject}
+      @returns {Record<string, string | Function>}
         Object with keys as strings and values as class names or functions.
      */
 
@@ -36,10 +36,10 @@ export function create (params = {}) {
 
       if (isFn(value)) {
         styles[property] = value
-      }
-
-      if (isArr(value) || isObj(value)) {
-        styles[property] = css(value)
+      } else if (isArr(value) || isObj(value)) {
+        styles[property] = css(
+          /** @type {StylesObject | StylesObject[]} */ (value)
+        )
       }
 
       return styles

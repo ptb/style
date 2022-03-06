@@ -6,13 +6,13 @@
     no-empty-function
  */
 
-const { writeFileSync } = require("fs")
-const { join } = require("path")
+const { writeFileSync } = require("node:fs")
+const { join } = require("node:path")
 
 const { createMacro } = require("babel-plugin-macros")
 
 // @ts-ignore
-const { css, getStyles } = require("./style.cjs")
+const { create, css, getStyles } = require("./style.cjs")
 
 let processExitHook = function () {}
 
@@ -43,12 +43,12 @@ function macro ({ babel, config = {}, references, source, state }) {
   const { cwd, file } = state
   const filepath = join(cwd, output)
 
-  const path = file.scope.path.get("body").find(function (p) {
+  const mod = file.scope.path.get("body").find(function (p) {
     return p.isImportDeclaration() && p.node.source.value === source
   })
 
-  if (path && (/[./]macro/u).test(source)) {
-    const src = path.get("source")
+  if (mod && (/[./]macro/u).test(source)) {
+    const src = mod.get("source")
 
     if (!Array.isArray(src)) {
       src.replaceWith(
@@ -61,26 +61,36 @@ function macro ({ babel, config = {}, references, source, state }) {
     const ref = references[refs]
 
     if (typeof ref !== "undefined") {
-      ref.forEach(function ({ parentPath }) {
-        if (parentPath && t.isCallExpression(parentPath.node)) {
-          const arg1 = parentPath.get("arguments")
-          let args
+      ref.forEach(function (path) {
+        if (
+          path.parentPath &&
+          t.isCallExpression(path.parentPath.node)
+        ) {
+          const args = path.parentPath.get("arguments")
 
-          if (Array.isArray(arg1)) {
-            const arg2 = arg1.map(function (arg) {
+          if (Array.isArray(args)) {
+            const input = args.map(function (arg) {
               return arg.evaluate()
             })
 
             if (
-              arg2.every(function (arg) {
+              input.every(function (arg) {
                 return arg.confident
               })
             ) {
-              args = arg2.map(function (arg) {
+              const values = input.map(function (arg) {
                 return arg.value
               })
 
-              parentPath.replaceWith(t.stringLiteral(css(... args)))
+              switch (refs) {
+                case "create":
+                  path.replaceWithSourceString(
+                    JSON.stringify(create(... values))
+                  )
+                  break
+                case "css":
+                  path.replaceWith(t.stringLiteral(css(... values)))
+              }
             }
           }
         }

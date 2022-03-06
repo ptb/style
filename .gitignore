@@ -126,9 +126,11 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-/merge-json.cjs
+/index.js
 /macro.cjs
+/merge-json.cjs
 /style.cjs*
 /style.js*
 /types/*
+/vite-plugin.js
 !/src/*

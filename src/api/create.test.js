@@ -4,14 +4,6 @@ import ava from "ava"
 
 import { create, css } from "../index.js"
 
-ava("given undefined arguments", (t) => {
-  const actual = create()
-
-  const expect = {}
-
-  t.deepEqual(actual, expect)
-})
-
 ava("given an object with simple declarations", (t) => {
   const actual = create({
     "banner": {
@@ -36,12 +28,12 @@ ava("given an object with simple declarations and function", (t) => {
   /**
     Example function.
 
-    @typedef {import ("..").PlainObject} PlainObject
+    @typedef {import (".").StylesObject} StylesObject
 
     @param {number} size
     - An example number.
 
-    @returns {PlainObject}
+    @returns {StylesObject}
       A plain JavaScript object.
    */
 
@@ -52,10 +44,12 @@ ava("given an object with simple declarations and function", (t) => {
   }
 
   const actual = create({
-    "banner": {
-      "display": "block",
-      "width": "80%"
-    },
+    "banner": [
+      {
+        "display": "block",
+        "width": "80%"
+      }
+    ],
     "item": item,
     "product": {
       "color": "#f00",

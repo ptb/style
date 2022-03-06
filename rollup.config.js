@@ -2,9 +2,6 @@
 
 import { execSync } from "child_process"
 
-import babel from "@rollup/plugin-babel"
-import { nodeResolve } from "@rollup/plugin-node-resolve"
-
 // @ts-ignore
 import replace from "@rollup/plugin-replace"
 import strip from "@rollup/plugin-strip"
@@ -32,50 +29,6 @@ const banner = "/*! @copyright "
   .concat(" | @version ")
   .concat(pkg.version)
   .concat(" */")
-
-const externals = [
-  "../index.js",
-  "./cssbeautify.js",
-  "./jsx-runtime",
-  "./postcss.js",
-  "./prism.js",
-  "./react-dom.js",
-  "./react-dom-server.js"
-]
-
-const plugins = [
-  nodeResolve(),
-  babel({
-    "babelHelpers": "bundled",
-    "exclude": ["src/react/*"],
-    "plugins": [
-      "@babel/plugin-syntax-jsx",
-      [
-        "@babel/plugin-transform-react-jsx",
-        {
-          "importSource": ".",
-          "runtime": "automatic"
-        }
-      ],
-      "babel-plugin-macros"
-    ]
-  }),
-  replace({
-    "delimiters": ["", ""],
-    "preventAssignment": false,
-    "values": {
-      "from './jsx-runtime'": "from './react.js'"
-    }
-  }),
-  terser({
-    "format": {
-      "comments": false
-    },
-    "mangle": {
-      "toplevel": true
-    }
-  })
-]
 
 export default [
   {
@@ -152,6 +105,15 @@ export default [
     }
   },
   {
+    "external": ["./style.js"],
+    "input": "src/vite-plugin.js",
+    "output": {
+      "banner": banner,
+      "file": "vite-plugin.js",
+      "format": "esm"
+    }
+  },
+  {
     "external": ["fs"],
     "input": "src/merge/merge-json.js",
     "output": {
@@ -167,32 +129,5 @@ export default [
       }),
       execute("chmod +x merge-json.cjs")
     ]
-  },
-  {
-    "external": externals,
-    "input": "docs/index.jsx",
-    "output": {
-      "file": "js/index.js",
-      "format": "esm"
-    },
-    plugins
-  },
-  {
-    "external": externals,
-    "input": "docs/demo.jsx",
-    "output": {
-      "file": "js/demo.js",
-      "format": "esm"
-    },
-    plugins
-  },
-  {
-    "external": externals,
-    "input": "docs/convert.jsx",
-    "output": {
-      "file": "js/convert.js",
-      "format": "esm"
-    },
-    plugins
   }
 ]
