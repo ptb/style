@@ -85,7 +85,7 @@ function macro ({ babel, config = {}, references, source, state }) {
                     JSON.stringify(create(... values))
                   )
                   break
-                default:
+                case "css":
                   path.replaceWith(
                     t.stringLiteral(css(... values))
                   )
