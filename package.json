@@ -34,6 +34,7 @@
     ],
     "temp-directory": "/tmp/c8_output"
   },
+  "description": "@ptb/style is a CSS compiler with a powerful, intuitive API that makes authoring CSS faster and easier.",
   "devDependencies": {
     "@ava/babel": "2.0.0",
     "@rollup/plugin-replace": "4.0.0",
@@ -64,7 +65,7 @@
     "postcss": "8.4.8",
     "prettier-eslint": "13.0.0",
     "prettier-eslint-cli": "5.0.1",
-    "puppeteer": "13.5.0",
+    "puppeteer": "13.5.1",
     "rollup": "2.70.0",
     "rollup-plugin-execute": "1.1.1",
     "rollup-plugin-terser": "7.0.2",
@@ -196,5 +197,5 @@
   ],
   "type": "module",
   "types": "index.d.ts",
-  "version": "0.9.15"
+  "version": "0.9.16"
 }

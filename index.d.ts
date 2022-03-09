@@ -24,7 +24,7 @@ import {
   Returns a string of class names each separated by a space.
  */
 
-export function cn(... args: any[]): string;
+export function cx(... args: any[]): string;
 
 export type Percentage = `${number}%`;
 

@@ -592,7 +592,7 @@ __metadata:
     postcss: 8.4.8
     prettier-eslint: 13.0.0
     prettier-eslint-cli: 5.0.1
-    puppeteer: 13.5.0
+    puppeteer: 13.5.1
     rollup: 2.70.0
     rollup-plugin-execute: 1.1.1
     rollup-plugin-terser: 7.0.2
@@ -1824,9 +1824,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001304, caniuse-lite@npm:^1.0.30001313":
-  version: 1.0.30001313
-  resolution: "caniuse-lite@npm:1.0.30001313"
-  checksum: 49f2dcd1fa493a09a5247dcf3a4da3b9df355131b1fc1fd08b67ae7683c300ed9b9eef6a5424b4ac7e5d1ff0e129d2a0b4adf2a6a5a04ab5c2c0b2c590e935be
+  version: 1.0.30001314
+  resolution: "caniuse-lite@npm:1.0.30001314"
+  checksum: d82e1b8b287b1b2d2ed25c4495fe293276853dd9c77553c722929a6142fc49b3dd5ea21a95f6410d93319434a5bd071c304ea92e93debbcf292a9156cf08b35d
   languageName: node
   linkType: hard
 
@@ -1885,9 +1885,9 @@ __metadata:
   linkType: hard
 
 "chalk@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "chalk@npm:5.0.0"
-  checksum: 6eba7c518b9aa5fe882ae6d14a1ffa58c418d72a3faa7f72af56641f1bbef51b645fca1d6e05d42357b7d3c846cd504c0b7b64d12309cdd07867e3b4411e0d01
+  version: 5.0.1
+  resolution: "chalk@npm:5.0.1"
+  checksum: 7b45300372b908f0471fbf7389ce2f5de8d85bb949026fd51a1b95b10d0ed32c7ed5aab36dd5e9d2bf3191867909b4404cef75c5f4d2d1daeeacd301dd280b76
   languageName: node
   linkType: hard
 
@@ -2554,9 +2554,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.76":
-  version: 1.4.76
-  resolution: "electron-to-chromium@npm:1.4.76"
-  checksum: eef4305665e095610f6e913fad1efc73473b7c383f1cfa5e1e005b19c4133006d5492013b38dbcb1e4cdb0e3cd3d0ff94c4c52630fd088464eb2ebd1e210e0eb
+  version: 1.4.79
+  resolution: "electron-to-chromium@npm:1.4.79"
+  checksum: 0d312fc3a347d384d4c7d52fab353eca29827076faec515d2156a681b210d68d1eded416b74b41512337ca264649e7d4a11ae0bd97742b5c21ff9c2869657ed3
   languageName: node
   linkType: hard
 
@@ -4966,10 +4966,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lru-cache@npm:^7.4.0":
-  version: 7.4.1
-  resolution: "lru-cache@npm:7.4.1"
-  checksum: de6d8aa83b0a304943a1e1ec2a982d9b44ef36963c20bd01950f13dcb3eb482c57bfa15ab49b1baa15c682d6d33a10842bb7b33d8a449845009ffab6a2faec3c
+"lru-cache@npm:^7.4.1":
+  version: 7.4.2
+  resolution: "lru-cache@npm:7.4.2"
+  checksum: 389b3b13b3a0406087b5ff3a913358161aa0b17e55e5a2626c343fa701026ce176483043ed6062ea188edbcd9ffab47a136a0f6e6d9b42b4236c8c49523a6ac5
   languageName: node
   linkType: hard
 
@@ -4992,8 +4992,8 @@ __metadata:
   linkType: hard
 
 "make-fetch-happen@npm:^10.0.3":
-  version: 10.0.4
-  resolution: "make-fetch-happen@npm:10.0.4"
+  version: 10.0.5
+  resolution: "make-fetch-happen@npm:10.0.5"
   dependencies:
     agentkeepalive: ^4.2.1
     cacache: ^15.3.0
@@ -5001,17 +5001,17 @@ __metadata:
     http-proxy-agent: ^5.0.0
     https-proxy-agent: ^5.0.0
     is-lambda: ^1.0.1
-    lru-cache: ^7.4.0
+    lru-cache: ^7.4.1
     minipass: ^3.1.6
     minipass-collect: ^1.0.2
-    minipass-fetch: ^2.0.1
+    minipass-fetch: ^2.0.2
     minipass-flush: ^1.0.5
     minipass-pipeline: ^1.2.4
     negotiator: ^0.6.3
     promise-retry: ^2.0.1
     socks-proxy-agent: ^6.1.1
     ssri: ^8.0.1
-  checksum: 036fcfaec18b69ce6384644275850b0871aff105663aecc0130b5c45fe318542d7e2004cf1f4cd26b7c6842c282f8b37f00da67aa3bae13c13693e405480ac74
+  checksum: 150071e41262bffafccafa764bab0e6a929a46be5abc1dfee414ffb821d052942596f3660ff84b17e4d6c44f51b2d2741f6d02a49e2dad44e06c94c3baf624fa
   languageName: node
   linkType: hard
 
@@ -5223,9 +5223,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minipass-fetch@npm:^2.0.1":
-  version: 2.0.2
-  resolution: "minipass-fetch@npm:2.0.2"
+"minipass-fetch@npm:^2.0.2":
+  version: 2.0.3
+  resolution: "minipass-fetch@npm:2.0.3"
   dependencies:
     encoding: ^0.1.13
     minipass: ^3.1.6
@@ -5234,7 +5234,7 @@ __metadata:
   dependenciesMeta:
     encoding:
       optional: true
-  checksum: 0613b0a6ef427609707c2b73b69230348fe3c24b33c144622e8e248404534fa1f125b94c324c555cd665ef623abedab0f7891e460b1c9ac6babc3ab2385b3c18
+  checksum: 78a4a509b1e73f5e63b84065969790373b36b04da586744815c7f7f80013f1d786797842cc33cfa517eba0ad2f2142eb0ac808c46738da1c53e0e3aeed81df11
   languageName: node
   linkType: hard
 
@@ -6274,9 +6274,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"puppeteer@npm:13.5.0":
-  version: 13.5.0
-  resolution: "puppeteer@npm:13.5.0"
+"puppeteer@npm:13.5.1":
+  version: 13.5.1
+  resolution: "puppeteer@npm:13.5.1"
   dependencies:
     cross-fetch: 3.1.5
     debug: 4.3.3
@@ -6290,7 +6290,7 @@ __metadata:
     tar-fs: 2.1.1
     unbzip2-stream: 1.4.3
     ws: 8.5.0
-  checksum: 775f00950e106ed17db03895c6cb20e05fe234b91646e3978a35d1d5dfc1914beccd47dc901b40059056c056b6064bcbb444674065fb83dfa7a1243a7281fdfc
+  checksum: adf7511977d9300386cc2b2699d83c7f4c2e890fb00a5d7a7b41a11561b599b1f19b26ac4ae9d469ce567c87a22be6362160166f31aca135d94148f68aeff2cc
   languageName: node
   linkType: hard
 

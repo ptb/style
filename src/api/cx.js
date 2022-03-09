@@ -25,7 +25,7 @@ import { isArr, isObj, isStr, toPairs, uniq } from "../index.js"
     Returns a string of class names each separated by a space.
  */
 
-export function cn () {
+export function cx () {
   return uniq(
     Array.prototype.slice
       .call(arguments)
@@ -35,7 +35,7 @@ export function cn () {
         }
 
         if (isArr(input)) {
-          return output.concat(cn.apply(null, input))
+          return output.concat(cx.apply(null, input))
         }
 
         if (isObj(input)) {

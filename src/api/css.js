@@ -6,7 +6,7 @@
 
 import {
   cache,
-  cn,
+  cx,
   getClassName,
   nanoid,
   parse,
@@ -63,13 +63,13 @@ import {
 export function css (input = {}, className = "") {
   const group = nanoid()
 
-  return cn(
+  return cx(
     parse({ input }, group, true)
       .map(cache)
       .map(function (style) {
         return update(style, group)
       })
       .map(getClassName)
-      .concat(cn(className))
+      .concat(cx(className))
   )
 }

@@ -1,9 +1,9 @@
 import ava from "ava"
 
-import { cn } from "../index.js"
+import { cx } from "../index.js"
 
 ava("keeps object keys with truthy values", (t) => {
-  const actual = cn({
+  const actual = cx({
     "a": true,
     "b": false,
     "c": 0,
@@ -18,7 +18,7 @@ ava("keeps object keys with truthy values", (t) => {
 })
 
 ava("joins arrays of class names and ignore falsy values", (t) => {
-  const actual = cn("a", 0, null, undefined, true, 1, "b")
+  const actual = cx("a", 0, null, undefined, true, 1, "b")
 
   const expect = "a b"
 
@@ -26,7 +26,7 @@ ava("joins arrays of class names and ignore falsy values", (t) => {
 })
 
 ava("supports heterogenous arguments", (t) => {
-  const actual = cn({ "a": true }, "b", 0)
+  const actual = cx({ "a": true }, "b", 0)
 
   const expect = "a b"
 
@@ -34,7 +34,7 @@ ava("supports heterogenous arguments", (t) => {
 })
 
 ava("should be trimmed", (t) => {
-  const actual = cn("", "b", {}, "")
+  const actual = cx("", "b", {}, "")
 
   const expect = "b"
 
@@ -42,7 +42,7 @@ ava("should be trimmed", (t) => {
 })
 
 ava("returns an empty string for an empty configuration", (t) => {
-  const actual = cn({})
+  const actual = cx({})
 
   const expect = ""
 
@@ -50,7 +50,7 @@ ava("returns an empty string for an empty configuration", (t) => {
 })
 
 ava("supports an array of class names", (t) => {
-  const actual = cn(["a", "b"])
+  const actual = cx(["a", "b"])
 
   const expect = "a b"
 
@@ -58,8 +58,8 @@ ava("supports an array of class names", (t) => {
 })
 
 ava("joins array arguments with string arguments", (t) => {
-  const actual1 = cn([["a", "b"], "c"])
-  const actual2 = cn("c", ["a", "b"])
+  const actual1 = cx([["a", "b"], "c"])
+  const actual2 = cx("c", ["a", "b"])
 
   const expect = "a b c"
 
@@ -68,7 +68,7 @@ ava("joins array arguments with string arguments", (t) => {
 })
 
 ava("handles multiple array arguments", (t) => {
-  const actual = cn(["d", "c"], ["a", "b"])
+  const actual = cx(["d", "c"], ["a", "b"])
 
   const expect = "a b c d"
 
@@ -76,7 +76,7 @@ ava("handles multiple array arguments", (t) => {
 })
 
 ava("handles arrays that include falsy and true values", (t) => {
-  const actual = cn(["a", 0, null, undefined, false, true, "b"])
+  const actual = cx(["a", 0, null, undefined, false, true, "b"])
 
   const expect = "a b"
 
@@ -84,7 +84,7 @@ ava("handles arrays that include falsy and true values", (t) => {
 })
 
 ava("handles arrays that include arrays", (t) => {
-  const actual = cn(["a", ["b", "c"]])
+  const actual = cx(["a", ["b", "c"]])
 
   const expect = "a b c"
 
@@ -92,7 +92,7 @@ ava("handles arrays that include arrays", (t) => {
 })
 
 ava("handles arrays that include objects", (t) => {
-  const actual = cn(["a", { "b": true, "c": false }])
+  const actual = cx(["a", { "b": true, "c": false }])
 
   const expect = "a b"
 
@@ -100,7 +100,7 @@ ava("handles arrays that include objects", (t) => {
 })
 
 ava("handles deep array recursion", (t) => {
-  const actual = cn(["a", ["b", ["c", { "d": true }]]])
+  const actual = cx(["a", ["b", ["c", { "d": true }]]])
 
   const expect = "a b c d"
 
@@ -108,7 +108,7 @@ ava("handles deep array recursion", (t) => {
 })
 
 ava("handles arrays that are empty", (t) => {
-  const actual = cn("a", [])
+  const actual = cx("a", [])
 
   const expect = "a"
 
@@ -116,7 +116,7 @@ ava("handles arrays that are empty", (t) => {
 })
 
 ava("handles nested arrays that have empty nested arrays", (t) => {
-  const actual = cn("a", [[]])
+  const actual = cx("a", [[]])
 
   const expect = "a"
 
@@ -126,7 +126,7 @@ ava("handles nested arrays that have empty nested arrays", (t) => {
 ava(
   "handles all types of truthy and falsy property values as expected",
   (t) => {
-    const actual = cn({
+    const actual = cx({
       "emptyList": [],
       "emptyObject": {},
       "emptyString": "",
@@ -152,7 +152,7 @@ ava(
 )
 
 ava("handles toString() method defined on object", (t) => {
-  const actual = cn({
+  const actual = cx({
     "toString": function () {
       return "classFromMethod"
     }
