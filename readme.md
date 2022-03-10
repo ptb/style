@@ -1,4 +1,4 @@
-# @ptb/style [![coverage](https://img.shields.io/coveralls/github/ptb/style?color=696)](https://coveralls.io/github/ptb/style) [![license](https://img.shields.io/npm/l/@ptb/style?color=696)](https://choosealicense.com/licenses/apache-2.0/) [![version](https://img.shields.io/npm/v/@ptb/style?color=696&label=version)](https://www.npmjs.com/package/@ptb/style) [![size](https://img.shields.io/bundlephobia/minzip/@ptb/style?color=696&label=gzip+size)](https://bundlephobia.com/package/@ptb/style)
+# @ptb/style [![coverage][coverageSvg]][coverage] [![license][licenseSvg]][license] [![version][versionSvg]][version] [![size][sizeSvg]][size] [![tests][testsSvg]][tests]
 
 <img align="right" alt="" height="180" src="docs/logo.svg" width="180" />
 
@@ -87,6 +87,16 @@ Distributed under the Apache License. See [`LICENSE`](LICENSE) for more informat
 - Thanks to [Gary Court](https://github.com/garycourt) for [murmurhash-js](https://github.com/garycourt/murmurhash-js).
 - Thanks to [Andrey Sitnik](https://github.com/ai) for [nanoid](https://github.com/ai/nanoid/blob/main/non-secure/index.js).
 
+[coverage]: https://coveralls.io/github/ptb/style
+[coverageSvg]: https://img.shields.io/coveralls/github/ptb/style?color=696
+[license]: https://choosealicense.com/licenses/apache-2.0/
+[licenseSvg]: https://img.shields.io/npm/l/@ptb/style?color=696
+[version]: https://www.npmjs.com/package/@ptb/style
+[versionSvg]: https://img.shields.io/npm/v/@ptb/style?color=696&label=version
+[size]: https://bundlephobia.com/package/@ptb/style
+[sizeSvg]: https://img.shields.io/bundlephobia/minzip/@ptb/style?color=696&label=gzip+size
+[tests]: https://github.com/ptb/style/actions/workflows/tests.yml
+[testsSvg]: https://github.com/ptb/style/actions/workflows/tests.yml/badge.svg
 [docs]: https://ptb.dev/style/#toc=1
 [bugs]: https://github.com/ptb/style/issues
 [talk]: https://github.com/ptb/style/discussions
