@@ -1,4 +1,4 @@
-# @ptb/style
+# @ptb/style [![coverage](https://img.shields.io/coveralls/github/ptb/style?color=696)](https://coveralls.io/github/ptb/style) [![license](https://img.shields.io/npm/l/@ptb/style?color=696)](https://choosealicense.com/licenses/apache-2.0/) [![version](https://img.shields.io/npm/v/@ptb/style?color=696&label=version)](https://www.npmjs.com/package/@ptb/style) [![size](https://img.shields.io/bundlephobia/minzip/@ptb/style?color=696&label=gzip+size)](https://bundlephobia.com/package/@ptb/style)
 
 <img align="right" alt="" height="180" src="docs/logo.svg" width="180" />
 
