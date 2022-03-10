@@ -32,6 +32,10 @@
     "include": [
       "src/**/*.js"
     ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
     "temp-directory": "/tmp/c8_output"
   },
   "description": "@ptb/style is a CSS compiler with a powerful, intuitive API that makes authoring CSS faster and easier.",
@@ -47,6 +51,7 @@
     "ava": "4.1.0",
     "babel-plugin-macros": "3.1.0",
     "c8": "7.11.0",
+    "coveralls": "3.1.1",
     "csstype": "3.0.11",
     "dts-bundle-generator": "6.5.0",
     "eslint": "7.32.0",
@@ -157,7 +162,6 @@
     "access": "public"
   },
   "renovate": {
-    "automerge": true,
     "extends": [
       "config:base"
     ],
@@ -197,5 +201,5 @@
   ],
   "type": "module",
   "types": "index.d.ts",
-  "version": "0.9.16"
+  "version": "0.9.17"
 }
