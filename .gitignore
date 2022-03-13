@@ -126,10 +126,11 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+/gatsby-ssr.js
 /index.js
-/macro.cjs
+/macro/index.js
+/macro/style.js*
 /merge-json.cjs
-/style.cjs*
 /style.js*
 /types/*
 /vite-plugin.cjs

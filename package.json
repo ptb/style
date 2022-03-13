@@ -58,13 +58,14 @@
     "eslint-plugin-compat": "4.0.2",
     "eslint-plugin-fp": "2.3.0",
     "eslint-plugin-import": "2.25.4",
-    "eslint-plugin-jsdoc": "37.9.7",
+    "eslint-plugin-jsdoc": "38.0.3",
     "eslint-plugin-json": "3.1.0",
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-promise": "6.0.0",
     "eslint-plugin-react": "7.29.3",
     "eslint-plugin-react-hooks": "4.3.0",
     "eslint-plugin-standard": "5.0.0",
+    "gatsby": "4.9.3",
     "nodemon": "2.0.15",
     "npm-run-all": "4.1.5",
     "postcss": "8.4.8",
@@ -88,20 +89,22 @@
   "exports": {
     ".": {
       "import": "./style.js",
-      "require": "./style.cjs"
+      "require": "./macro/style.js"
     },
     "./index": "./index.js",
-    "./macro": "./macro.cjs",
+    "./macro": "./macro/index.js",
+    "./package.json": "./package.json",
     "./vite-plugin": "./vite-plugin.cjs"
   },
   "files": [
+    "gatsby-ssr.js",
     "index.d.ts",
     "index.js",
-    "macro.cjs",
-    "macro.d.ts",
+    "macro/index.js",
+    "macro/index.d.ts",
+    "macro/style.js",
+    "macro/style.js.map",
     "merge-json.cjs",
-    "style.cjs",
-    "style.cjs.map",
     "style.js",
     "style.js.map",
     "vite-plugin.cjs"
@@ -116,7 +119,7 @@
     "styles"
   ],
   "license": "Apache-2.0",
-  "main": "style.cjs",
+  "main": "macro/style.js",
   "maintainers": [
     {
       "email": "peter@ptb.dev",
@@ -176,7 +179,7 @@
   },
   "scripts": {
     "build": "tsc -p jsconfig.json && dts-bundle-generator --no-banner --out-file index.d.ts --project jsconfig.json src/style.js 2> /dev/null || true && rm -rf types 2> /dev/null || true",
-    "clean": "rm -rf index.js macro.cjs merge-json.cjs style.js* style.cjs* types vite-plugin.js 2> /dev/null || true",
+    "clean": "rm -rf gatsby-ssr.js index.js macro/index.js macro/style.js* merge-json.cjs style.js* types vite-plugin.cjs 2> /dev/null || true",
     "lint": "eslint --fix src",
     "prepare": "rollup -c && size-limit",
     "strip": "sed -i'' -E -e 's/export type Params = Params;//' -e 's/export type PlainObject = PlainObject;//' -e 's/export type StylesObject = StylesObject;//' -e 's/`@media \\$\\{string}`/\"@media ${string}\"/' -e 's/`\\$\\{number}%`/\"${number}%\"/' -e 's/`%\\$\\{string}`/\"%${string}\"/' -e 's/`\\$\\$\\{string}`/\"$${string}\"/' -e 's/\\\\t/  /g' -e 's/ \\\\* /  /' -e 's/ *[@]typedef [{]import.*//' -e 's/\\\\/[*][*]/\\\\n\\\\n\\\\/**/' -e 's/[*]\\\\//*\\\\/\\\\n/' -e 's/export/\\\\nexport/' -e 's/export \\{};//' index.d.ts && sed -i'' -E -e '/^$/N;/^\\\\n$/D' index.d.ts && prettier-eslint --parser \"typescript\" --semi --write index.d.ts && sed -i'' -E -e 's/      \\\\/[*][*]/  \\\\/**/' -e 's/\\\"@media \\$\\{string}\\\"/`@media ${string}`/' -e 's/\\\"\\$\\{number}%\\\"/`${number}%`/' -e 's/\\\"\\$\\$\\{string}\\\"/`$${string}`/' -e 's/\\\"%\\$\\{string}\\\"/`%${string}`/' index.d.ts || true",
@@ -192,7 +195,7 @@
     },
     {
       "limit": "9 KB",
-      "path": "style.cjs"
+      "path": "macro/style.js"
     },
     {
       "limit": "9.5 KB",
@@ -201,5 +204,5 @@
   ],
   "type": "module",
   "types": "index.d.ts",
-  "version": "0.9.17"
+  "version": "0.9.18"
 }

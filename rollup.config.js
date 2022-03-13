@@ -100,8 +100,17 @@ export default [
     "input": "src/macro.cjs",
     "output": {
       "banner": banner,
-      "file": "macro.cjs",
+      "file": "macro/index.js",
       "format": "cjs"
+    }
+  },
+  {
+    "external": ["react", "./style.js"],
+    "input": "src/gatsby-ssr.js",
+    "output": {
+      "banner": banner,
+      "file": "gatsby-ssr.js",
+      "format": "esm"
     }
   },
   {
