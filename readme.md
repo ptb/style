@@ -1,4 +1,4 @@
-# @ptb/style [![coverage][coverageSvg]][coverage] [![license][licenseSvg]][license] [![size][sizeSvg]][size]
+# @ptb/style [![coverage][coverageSvg]][coverage] [![license][licenseSvg]][license] [![size][sizeSvg]][size] [![types][typesSvg]][types]
 
 <img align="right" alt="" height="180" src="docs/logo.svg" width="180" />
 
@@ -93,6 +93,9 @@ Distributed under the Apache License. See [`LICENSE`](LICENSE) for more informat
 [licenseSvg]: https://img.shields.io/npm/l/@ptb/style?color=696
 [size]: https://bundlephobia.com/package/@ptb/style
 [sizeSvg]: https://img.shields.io/bundlephobia/minzip/@ptb/style?color=696&label=gzip+size
+[types]: https://github.com/ptb/style/blob/develop/index.d.ts
+[typesSvg]: https://img.shields.io/npm/types/@ptb/style?color=696
+
 [docs]: https://ptb.dev/style/#toc=1
 [bugs]: https://github.com/ptb/style/issues
 [talk]: https://github.com/ptb/style/discussions
