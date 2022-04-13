@@ -2576,7 +2576,7 @@ __metadata:
     serve: 13.0.2
     size-limit: 7.0.8
     tslib: 2.3.1
-    typedoc: ^0.22.15
+    typedoc: 0.22.15
     typescript: 4.6.3
     vite: 2.9.3
     vite-plugin-macro: 0.2.0
@@ -16466,7 +16466,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:^0.22.15":
+"typedoc@npm:0.22.15":
   version: 0.22.15
   resolution: "typedoc@npm:0.22.15"
   dependencies:
