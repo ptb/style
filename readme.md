@@ -1,6 +1,6 @@
 # @ptb/style [![coverage][coverageSvg]][coverage] [![license][licenseSvg]][license] [![size][sizeSvg]][size] [![types][typesSvg]][types]
 
-<img align="right" alt="" height="180" src="docs/logo.svg" width="180" />
+<img align="right" alt="" height="180" src="assests/logo.svg" width="180" />
 
 ### CSS compiler with a powerful, intuitive API that makes authoring CSS faster and easier.
 
