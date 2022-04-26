@@ -2551,7 +2551,7 @@ __metadata:
     c8: 7.11.2
     coveralls: 3.1.1
     csstype: 3.0.11
-    dts-bundle-generator: 6.8.0
+    dts-bundle-generator: 6.9.0
     eslint: 7.32.0
     eslint-plugin-compat: 4.0.2
     eslint-plugin-fp: 2.3.0
@@ -6610,15 +6610,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dts-bundle-generator@npm:6.8.0":
-  version: 6.8.0
-  resolution: "dts-bundle-generator@npm:6.8.0"
+"dts-bundle-generator@npm:6.9.0":
+  version: 6.9.0
+  resolution: "dts-bundle-generator@npm:6.9.0"
   dependencies:
     typescript: ">=3.0.1"
     yargs: ^17.2.1
   bin:
     dts-bundle-generator: dist/bin/dts-bundle-generator.js
-  checksum: dacb3e613c859704251f823333f6e2c5b73906f8a87230f426767a1eccc17fae55621e17dd0a71eebf7c3e5259d02c9501d8a6d5429d150da6f5b1678341876a
+  checksum: 1ea1d4fa7f206396ee69173efdbb80af5bfdaea1fc28af7e045daceaee1d2df940f8c4abf76ef9015a2fb55235e78af570719c1c1bce89bb6fad620c64a163f0
   languageName: node
   linkType: hard
 
