@@ -3043,7 +3043,7 @@ __metadata:
     eslint-plugin-react: 7.29.4
     eslint-plugin-react-hooks: 4.5.0
     eslint-plugin-standard: 5.0.0
-    gatsby: 4.13.0
+    gatsby: 4.13.1
     nodemon: 2.0.15
     npm-run-all: 4.1.5
     postcss: 8.4.12
@@ -9311,9 +9311,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby@npm:4.13.0":
-  version: 4.13.0
-  resolution: "gatsby@npm:4.13.0"
+"gatsby@npm:4.13.1":
+  version: 4.13.1
+  resolution: "gatsby@npm:4.13.1"
   dependencies:
     "@babel/code-frame": ^7.14.0
     "@babel/core": ^7.15.5
@@ -9476,7 +9476,7 @@ __metadata:
       optional: true
   bin:
     gatsby: ./cli.js
-  checksum: 38a7ab1a67aa36ebb8597b06be724cc4ae8745c3322b6c3705ebd5dc2a5bb6ab343848455e9d14fb19732f50662472528e0232cf5653809ce86b307798ddeb4e
+  checksum: 49c72a0d8b163e76a8cd778efd7b78a9da742df57950e18fbfdd1b1a41ebbafaf4acfc5811381caaf7e1b33ffc6574e595340ec8e4e643a15c1f0ed1336971fa
   languageName: node
   linkType: hard
 
