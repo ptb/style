@@ -47,18 +47,14 @@ export function parseSelfSelector (
         const value = selector.join("")
 
         const declarations =
-          store
-            .get(media)
-            .get(group)
+          store.get(media).get(group)
             .get(value) || []
 
         declarations[getPropertyId(property)] = JSON.stringify(
           params.value
         )
 
-        store
-          .get(media)
-          .get(group)
+        store.get(media).get(group)
           .set(value, declarations)
       }
     })

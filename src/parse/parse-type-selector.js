@@ -33,19 +33,21 @@ export function parseTypeSelector (params = defaultParams, group) {
     const input = value
     const conditional = get(params, "conditional", {})
 
-    return /** @type {Params[]} */ (merge(
-      parse({ conditional, emit, input }, group, false),
-      parse(
-        {
-          conditional,
-          emit,
-          input,
-          "selectors": [[property]]
-        },
-        group,
-        false
+    return /** @type {Params[]} */ (
+      merge(
+        parse({ conditional, emit, input }, group, false),
+        parse(
+          {
+            conditional,
+            emit,
+            input,
+            "selectors": [[property]]
+          },
+          group,
+          false
+        )
       )
-    ))
+    )
   }
 
   return [params]

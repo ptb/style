@@ -36,13 +36,13 @@ export function parseFontFace (params = defaultParams) {
     const input = params.value
     const selectors = [["@font-face"]]
 
-    const identifier = /** @type {string} */ (getIdentifier(
-      /** @type {Params} */ (merge(
-        params,
-        { "selectors": undefined },
-        { selectors }
-      ))
-    ))
+    const identifier = /** @type {string} */ (
+      getIdentifier(
+        /** @type {Params} */ (
+          merge(params, { "selectors": undefined }, { selectors })
+        )
+      )
+    )
 
     if (isObj(input)) {
       // @ts-ignore
@@ -99,10 +99,12 @@ export function parseFontFace (params = defaultParams) {
 
               function (fonts, value) {
                 if (isObj(value)) {
-                  const font = /** @type {Params} */ (parseFontFace({
-                    property,
-                    value
-                  }).shift())
+                  const font = /** @type {Params} */ (
+                    parseFontFace({
+                      property,
+                      value
+                    }).shift()
+                  )
 
                   styles.push(font)
                   return fonts.concat(font.value)

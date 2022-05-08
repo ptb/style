@@ -66,8 +66,7 @@ ava(
           "fontFamily": "Avenir",
           "fontStyle": "italic",
           "fontWeight": 300,
-          "src":
-            "url(/fonts/avenir-300-light-oblique.woff) format(woff)"
+          "src": "url(/fonts/avenir-300-light-oblique.woff) format(woff)"
         }
       },
       "avenir400": {
@@ -99,8 +98,7 @@ ava(
           "fontFamily": "Avenir",
           "fontStyle": "italic",
           "fontWeight": 500,
-          "src":
-            "url(/fonts/avenir-500-roman-oblique.woff) format(woff)"
+          "src": "url(/fonts/avenir-500-roman-oblique.woff) format(woff)"
         }
       },
       "avenir600": {
@@ -108,8 +106,7 @@ ava(
           "fontFamily": "Avenir",
           "fontStyle": "normal",
           "fontWeight": 600,
-          "src":
-            "url(/fonts/avenir-600-medium-normal.woff) format(woff)"
+          "src": "url(/fonts/avenir-600-medium-normal.woff) format(woff)"
         }
       },
       "avenir600i": {
@@ -117,8 +114,7 @@ ava(
           "fontFamily": "Avenir",
           "fontStyle": "italic",
           "fontWeight": 600,
-          "src":
-            "url(/fonts/avenir-600-medium-oblique.woff) format(woff)"
+          "src": "url(/fonts/avenir-600-medium-oblique.woff) format(woff)"
         }
       },
       "avenir700": {
@@ -134,8 +130,7 @@ ava(
           "fontFamily": "Avenir",
           "fontStyle": "italic",
           "fontWeight": 700,
-          "src":
-            "url(/fonts/avenir-700-heavy-oblique.woff) format(woff)"
+          "src": "url(/fonts/avenir-700-heavy-oblique.woff) format(woff)"
         }
       },
       "avenir800": {
@@ -151,8 +146,7 @@ ava(
           "fontFamily": "Avenir",
           "fontStyle": "italic",
           "fontWeight": 800,
-          "src":
-            "url(/fonts/avenir-800-black-oblique.woff) format(woff)"
+          "src": "url(/fonts/avenir-800-black-oblique.woff) format(woff)"
         }
       }
     }

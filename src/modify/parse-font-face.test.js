@@ -32,8 +32,7 @@ ava("given an object with valid font-face declaration (1)", (t) => {
   const actual = parseFontFace({
     "property": "fontFamily",
     "value": {
-      "src":
-        "url('/fonts/font.woff2') format ('woff2'), url('/fonts/font.woff') format ('woff')"
+      "src": "url('/fonts/font.woff2') format ('woff2'), url('/fonts/font.woff') format ('woff')"
     }
   })
 
@@ -41,8 +40,7 @@ ava("given an object with valid font-face declaration (1)", (t) => {
     {
       "block": [
         {
-          "src":
-            "url('/fonts/font.woff2') format ('woff2'), url('/fonts/font.woff') format ('woff')"
+          "src": "url('/fonts/font.woff2') format ('woff2'), url('/fonts/font.woff') format ('woff')"
         },
         {
           "font-family": "c8ar46"
@@ -76,8 +74,7 @@ ava("given an object with valid font-face declaration (2)", (t) => {
   const actual = parseFontFace({
     "property": "fontFamily",
     "value": {
-      "src":
-        "url('/fonts/font2.woff2') format ('woff2'), url('/fonts/font2.woff') format ('woff')"
+      "src": "url('/fonts/font2.woff2') format ('woff2'), url('/fonts/font2.woff') format ('woff')"
     }
   })
 
@@ -85,8 +82,7 @@ ava("given an object with valid font-face declaration (2)", (t) => {
     {
       "block": [
         {
-          "src":
-            "url('/fonts/font2.woff2') format ('woff2'), url('/fonts/font2.woff') format ('woff')"
+          "src": "url('/fonts/font2.woff2') format ('woff2'), url('/fonts/font2.woff') format ('woff')"
         },
         {
           "font-family": "c8025u"
@@ -121,8 +117,7 @@ ava("given an object with valid font-face declaration (3)", (t) => {
     "property": "fontFamily",
     "value": {
       "fontFamily": "Avenir",
-      "src":
-        "url('/fonts/avenir.woff2') format ('woff2'), url('/fonts/avenir.woff') format ('woff')"
+      "src": "url('/fonts/avenir.woff2') format ('woff2'), url('/fonts/avenir.woff') format ('woff')"
     }
   })
 
@@ -133,8 +128,7 @@ ava("given an object with valid font-face declaration (3)", (t) => {
           "font-family": "Avenir"
         },
         {
-          "src":
-            "url('/fonts/avenir.woff2') format ('woff2'), url('/fonts/avenir.woff') format ('woff')"
+          "src": "url('/fonts/avenir.woff2') format ('woff2'), url('/fonts/avenir.woff') format ('woff')"
         }
       ],
       "emit": false,
@@ -166,8 +160,7 @@ ava("given an object with valid font-face declaration (4)", (t) => {
     "property": "fontFamily",
     "value": {
       "fontFamily": "Avenir",
-      "src":
-        "url('/fonts/avenir.woff2') format ('woff2'), url('/fonts/avenir.woff') format ('woff')"
+      "src": "url('/fonts/avenir.woff2') format ('woff2'), url('/fonts/avenir.woff') format ('woff')"
     }
   })
 
@@ -178,8 +171,7 @@ ava("given an object with valid font-face declaration (4)", (t) => {
           "font-family": "Avenir"
         },
         {
-          "src":
-            "url('/fonts/avenir.woff2') format ('woff2'), url('/fonts/avenir.woff') format ('woff')"
+          "src": "url('/fonts/avenir.woff2') format ('woff2'), url('/fonts/avenir.woff') format ('woff')"
         }
       ],
       "emit": false,

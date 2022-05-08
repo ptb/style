@@ -33,9 +33,7 @@ ava.serial("given object with self-selector (1)", (t) => {
 
   parseSelfSelector(input, "abcdef", true)
 
-  const actual = store
-    .get("")
-    .get("abcdef")
+  const actual = store.get("").get("abcdef")
     .get(".ghijkl&")[498]
 
   const expect = '"flex"'
@@ -56,9 +54,7 @@ ava.serial("given object with self-selector (2)", (t) => {
 
   parseSelfSelector(input, "abcdef", true)
 
-  const actual = store
-    .get("")
-    .get("abcdef")
+  const actual = store.get("").get("abcdef")
     .get(".ghijkl&")
 
   const expect = '"none"'
@@ -83,19 +79,13 @@ ava.serial("given an object with compound self-selector", (t) => {
     true
   )
 
-  const actual1 = store
-    .get("")
-    .get("ghijkl")
+  const actual1 = store.get("").get("ghijkl")
     .get("& a:active")[733]
 
-  const actual2 = store
-    .get("")
-    .get("ghijkl")
+  const actual2 = store.get("").get("ghijkl")
     .get("& a:focus")[733]
 
-  const actual3 = store
-    .get("")
-    .get("ghijkl")
+  const actual3 = store.get("").get("ghijkl")
     .get("& a:hover")[733]
 
   const expect = "\"url('image.gif')\""

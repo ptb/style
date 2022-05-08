@@ -28,8 +28,7 @@ ava("given an object with identifier and emit false", (t) => {
   const actual = getClassName({
     "block": [
       {
-        "src":
-          "url('/fonts/font.woff2') format ('woff2'), url('/fonts/font.woff') format ('woff')"
+        "src": "url('/fonts/font.woff2') format ('woff2'), url('/fonts/font.woff') format ('woff')"
       },
       {
         "font-family": "c5xq1"
@@ -39,15 +38,13 @@ ava("given an object with identifier and emit false", (t) => {
     "identifier": "c5xq1",
     "input": {
       "fontFamily": {
-        "src":
-          "url('/fonts/font.woff2') format ('woff2'), url('/fonts/font.woff') format ('woff')"
+        "src": "url('/fonts/font.woff2') format ('woff2'), url('/fonts/font.woff') format ('woff')"
       }
     },
     "property": "fontFamily",
     "selectors": [["@font-face"]],
     "value": {
-      "src":
-        "url('/fonts/font.woff2') format ('woff2'), url('/fonts/font.woff') format ('woff')"
+      "src": "url('/fonts/font.woff2') format ('woff2'), url('/fonts/font.woff') format ('woff')"
     }
   })
 

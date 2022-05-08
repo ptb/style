@@ -27,9 +27,9 @@ export function replaceVariables (input, media = "") {
   if (isVariable(input, false)) {
     setStore(media)
 
-    const variables = /** @type {RegExpMatchArray} */ (getVariables(
-      input
-    ))
+    const variables = /** @type {RegExpMatchArray} */ (
+      getVariables(input)
+    )
 
     return variables.reduce(function (result, variable) {
       const paths = variable.split(".")

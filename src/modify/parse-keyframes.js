@@ -31,13 +31,17 @@ export function parseKeyframes (params = defaultParams) {
     const conditional = get(params, "conditional", {})
     const selectors = ["@keyframes", " "]
 
-    const identifier = /** @type {string} */ (getIdentifier(
-      /** @type {Params} */ (merge(
-        params,
-        { "selectors": undefined },
-        { "selectors": [selectors] }
-      ))
-    ))
+    const identifier = /** @type {string} */ (
+      getIdentifier(
+        /** @type {Params} */ (
+          merge(
+            params,
+            { "selectors": undefined },
+            { "selectors": [selectors] }
+          )
+        )
+      )
+    )
 
     const anim = /** @type {Params} */ ({
       "block": toPairs(input)

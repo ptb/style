@@ -41,11 +41,13 @@ import {
  */
 
 export function parse (params = defaultParams, group = "", prime) {
-  const input = /** @type {Params} */ (merge(
-    params,
-    { "input": undefined },
-    { "input": flattenInput(params) }
-  ))
+  const input = /** @type {Params} */ (
+    merge(
+      params,
+      { "input": undefined },
+      { "input": flattenInput(params) }
+    )
+  )
 
   return parseInput(input, group)
     .reduce(

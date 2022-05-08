@@ -31,22 +31,28 @@ export function parsePlaceholder (params = defaultParams) {
       "value": property
     })
 
-    const result = /** @type {Params} */ (merge(params, {
-      identifier
-    }))
+    const result = /** @type {Params} */ (
+      merge(params, {
+        identifier
+      })
+    )
 
     return value === true
       ? [result]
       : [
-        /** @type {Params} */ (merge(result, {
-          "emit": true,
-          "input": { [property]: true },
-          "value": true
-        })),
-        /** @type {Params} */ (merge(result, {
-          "emit": false,
-          "input": value
-        }))
+        /** @type {Params} */ (
+          merge(result, {
+            "emit": true,
+            "input": { [property]: true },
+            "value": true
+          })
+        ),
+        /** @type {Params} */ (
+          merge(result, {
+            "emit": false,
+            "input": value
+          })
+        )
       ]
   }
 

@@ -16,11 +16,13 @@ import { getIdentifier } from "../index.js"
 export function getPlaceholders (selectors = [], media) {
   return selectors.map(function (selector) {
     if ((/^%/u).test(selector)) {
-      const identifier = /** @type {string} */ (getIdentifier({
-        "conditional": { media },
-        "property": selector,
-        "value": selector
-      }))
+      const identifier = /** @type {string} */ (
+        getIdentifier({
+          "conditional": { media },
+          "property": selector,
+          "value": selector
+        })
+      )
 
       return ".".concat(identifier)
     }

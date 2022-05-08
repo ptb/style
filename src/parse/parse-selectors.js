@@ -88,10 +88,12 @@ export function parseSelectors (params = defaultParams, group = "") {
     })
 
     if (noAncestors) {
-      return /** @type {Params[]} */ (merge(
-        parse({ conditional, "emit": false, input }, group, false),
-        parse({ conditional, emit, input, selectors }, group, false)
-      ))
+      return /** @type {Params[]} */ (
+        merge(
+          parse({ conditional, "emit": false, input }, group, false),
+          parse({ conditional, emit, input, selectors }, group, false)
+        )
+      )
     }
 
     return parse(

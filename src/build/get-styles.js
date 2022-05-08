@@ -25,8 +25,6 @@ export function getStyles (mq) {
     })
   }
 
-  return results
-    .filter(Boolean)
-    .sort()
+  return results.filter(Boolean).sort()
     .join("")
 }

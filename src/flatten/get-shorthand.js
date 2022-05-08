@@ -37,8 +37,9 @@ export function getShorthand (input, value) {
       property = "py"
     }
 
-    const properties =
-      /** @type {string | string[]} */ (shorthands[property])
+    const properties = /** @type {string | string[]} */ (
+      shorthands[property]
+    )
 
     if (isStr(properties)) {
       return { [properties]: value }

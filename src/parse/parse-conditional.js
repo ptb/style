@@ -24,9 +24,7 @@ import {
 
 function getString (input) {
   return camelCase(
-    input
-      .slice(input.indexOf(" "))
-      .trim()
+    input.slice(input.indexOf(" ")).trim()
       .replace(/: +/u, ":")
   )
 }

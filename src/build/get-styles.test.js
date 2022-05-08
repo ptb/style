@@ -15,11 +15,9 @@ ava.serial("given undefined arguments", (t) => {
 
 ava.serial("given an object with placeholder property", (t) => {
   cache(
-    /** @type {Params} */ (parse(
-      { "input": { "%figure": true } },
-      "abc",
-      true
-    ).shift())
+    /** @type {Params} */ (
+      parse({ "input": { "%figure": true } }, "abc", true).shift()
+    )
   )
 
   const actual = getStyles()

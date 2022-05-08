@@ -78,11 +78,13 @@ export function parseFallbacks (params = defaultParams) {
     }
 
     return [
-      /** @type {Params} */ (merge(
-        params,
-        { "block": undefined, "value": undefined },
-        { block, value }
-      ))
+      /** @type {Params} */ (
+        merge(
+          params,
+          { "block": undefined, "value": undefined },
+          { block, value }
+        )
+      )
     ]
   }
 

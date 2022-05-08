@@ -27,9 +27,11 @@ export function modifyNumbers (params = defaultParams) {
     !regex.test(property)
   ) {
     return [
-      /** @type {Params} */ (merge(params, {
-        "value": "".concat(value.toString(), "px")
-      }))
+      /** @type {Params} */ (
+        merge(params, {
+          "value": "".concat(value.toString(), "px")
+        })
+      )
     ]
   }
 

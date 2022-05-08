@@ -59,9 +59,11 @@ export function parseProperties (
     const media = getMedia(get(params, "conditional.media"))
     const value = params.value
 
-    let identifier = /** @type {string} */ (isUndef(params.identifier)
-      ? getIdentifier(params)
-      : params.identifier)
+    let identifier = /** @type {string} */ (
+      isUndef(params.identifier)
+        ? getIdentifier(params)
+        : params.identifier
+    )
 
     let selectors = params.selectors || []
 
@@ -110,17 +112,17 @@ export function parseProperties (
         if (i >= 0) {
           const key = selector.join("")
 
-          const declarations = store
-            .get(media)
-            .get(group)
+          const declarations = store.get(media).get(group)
             .get(key)
 
-          identifier = /** @type {string} */ (getIdentifier({
-            "conditional": params.conditional,
-            "property": "&",
-            "selectors": [selector],
-            "value": declarations.filter(Boolean).join(";")
-          }))
+          identifier = /** @type {string} */ (
+            getIdentifier({
+              "conditional": params.conditional,
+              "property": "&",
+              "selectors": [selector],
+              "value": declarations.filter(Boolean).join(";")
+            })
+          )
 
           identifiers = identifiers.concat(identifier)
 
@@ -144,11 +146,13 @@ export function parseProperties (
     const block = params.block || [{ [kebabCase(property)]: value }]
 
     return [
-      /** @type {Params} */ (merge(
-        params,
-        { "block": undefined, "selectors": undefined },
-        { block, emit, identifier, selectors }
-      ))
+      /** @type {Params} */ (
+        merge(
+          params,
+          { "block": undefined, "selectors": undefined },
+          { block, emit, identifier, selectors }
+        )
+      )
     ]
   }
 
